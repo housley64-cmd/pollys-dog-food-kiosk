@@ -5,12 +5,21 @@ html,body{
   -webkit-tap-highlight-color:transparent;user-select:none
 }
 button{font:inherit;cursor:pointer}
-.app-shell{width:100vw;height:100vh}
-.screen{display:none;width:100vw;height:100vh}
+.app-shell{
+  width:100vw;
+  height:var(--app-height,100vh);
+}
+.screen{
+  display:none;
+  width:100vw;
+  height:var(--app-height,100vh);
+}
 .active-screen{display:block}
 
-/* Designed for kiosk use with Chrome bars visible:
-   whole 16:9 scene remains visible with a small safe border. */
+/* HOME
+   Uses the actual browser viewport height measured in JavaScript.
+   This avoids older Android Chrome initially treating 100vh as taller
+   than the visible area before the first touch. */
 #homeScreen{
   background:#24130c;
   padding:8px 10px;
@@ -19,52 +28,90 @@ button{font:inherit;cursor:pointer}
   position:relative;
   width:100%;
   height:100%;
-  max-width:calc((100vh - 16px) * 16 / 9);
-  max-height:calc(100vh - 16px);
+  max-width:calc((var(--app-height,100vh) - 16px) * 16 / 9);
+  max-height:calc(var(--app-height,100vh) - 16px);
   margin:0 auto;
   background-image:url('home-scene-16x9.png');
   background-size:100% 100%;
-  background-position:center center;
+  background-position:center;
   background-repeat:no-repeat;
   overflow:hidden;
-  border-radius:8px;
+  border-radius:8px
 }
 
-/* Invisible touch zones, calibrated to the new 8-button artwork. */
 .hotspot{
   position:absolute;border:0;background:rgba(255,255,255,.01);
   color:transparent;font-size:0;outline:none;border-radius:16px
 }
 .hotspot:active{transform:scale(.985)}
-
-.hotspot.brand  {left:42.22%;top:26.35%;width:20.99%;height:13.82%}
-.hotspot.puppy  {left:63.82%;top:26.35%;width:19.98%;height:14.13%}
-.hotspot.adult  {left:42.22%;top:41.34%;width:20.87%;height:14.35%}
-.hotspot.senior {left:63.88%;top:41.66%;width:19.98%;height:14.24%}
+.hotspot.brand{left:42.22%;top:26.35%;width:20.99%;height:13.82%}
+.hotspot.puppy{left:63.82%;top:26.35%;width:19.98%;height:14.13%}
+.hotspot.adult{left:42.22%;top:41.34%;width:20.87%;height:14.35%}
+.hotspot.senior{left:63.88%;top:41.66%;width:19.98%;height:14.24%}
 .hotspot.special{left:41.87%;top:56.22%;width:21.29%;height:14.45%}
 .hotspot.protein{left:63.76%;top:56.54%;width:20.16%;height:14.45%}
-.hotspot.cold   {left:41.03%;top:72.26%;width:22.31%;height:14.98%}
-.hotspot.guide  {left:64.11%;top:72.58%;width:19.86%;height:14.56%}
+.hotspot.cold{left:41.03%;top:72.26%;width:22.31%;height:14.98%}
+.hotspot.guide{left:64.11%;top:72.58%;width:19.86%;height:14.56%}
 
-/* Secondary screens */
+/* THEMED SUBPAGES */
 .content-screen{
-  overflow:auto;padding:18px;
-  background:linear-gradient(rgba(78,36,15,.18),rgba(78,36,15,.18)),linear-gradient(#f4ddb2,#dfb674)
+  overflow:auto;padding:16px;
+  background:
+    linear-gradient(rgba(78,36,15,.12),rgba(78,36,15,.12)),
+    repeating-linear-gradient(90deg,#d49a57 0,#d49a57 72px,#cc8f4d 73px,#cc8f4d 75px);
 }
-.page-card{
-  max-width:1080px;margin:24px auto;padding:32px;
-  background:linear-gradient(180deg,#fffaf0,#fff0d5);
-  border:5px solid #d99d45;border-radius:28px;
-  box-shadow:0 9px 0 rgba(74,38,16,.18)
+.brand-page,.page-card{
+  max-width:1120px;margin:12px auto 24px;padding:22px;
+  background:linear-gradient(180deg,#fff7e7,#f7dfb6);
+  border:5px solid #7e431e;border-radius:26px;
+  box-shadow:0 9px 0 rgba(74,38,16,.20)
 }
-.page-label{color:#8d541f;font-size:15px;font-weight:bold;letter-spacing:1.5px}
-.page-card h1{margin:10px 0 8px;font-size:38px;line-height:1.08;color:#3d2416}
-.page-card p{font-size:21px;line-height:1.45;color:#604939}
-.info-box{
-  display:flex;align-items:center;gap:17px;margin:26px 0;padding:21px;
-  background:#fff1bd;border:3px solid #edbd50;border-radius:20px
+.wood-header{
+  text-align:center;padding:18px 20px 20px;margin-bottom:18px;
+  background:linear-gradient(#a95d2d,#7e3f1f);
+  border:4px solid #5f3018;border-radius:20px;color:#fff7dc;
+  box-shadow:inset 0 0 0 3px rgba(255,214,145,.22)
 }
-.info-icon{
+.mini-kicker,.page-label{
+  font-size:14px;font-weight:bold;letter-spacing:1.6px;color:#ffd67d
+}
+.wood-header h1,.page-card h1{
+  margin:6px 0 6px;font-size:38px;line-height:1.06
+}
+.wood-header p,.page-card p{
+  margin:0;font-size:19px;line-height:1.4
+}
+.page-card h1{color:#3d2416}
+.page-card p{color:#604939}
+
+.brand-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px
+}
+.brand-sign{
+  position:relative;min-height:118px;border:4px solid #5f331a;border-radius:18px;
+  color:white;text-shadow:0 2px 0 rgba(0,0,0,.28);
+  box-shadow:0 6px 0 rgba(75,40,20,.20);
+  padding:16px;text-align:center;font-weight:bold
+}
+.brand-sign:before{
+  content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+  width:54px;border-top:4px solid #d8b17a
+}
+.brand-sign .brand-name{display:block;font-size:27px;line-height:1.05}
+.brand-sign .brand-note{display:block;margin-top:8px;font-size:14px;font-weight:normal;color:#fff4db}
+.brand-sign:nth-child(6n+1){background:linear-gradient(#2e87dd,#236fc4)}
+.brand-sign:nth-child(6n+2){background:linear-gradient(#52b43d,#3e9730)}
+.brand-sign:nth-child(6n+3){background:linear-gradient(#eb8a27,#d66d12)}
+.brand-sign:nth-child(6n+4){background:linear-gradient(#9a55d2,#7d3fb7)}
+.brand-sign:nth-child(6n+5){background:linear-gradient(#df4a44,#c5352f)}
+.brand-sign:nth-child(6n+6){background:linear-gradient(#2da5a8,#23888b)}
+.brand-sign:active{transform:translateY(2px)}
+
+.info-box,.shelf-panel{
+  display:flex;align-items:center;gap:17px;margin:24px 0;padding:20px;
+  background:#fff1bd;border:3px solid #d9a642;border-radius:20px
+}
+.info-icon,.shelf-icon{
   width:66px;height:66px;flex:0 0 66px;display:flex;align-items:center;justify-content:center;
   border-radius:50%;background:#ffd260;color:#643515;font-size:32px;font-weight:bold
 }
@@ -77,10 +124,15 @@ button{font:inherit;cursor:pointer}
   box-shadow:0 5px 0 rgba(74,38,16,.12)
 }
 .button-row{display:flex;gap:14px}
+.bottom-buttons{margin-top:20px}
 .back-btn{
-  flex:1;min-height:72px;border:0;border-radius:18px;background:#9a2e24;
+  flex:1;min-height:70px;border:0;border-radius:18px;background:#9a2e24;
   color:#fff;font-size:22px;font-weight:bold
 }
 .back-btn.secondary{background:#7c613f}
 .answer-btn:active,.back-btn:active{transform:translateY(2px)}
-@media(max-width:900px){.answer-grid{grid-template-columns:1fr}}
+
+@media(max-width:900px){
+  .brand-grid{grid-template-columns:repeat(2,1fr)}
+  .answer-grid{grid-template-columns:1fr}
+}

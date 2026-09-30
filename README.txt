@@ -1,20 +1,11 @@
-POLLY'S PETS DOG FOOD FINDER - VERSION 5
+VERSION 7.1 - INITIAL SIZE FIX
 
-This version adds:
-- Themed Disneyesque Grandpa Norm's Chow Barn styling
-- Updated Professor Polly image
-- Cleaner main screen with only functional buttons
-- Colorful wood-sign navigation
-- Working Help Me Choose questionnaire
-- Automatic return to Home after inactivity
-- Periodic refresh while sitting on Home
+Fixes the issue where old Android Chrome initially displayed the home image too large until the first touch.
+It measures the actual visible browser height on load and after Chrome changes its bars.
 
-UPLOAD THESE FILES TO GITHUB:
-index.html
-style.css
-app.js
-pollys-logo.png
-professor-polly.png
-chow-barn.png
-
-Then refresh the kiosk page.
+UPLOAD TO GITHUB:
+- index.html
+- style.css
+- app.js
+- brands.js
+- home-scene-16x9.png
