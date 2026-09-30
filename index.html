@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#7d251d">
+  <meta name="theme-color" content="#922b22">
   <title>Polly's Pets Dog Food Finder</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <div class="topbar-left">
-        <img src="pollys-logo.png" alt="Polly's Pets Logo" class="top-logo">
+        <img src="pollys-logo.png" alt="Polly's Pets logo" class="top-logo">
         <div class="title-wrap">
-          <div class="small-title">POLLY'S PETS</div>
-          <div class="main-title">Dog Food Finder</div>
-          <div class="subtitle">Grandpa Norm's Chow Barn</div>
+          <div class="tiny-kicker">WELCOME TO</div>
+          <div class="main-title">Polly's Pets Dog Food Finder</div>
+          <div class="sub-title">Inside Grandpa Norm's Chow Barn</div>
         </div>
       </div>
 
@@ -24,71 +24,77 @@
 
     <main id="homeScreen" class="screen active-screen">
       <section class="hero-card">
-        <div class="hero-copy">
-          <div class="hero-kicker">WELCOME TO POLLY'S PETS</div>
-          <h1>Let's find a great food for your dog!</h1>
-          <p>Choose a category below, or let Professor Polly guide you.</p>
+        <div class="hero-left">
+          <div class="hero-badge">PROFESSOR POLLY'S NUTRITION LAB</div>
+          <h1>Let’s find a great food for your dog!</h1>
+          <p class="hero-text">Choose a fun path below, or let Professor Polly guide you through a few quick questions.</p>
 
           <div class="speech-bubble">
             <strong>Professor Polly says:</strong><br>
-            “Tap a category to explore dog foods, or choose <strong>Help Me Choose</strong> to get started!”
+            “Tap a sign below to start your dog food adventure!”
           </div>
         </div>
 
-        <div class="hero-polly-wrap">
+        <div class="hero-right">
           <img src="professor-polly.png" alt="Professor Polly" class="hero-polly">
         </div>
       </section>
 
       <section class="barn-banner">
         <div class="barn-overlay">
-          <div class="barn-kicker">INSIDE GRANDPA NORM'S CHOW BARN</div>
-          <div class="barn-title">Explore foods by brand, life stage, need, or protein.</div>
+          <div class="barn-kicker">GRANDPA NORM'S CHOW BARN</div>
+          <div class="barn-title">Explore foods by brand, life stage, special needs, or protein.</div>
         </div>
       </section>
 
       <section class="menu-grid">
-        <button class="menu-card" type="button" onclick="openSection('Shop by Brand', 'Browse the dog food brands available at Polly\'s Pets.')">
-          <div class="card-icon">★</div>
+        <button class="menu-card card-red" type="button" onclick="openSection('Shop by Brand', 'Browse the dog food brands available at Polly\'s Pets.')">
+          <div class="rope"></div>
+          <div class="card-emoji">★</div>
           <div class="card-title">Shop by Brand</div>
           <div class="card-text">Find the brands you already know and trust.</div>
         </button>
 
-        <button class="menu-card" type="button" onclick="openSection('Puppy Food', 'View formulas that are a great starting point for puppies.')">
-          <div class="card-icon">🐶</div>
+        <button class="menu-card card-gold" type="button" onclick="openSection('Puppy Food', 'View formulas that are a great starting point for puppies.')">
+          <div class="rope"></div>
+          <div class="card-emoji">🐶</div>
           <div class="card-title">Puppy Food</div>
           <div class="card-text">Growing puppy formulas and all-life-stage options.</div>
         </button>
 
-        <button class="menu-card" type="button" onclick="openSection('Adult Dog Food', 'View everyday foods for adult dogs.')">
-          <div class="card-icon">🐾</div>
+        <button class="menu-card card-teal" type="button" onclick="openSection('Adult Dog Food', 'View everyday foods for adult dogs.')">
+          <div class="rope"></div>
+          <div class="card-emoji">🐾</div>
           <div class="card-title">Adult Dog Food</div>
           <div class="card-text">Everyday formulas for most adult dogs.</div>
         </button>
 
-        <button class="menu-card" type="button" onclick="openSection('Senior Dog Food', 'View foods commonly chosen for senior dogs.')">
-          <div class="card-icon">❤</div>
+        <button class="menu-card card-green" type="button" onclick="openSection('Senior Dog Food', 'View foods commonly chosen for senior dogs.')">
+          <div class="rope"></div>
+          <div class="card-emoji">❤</div>
           <div class="card-title">Senior Dog Food</div>
           <div class="card-text">Options for aging dogs and lighter nutritional needs.</div>
         </button>
 
-        <button class="menu-card" type="button" onclick="openSection('Special Needs', 'Explore foods for special nutrition needs.')">
-          <div class="card-icon">✓</div>
+        <button class="menu-card card-blue" type="button" onclick="openSection('Special Needs', 'Explore foods for special nutrition needs.')">
+          <div class="rope"></div>
+          <div class="card-emoji">✓</div>
           <div class="card-title">Special Needs</div>
-          <div class="card-text">Sensitive stomach, skin &amp; coat, weight support and more.</div>
+          <div class="card-text">Sensitive stomach, skin & coat, weight support and more.</div>
         </button>
 
-        <button class="menu-card" type="button" onclick="openSection('Protein', 'Browse foods by their main protein source.')">
-          <div class="card-icon">🥩</div>
+        <button class="menu-card card-purple" type="button" onclick="openSection('Protein', 'Browse foods by their main protein source.')">
+          <div class="rope"></div>
+          <div class="card-emoji">🥩</div>
           <div class="card-title">Protein</div>
           <div class="card-text">Chicken, beef, lamb, salmon, turkey, duck and more.</div>
         </button>
       </section>
 
       <button class="guided-card" type="button" onclick="startGuide()">
-        <div class="guided-badge">?</div>
+        <div class="guided-star">?</div>
         <div class="guided-copy">
-          <div class="guided-kicker">NOT SURE WHERE TO START?</div>
+          <div class="guided-kicker">NEED A LITTLE HELP?</div>
           <div class="guided-title">Help Me Choose</div>
           <div class="guided-text">Answer a few quick questions and Professor Polly will point you in the right direction.</div>
         </div>
@@ -108,7 +114,7 @@
           <div class="coming-icon">🐾</div>
           <div>
             <div class="coming-title">This section is ready for real products.</div>
-            <div class="coming-text">The next version can fill this page with the actual dog foods Polly's Pets carries.</div>
+            <div class="coming-text">Next we can fill this page with the actual dog foods Polly's Pets carries.</div>
           </div>
         </div>
 
@@ -121,9 +127,7 @@
         <div class="page-label">HELP ME CHOOSE</div>
         <h2 id="questionTitle">How old is your dog?</h2>
         <p id="questionSubtitle">Choose the closest match.</p>
-
         <div id="answerGrid" class="answer-grid"></div>
-
         <button class="back-btn secondary" type="button" onclick="previousGuideStep()">← Back</button>
       </section>
     </main>
@@ -138,7 +142,7 @@
           <div class="coming-icon">★</div>
           <div>
             <div class="coming-title">Professor Polly is ready for the next step.</div>
-            <div class="coming-text">Next we can connect these answers to actual products and brands in the store.</div>
+            <div class="coming-text">Next we can connect these answers to actual brands and products in the store.</div>
           </div>
         </div>
 
@@ -149,6 +153,6 @@
     <footer>Family Owned Since 1977</footer>
   </div>
 
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
