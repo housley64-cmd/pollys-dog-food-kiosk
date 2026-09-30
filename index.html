@@ -3,137 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#8a2b1f">
+  <meta name="theme-color" content="#7b2c1c">
   <title>Polly's Pets Dog Food Finder</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <div class="app-shell">
-    <header class="topbar">
-      <div class="brand-wrap">
-        <img src="pollys-logo.png" alt="Polly's Pets logo" class="brand-logo">
-        <div class="brand-copy">
-          <div class="brand-kicker">WELCOME TO</div>
-          <div class="brand-title">Polly's Pets Dog Food Finder</div>
-          <div class="brand-subtitle">Grandpa Norm's Chow Barn</div>
-        </div>
-      </div>
-
-      <button id="homeBtn" class="home-btn" type="button" onclick="showHome()">HOME</button>
-    </header>
-
     <main id="homeScreen" class="screen active-screen">
-      <section class="hero-card">
-        <div class="hero-left">
-          <div class="hero-label">PROFESSOR POLLY'S DOG FOOD RESEARCH LAB</div>
-          <h1>Let's find a great food for your dog!</h1>
-          <p class="hero-text">
-            Explore by brand, age, special needs, or protein — or let Professor Polly guide you.
-          </p>
-
-          <div class="speech-bubble">
-            <strong>Professor Polly says:</strong><br>
-            “Tap a sign below to start your dog food adventure!”
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <img src="professor-polly.png" alt="Professor Polly" class="hero-polly">
+      <section class="scene-wrapper">
+        <div class="scene-frame" aria-label="Polly's Pets Dog Food Finder home scene">
+          <button class="hotspot brand" type="button" onclick="openSection('Shop by Brand', 'Browse the dog food brands available at Polly\'s Pets.')">Shop by Brand</button>
+          <button class="hotspot puppy" type="button" onclick="openSection('Puppy Food', 'View formulas that are a great starting point for puppies.')">Puppy Food</button>
+          <button class="hotspot adult" type="button" onclick="openSection('Adult Dog Food', 'View everyday foods for adult dogs.')">Adult Dog Food</button>
+          <button class="hotspot senior" type="button" onclick="openSection('Senior Dog Food', 'View foods commonly chosen for senior dogs.')">Senior Dog Food</button>
+          <button class="hotspot special" type="button" onclick="openSection('Special Needs', 'Explore foods for special nutrition needs.')">Special Needs</button>
+          <button class="hotspot protein" type="button" onclick="openSection('Protein', 'Browse foods by their main protein source.')">Protein</button>
+          <button class="hotspot guide" type="button" onclick="startGuide()">Help Me Choose</button>
         </div>
       </section>
-
-      <section class="barn-banner">
-        <div class="barn-overlay">
-          <div class="barn-kicker">INSIDE GRANDPA NORM'S CHOW BARN</div>
-          <div class="barn-title">Explore foods by brand, life stage, special needs, or protein.</div>
-        </div>
-      </section>
-
-      <section class="button-grid">
-        <button class="wood-card blue" type="button" onclick="openSection('Shop by Brand', 'Browse the dog food brands available at Polly\'s Pets.')">
-          <span class="wood-icon">★</span>
-          <span class="wood-title">Shop by Brand</span>
-          <span class="wood-text">Find the brands you already know and trust.</span>
-        </button>
-
-        <button class="wood-card green" type="button" onclick="openSection('Puppy Food', 'View formulas that are a great starting point for puppies.')">
-          <span class="wood-icon">🐶</span>
-          <span class="wood-title">Puppy Food</span>
-          <span class="wood-text">Growing puppy formulas and all-life-stage options.</span>
-        </button>
-
-        <button class="wood-card orange" type="button" onclick="openSection('Adult Dog Food', 'View everyday foods for adult dogs.')">
-          <span class="wood-icon">🐾</span>
-          <span class="wood-title">Adult Dog Food</span>
-          <span class="wood-text">Everyday formulas for most adult dogs.</span>
-        </button>
-
-        <button class="wood-card purple" type="button" onclick="openSection('Senior Dog Food', 'View foods commonly chosen for senior dogs.')">
-          <span class="wood-icon">❤</span>
-          <span class="wood-title">Senior Dog Food</span>
-          <span class="wood-text">Options for aging dogs and lighter nutritional needs.</span>
-        </button>
-
-        <button class="wood-card red" type="button" onclick="openSection('Special Needs', 'Explore foods for special nutrition needs.')">
-          <span class="wood-icon">✚</span>
-          <span class="wood-title">Special Needs</span>
-          <span class="wood-text">Sensitive stomach, skin &amp; coat, weight support and more.</span>
-        </button>
-
-        <button class="wood-card gold" type="button" onclick="openSection('Protein', 'Browse foods by their main protein source.')">
-          <span class="wood-icon">🥩</span>
-          <span class="wood-title">Protein</span>
-          <span class="wood-text">Chicken, beef, lamb, salmon, turkey, duck and more.</span>
-        </button>
-      </section>
-
-      <button class="guide-banner" type="button" onclick="startGuide()">
-        <div class="guide-badge">?</div>
-        <div class="guide-copy">
-          <div class="guide-kicker">NOT SURE WHERE TO START?</div>
-          <div class="guide-title">Help Me Choose</div>
-          <div class="guide-text">Answer a few quick questions and Professor Polly will point you in the right direction.</div>
-        </div>
-        <div class="guide-arrow">→</div>
-      </button>
-
-      <div class="help-note">Need extra help? A Polly's Pets team member is always happy to help.</div>
     </main>
 
     <main id="sectionScreen" class="screen">
       <section class="page-card">
         <div class="page-label">DOG FOOD FINDER</div>
-        <h2 id="sectionTitle">Section</h2>
+        <h1 id="sectionTitle">Section</h1>
         <p id="sectionDescription"></p>
 
         <div class="info-box">
           <div class="info-icon">🐾</div>
           <div>
             <div class="info-title">This section is ready for real products.</div>
-            <div class="info-text">The next version can fill this page with the actual foods Polly's Pets carries.</div>
+            <div class="info-text">Next we can fill this page with the actual foods Polly's Pets carries.</div>
           </div>
         </div>
 
-        <button class="back-btn" type="button" onclick="showHome()">← Back to Home</button>
+        <div class="button-row">
+          <button class="back-btn" type="button" onclick="showHome()">← Back to Home</button>
+        </div>
       </section>
     </main>
 
     <main id="guideScreen" class="screen">
       <section class="page-card">
         <div class="page-label">HELP ME CHOOSE</div>
-        <h2 id="questionTitle">How old is your dog?</h2>
+        <h1 id="questionTitle">How old is your dog?</h1>
         <p id="questionSubtitle">Choose the closest match.</p>
 
         <div id="answerGrid" class="answer-grid"></div>
 
-        <button class="back-btn secondary" type="button" onclick="previousGuideStep()">← Back</button>
+        <div class="button-row">
+          <button class="back-btn secondary" type="button" onclick="previousGuideStep()">← Back</button>
+          <button class="back-btn" type="button" onclick="showHome()">Home</button>
+        </div>
       </section>
     </main>
 
     <main id="guideResultScreen" class="screen">
       <section class="page-card">
         <div class="page-label">YOUR STARTING POINT</div>
-        <h2>Great — here is your starting point!</h2>
+        <h1>Great — here is your starting point!</h1>
         <p id="guideSummary"></p>
 
         <div class="info-box">
@@ -144,13 +72,13 @@
           </div>
         </div>
 
-        <button class="back-btn" type="button" onclick="showHome()">Start Over</button>
+        <div class="button-row">
+          <button class="back-btn" type="button" onclick="showHome()">Start Over</button>
+        </div>
       </section>
     </main>
-
-    <footer>Family Owned Since 1977</footer>
   </div>
 
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>

@@ -32,7 +32,6 @@ function hideAllScreens() {
 function showHome() {
   hideAllScreens();
   document.getElementById('homeScreen').className = 'screen active-screen';
-  document.getElementById('homeBtn').style.display = 'none';
   guideStep = 0;
   guideAnswers = {};
   window.scrollTo(0, 0);
@@ -43,7 +42,6 @@ function openSection(title, description) {
   document.getElementById('sectionTitle').innerHTML = title;
   document.getElementById('sectionDescription').innerHTML = description;
   document.getElementById('sectionScreen').className = 'screen active-screen';
-  document.getElementById('homeBtn').style.display = 'block';
   window.scrollTo(0, 0);
 }
 
@@ -76,7 +74,6 @@ function showGuideQuestion() {
   }
 
   document.getElementById('guideScreen').className = 'screen active-screen';
-  document.getElementById('homeBtn').style.display = 'block';
   window.scrollTo(0, 0);
 }
 
@@ -111,7 +108,6 @@ function showGuideResult() {
 
   document.getElementById('guideSummary').innerHTML = summary;
   document.getElementById('guideResultScreen').className = 'screen active-screen';
-  document.getElementById('homeBtn').style.display = 'block';
   window.scrollTo(0, 0);
 }
 
