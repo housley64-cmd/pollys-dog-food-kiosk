@@ -1,11 +1,21 @@
-POLLY'S PETS DOG FOOD FINDER - VERSION 2
+POLLY'S PETS DOG FOOD FINDER - VERSION 3
 
 This version adds:
-- More polished Grandpa Norm's Chow Barn styling
-- Larger touchscreen controls
-- Working Help Me Choose questionnaire
-- 3-minute inactivity return to Home
+- Polly's Pets logo on the page
+- Professor Polly artwork
+- Grandpa Norm's Chow Barn image styling
+- A more playful Polly's Pets look
+- Larger colorful category cards
+- The same working Help Me Choose questionnaire
+- Automatic return to Home after inactivity
 - Periodic refresh while sitting on Home
 
-Replace index.html, style.css and app.js in the GitHub repository.
-After GitHub Pages republishes, refresh the kiosk page.
+UPLOAD THESE FILES TO GITHUB:
+index.html
+style.css
+app.js
+pollys-logo.png
+professor-polly.png
+chow-barn.png
+
+Then refresh the kiosk page.
