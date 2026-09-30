@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Polly's Pets Dog Food Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="brand-kicker">POLLY'S PETS</div>
+        <h1>Dog Food Finder</h1>
+        <p class="subtitle">Find a great food for your dog in just a few taps.</p>
+      </div>
+      <button id="homeBtn" class="home-btn" type="button" onclick="showHome()">HOME</button>
+    </header>
+
+    <main id="homeScreen" class="screen active-screen">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">WELCOME TO GRANDPA NORM'S CHOW BARN</div>
+          <h2>What would you like to shop by?</h2>
+          <p>Tap any option below to get started.</p>
+        </div>
+      </section>
+
+      <section class="menu-grid">
+        <button class="menu-card" type="button" onclick="openSection('Shop by Brand')">
+          <span class="menu-icon">★</span>
+          <span class="menu-title">Shop by Brand</span>
+          <span class="menu-text">Browse the dog food brands available at Polly's Pets.</span>
+        </button>
+
+        <button class="menu-card" type="button" onclick="openSection('Life Stage')">
+          <span class="menu-icon">🐾</span>
+          <span class="menu-title">Life Stage</span>
+          <span class="menu-text">Puppy, adult, senior and all-life-stage formulas.</span>
+        </button>
+
+        <button class="menu-card" type="button" onclick="openSection('Special Needs')">
+          <span class="menu-icon">❤</span>
+          <span class="menu-title">Special Needs</span>
+          <span class="menu-text">Explore foods for sensitivities and specific nutrition goals.</span>
+        </button>
+
+        <button class="menu-card" type="button" onclick="openSection('Protein')">
+          <span class="menu-icon">◉</span>
+          <span class="menu-title">Protein</span>
+          <span class="menu-text">Chicken, beef, lamb, salmon, turkey, duck and more.</span>
+        </button>
+      </section>
+
+      <button class="help-card" type="button" onclick="openSection('Help Me Choose')">
+        <span class="help-title">HELP ME CHOOSE</span>
+        <span class="help-text">Answer a few quick questions and we'll narrow down the options.</span>
+        <span class="help-arrow">→</span>
+      </button>
+
+      <div class="staff-note">
+        Need more help? Ask a Polly's Pets team member for personalized recommendations.
+      </div>
+    </main>
+
+    <main id="sectionScreen" class="screen">
+      <section class="section-panel">
+        <div class="section-badge">DOG FOOD FINDER</div>
+        <h2 id="sectionTitle">Section</h2>
+        <p id="sectionText">
+          This is the first working test screen. Once we confirm the kiosk displays and responds correctly,
+          we will build the full product database and filtering system here.
+        </p>
+
+        <div class="test-box">
+          <div class="test-check">✓</div>
+          <div>
+            <strong>Touch test successful</strong>
+            <p>If you can see this page after tapping a button, the basic kiosk navigation is working.</p>
+          </div>
+        </div>
+
+        <button class="back-btn" type="button" onclick="showHome()">← Back to Dog Food Finder</button>
+      </section>
+    </main>
+
+    <footer>
+      Polly's Pets • Family Owned Since 1977
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
