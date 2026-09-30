@@ -1,11 +1,3 @@
-VERSION 7.1 - INITIAL SIZE FIX
+V7.5 keeps the successful official Fromm product images from V7.4 and makes the main home screen slightly larger without returning to the unstable first-touch resizing behavior.
 
-Fixes the issue where old Android Chrome initially displayed the home image too large until the first touch.
-It measures the actual visible browser height on load and after Chrome changes its bars.
-
-UPLOAD TO GITHUB:
-- index.html
-- style.css
-- app.js
-- brands.js
-- home-scene-16x9.png
+Upload: index.html, style.css, app.js, brands.js, home-scene-16x9.png

@@ -5,7 +5,7 @@ button{font:inherit;cursor:pointer}.app-shell{width:100vw;height:100vh}.screen{d
 /* Stable home size: slightly larger than V7.3, but does not resize after first tap */
 #homeScreen{background:#24130c;padding:6px;display:none;align-items:center;justify-content:center}
 #homeScreen.active-screen{display:flex}
-.scene-frame{position:relative;width:92.5vw;max-width:1680px;aspect-ratio:16/9;background-image:url('home-scene-16x9.png');background-size:100% 100%;background-position:center;background-repeat:no-repeat;overflow:hidden;border-radius:8px}
+.scene-frame{position:relative;width:95.5vw;max-width:1740px;aspect-ratio:16/9;background-image:url('home-scene-16x9.png');background-size:100% 100%;background-position:center;background-repeat:no-repeat;overflow:hidden;border-radius:8px}
 .hotspot{position:absolute;border:0;background:rgba(255,255,255,.01);color:transparent;font-size:0;outline:none;border-radius:16px}.hotspot:active{transform:scale(.985)}
 .hotspot.brand{left:42.22%;top:26.35%;width:20.99%;height:13.82%}.hotspot.puppy{left:63.82%;top:26.35%;width:19.98%;height:14.13%}.hotspot.adult{left:42.22%;top:41.34%;width:20.87%;height:14.35%}.hotspot.senior{left:63.88%;top:41.66%;width:19.98%;height:14.24%}.hotspot.special{left:41.87%;top:56.22%;width:21.29%;height:14.45%}.hotspot.protein{left:63.76%;top:56.54%;width:20.16%;height:14.45%}.hotspot.cold{left:41.03%;top:72.26%;width:22.31%;height:14.98%}.hotspot.guide{left:64.11%;top:72.58%;width:19.86%;height:14.56%}
 
