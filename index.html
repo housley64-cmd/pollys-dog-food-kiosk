@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style.css?v=7.4">
+<link rel="stylesheet" href="style.css?v=7.8">
 </head>
 <body>
 <div class="app-shell">
@@ -40,7 +40,7 @@
   <div class="wood-header">
     <div class="mini-kicker">FROMM FAMILY FOODS</div>
     <h1>Fromm Dog Food</h1>
-    <p>Clean official package images matched to products carried at Polly's Pets.</p>
+    <p>Tap a bag or the More Info button for additional details.</p>
   </div>
 
   <div class="filter-row">
@@ -52,13 +52,69 @@
     <button class="filter-btn" onclick="filterFromm('Senior',this)">Senior</button>
   </div>
 
-  <div class="image-note">Official Fromm package art is used for the recipe. The size badge shows the bag size carried at Polly's Pets.</div>
+  <div class="image-note">Official Fromm package art is shown. Each card lists the size Polly's carries plus the sizes that formula is available in.</div>
 
   <div id="frommProductGrid" class="product-grid"></div>
 
   <div class="button-row bottom-buttons">
     <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
     <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
+<main id="productDetailScreen" class="screen content-screen">
+<section class="brand-page detail-page">
+  <div class="wood-header">
+    <div class="mini-kicker" id="detailLine">FROMM FAMILY FOODS</div>
+    <h1 id="detailName">Product Name</h1>
+    <p id="detailTagline">More information about this food.</p>
+  </div>
+
+  <div class="detail-layout">
+    <div class="detail-image-card">
+      <div class="detail-image-wrap">
+        <img id="detailImage" src="" alt="">
+      </div>
+      <div class="detail-size-panel">
+        <div class="detail-size-title">Polly's Size</div>
+        <div class="detail-size-value" id="detailCarrySize">30 lb</div>
+      </div>
+    </div>
+
+    <div class="detail-info-card">
+      <div class="detail-grid">
+        <div class="detail-info-box">
+          <div class="detail-info-label">Line</div>
+          <div class="detail-info-value" id="detailLineValue">Gold</div>
+        </div>
+        <div class="detail-info-box">
+          <div class="detail-info-label">Life Stage</div>
+          <div class="detail-info-value" id="detailLife">Adult</div>
+        </div>
+        <div class="detail-info-box">
+          <div class="detail-info-label">Main Protein</div>
+          <div class="detail-info-value" id="detailProtein">Chicken</div>
+        </div>
+        <div class="detail-info-box">
+          <div class="detail-info-label">Available Sizes</div>
+          <div class="detail-info-value" id="detailSizes">5 lb • 15 lb • 30 lb</div>
+        </div>
+      </div>
+
+      <div class="detail-description" id="detailDescription">
+        Product description goes here.
+      </div>
+
+      <div class="detail-note">
+        <strong>Note:</strong> Official Fromm product image shown. Polly's Pets may carry selected sizes in store.
+      </div>
+
+      <div class="button-row detail-buttons">
+        <button class="back-btn secondary" onclick="showFromm()">← Back to Fromm</button>
+        <button class="back-btn website-btn" id="detailWebsiteBtn" onclick="openOfficialPage()">Official Fromm Page</button>
+      </div>
+    </div>
   </div>
 </section>
 </main>
@@ -96,7 +152,7 @@
 </main>
 
 </div>
-<script src="brands.js?v=7.4"></script>
-<script src="app.js?v=7.4"></script>
+<script src="brands.js?v=7.8"></script>
+<script src="app.js?v=7.8"></script>
 </body>
 </html>

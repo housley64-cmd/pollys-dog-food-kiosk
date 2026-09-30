@@ -1,4 +1,8 @@
-V7.7 enlarges the home screen significantly so it nearly fills the full browser width.
-Fromm product cards and available-size information stay the same as V7.6.
+V7.8 adds tappable product detail pages for Fromm.
+
+New behavior:
+- Tap a Fromm product card or More Info button
+- Opens a full product-detail screen inside the kiosk
+- Includes an Official Fromm Page button for extra information
 
 Upload: index.html, style.css, app.js, brands.js, home-scene-16x9.png
