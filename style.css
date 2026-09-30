@@ -1,63 +1,61 @@
 *{box-sizing:border-box}
 html,body{
-  margin:0;padding:0;width:100%;height:100%;
-  overflow:hidden;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#24130c;color:#2f1c13;
-  -webkit-tap-highlight-color:transparent;user-select:none;
+  margin:0;padding:0;width:100%;height:100%;overflow:hidden;
+  font-family:Arial,Helvetica,sans-serif;background:#24130c;color:#2f1c13;
+  -webkit-tap-highlight-color:transparent;user-select:none
 }
 button{font:inherit;cursor:pointer}
 .app-shell{width:100vw;height:100vh}
 .screen{display:none;width:100vw;height:100vh}
 .active-screen{display:block}
 
-/* V6.4: slightly reduced home scene for Chrome with visible browser bars.
-   Keeps the entire 16:9 design visible with a small, intentional border. */
+/* Designed for kiosk use with Chrome bars visible:
+   whole 16:9 scene remains visible with a small safe border. */
 #homeScreen{
   background:#24130c;
-  padding:10px 14px 12px;
+  padding:8px 10px;
 }
-
 .scene-frame{
   position:relative;
   width:100%;
   height:100%;
-  max-width:calc((100vh - 22px) * 16 / 9);
-  max-height:calc(100vh - 22px);
+  max-width:calc((100vh - 16px) * 16 / 9);
+  max-height:calc(100vh - 16px);
   margin:0 auto;
   background-image:url('home-scene-16x9.png');
   background-size:100% 100%;
   background-position:center center;
   background-repeat:no-repeat;
   overflow:hidden;
-  border-radius:10px;
+  border-radius:8px;
 }
 
-/* Touch zones calibrated to the 16:9 artwork itself. */
+/* Invisible touch zones, calibrated to the new 8-button artwork. */
 .hotspot{
-  position:absolute;border:0;
-  background:rgba(255,255,255,0.01);
-  color:transparent;font-size:0;outline:none;border-radius:18px;
+  position:absolute;border:0;background:rgba(255,255,255,.01);
+  color:transparent;font-size:0;outline:none;border-radius:16px
 }
 .hotspot:active{transform:scale(.985)}
-.hotspot.brand{left:37.9%;top:36.0%;width:24.2%;height:14.6%}
-.hotspot.puppy{left:63.0%;top:36.1%;width:24.2%;height:14.6%}
-.hotspot.adult{left:38.0%;top:50.8%;width:24.3%;height:13.6%}
-.hotspot.senior{left:63.1%;top:50.9%;width:24.1%;height:13.6%}
-.hotspot.special{left:38.0%;top:64.9%;width:24.3%;height:13.2%}
-.hotspot.protein{left:63.3%;top:64.9%;width:24.1%;height:13.2%}
-.hotspot.guide{left:35.2%;top:78.7%;width:55.6%;height:14.5%;border-radius:24px}
+
+.hotspot.brand  {left:42.22%;top:26.35%;width:20.99%;height:13.82%}
+.hotspot.puppy  {left:63.82%;top:26.35%;width:19.98%;height:14.13%}
+.hotspot.adult  {left:42.22%;top:41.34%;width:20.87%;height:14.35%}
+.hotspot.senior {left:63.88%;top:41.66%;width:19.98%;height:14.24%}
+.hotspot.special{left:41.87%;top:56.22%;width:21.29%;height:14.45%}
+.hotspot.protein{left:63.76%;top:56.54%;width:20.16%;height:14.45%}
+.hotspot.cold   {left:41.03%;top:72.26%;width:22.31%;height:14.98%}
+.hotspot.guide  {left:64.11%;top:72.58%;width:19.86%;height:14.56%}
 
 /* Secondary screens */
 .content-screen{
   overflow:auto;padding:18px;
-  background:linear-gradient(rgba(78,36,15,.18),rgba(78,36,15,.18)),linear-gradient(#f4ddb2,#dfb674);
+  background:linear-gradient(rgba(78,36,15,.18),rgba(78,36,15,.18)),linear-gradient(#f4ddb2,#dfb674)
 }
 .page-card{
   max-width:1080px;margin:24px auto;padding:32px;
   background:linear-gradient(180deg,#fffaf0,#fff0d5);
   border:5px solid #d99d45;border-radius:28px;
-  box-shadow:0 9px 0 rgba(74,38,16,.18);
+  box-shadow:0 9px 0 rgba(74,38,16,.18)
 }
 .page-label{color:#8d541f;font-size:15px;font-weight:bold;letter-spacing:1.5px}
 .page-card h1{margin:10px 0 8px;font-size:38px;line-height:1.08;color:#3d2416}

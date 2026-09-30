@@ -55,7 +55,6 @@ function showGuideQuestion(){
   hideAllScreens();
 
   var question=guideQuestions[guideStep];
-
   document.getElementById('questionTitle').innerHTML=question.title;
   document.getElementById('questionSubtitle').innerHTML=question.subtitle;
 
@@ -116,14 +115,10 @@ document.addEventListener('contextmenu',function(event){
 });
 
 var idleTimer;
-
 function resetIdleTimer(){
   clearTimeout(idleTimer);
-  idleTimer=setTimeout(function(){
-    showHome();
-  },180000);
+  idleTimer=setTimeout(function(){showHome()},180000);
 }
-
 document.addEventListener('click',resetIdleTimer);
 document.addEventListener('touchstart',resetIdleTimer);
 resetIdleTimer();
