@@ -1,161 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#6f2a16">
-  <title>Polly's Pets Dog Food Finder</title>
-  <link rel="stylesheet" href="style.css?v=7.2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#6f2a16">
+<title>Polly's Pets Dog Food Finder</title>
+<link rel="stylesheet" href="style.css?v=7.3">
 </head>
 <body>
 <div class="app-shell">
+<main id="homeScreen" class="screen active-screen">
+  <section class="scene-frame">
+    <button class="hotspot brand" onclick="showBrandScreen()">Shop by Brand</button>
+    <button class="hotspot puppy" onclick="openSection('Puppy Food','View formulas for puppies.')">Puppy Food</button>
+    <button class="hotspot adult" onclick="openSection('Adult Dog Food','View everyday foods for adult dogs.')">Adult Dog Food</button>
+    <button class="hotspot senior" onclick="openSection('Senior Dog Food','View foods for senior dogs.')">Senior Dog Food</button>
+    <button class="hotspot special" onclick="openSection('Special Needs','Explore foods for special nutrition needs.')">Special Needs</button>
+    <button class="hotspot protein" onclick="openSection('Protein','Browse foods by protein source.')">Protein</button>
+    <button class="hotspot cold" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">Cold Dog Food</button>
+    <button class="hotspot guide" onclick="startGuide()">Help Me Choose</button>
+  </section>
+</main>
 
-  <!-- HOME -->
-  <main id="homeScreen" class="screen active-screen">
-    <section class="scene-frame" aria-label="Polly's Pets Dog Food Finder">
-      <button class="hotspot brand" type="button" onclick="showBrandScreen()">Shop by Brand</button>
-      <button class="hotspot puppy" type="button" onclick="openSection('Puppy Food','View formulas that are a great starting point for puppies.')">Puppy Food</button>
-      <button class="hotspot adult" type="button" onclick="openSection('Adult Dog Food','View everyday foods for adult dogs.')">Adult Dog Food</button>
-      <button class="hotspot senior" type="button" onclick="openSection('Senior Dog Food','View foods commonly chosen for senior dogs.')">Senior Dog Food</button>
-      <button class="hotspot special" type="button" onclick="openSection('Special Needs','Explore foods for special nutrition needs.')">Special Needs</button>
-      <button class="hotspot protein" type="button" onclick="openSection('Protein','Browse foods by their main protein source.')">Protein</button>
-      <button class="hotspot cold" type="button" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen dog foods carried at Polly\'s Pets.')">Cold Dog Food</button>
-      <button class="hotspot guide" type="button" onclick="startGuide()">Help Me Choose</button>
-    </section>
-  </main>
+<main id="brandScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="wood-header">
+    <div class="mini-kicker">GRANDPA NORM'S CHOW BARN</div>
+    <h1>Shop Dog Food by Brand</h1>
+    <p>Tap a brand to explore the products Polly's Pets carries.</p>
+  </div>
+  <div id="brandGrid" class="brand-grid"></div>
+  <button class="back-btn secondary" onclick="showHome()">← Back to Home</button>
+</section>
+</main>
 
-  <!-- SHOP BY BRAND -->
-  <main id="brandScreen" class="screen content-screen">
-    <section class="brand-page">
-      <div class="wood-header">
-        <div class="mini-kicker">GRANDPA NORM'S CHOW BARN</div>
-        <h1>Shop Dog Food by Brand</h1>
-        <p>Tap a brand sign to explore the foods Polly's Pets carries.</p>
-      </div>
+<main id="frommScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="wood-header">
+    <div class="mini-kicker">FROMM FAMILY FOODS</div>
+    <h1>Fromm Dog Food</h1>
+    <p>Individual bags currently carried at Polly's Pets.</p>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterFromm('All',this)">All</button>
+    <button class="filter-btn" onclick="filterFromm('Classic',this)">Classic</button>
+    <button class="filter-btn" onclick="filterFromm('Gold',this)">Gold</button>
+    <button class="filter-btn" onclick="filterFromm('Four-Star',this)">Four-Star</button>
+    <button class="filter-btn" onclick="filterFromm('Puppy',this)">Puppy</button>
+    <button class="filter-btn" onclick="filterFromm('Senior',this)">Senior</button>
+  </div>
+  <div id="frommProductGrid" class="product-grid"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
 
-      <div id="brandGrid" class="brand-grid"></div>
+<main id="brandDetailScreen" class="screen content-screen">
+<section class="page-card">
+<div class="page-label">SHOP BY BRAND</div>
+<h1 id="brandDetailTitle"></h1><p id="brandDetailText"></p>
+<div class="info-box"><div class="info-icon">🐾</div><div><div class="info-title">This brand is ready for products.</div><div class="info-text">We'll build it the same way as Fromm.</div></div></div>
+<div class="button-row"><button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button><button class="back-btn" onclick="showHome()">Home</button></div>
+</section>
+</main>
 
-      <div class="button-row bottom-buttons">
-        <button class="back-btn secondary" type="button" onclick="showHome()">← Back to Home</button>
-      </div>
-    </section>
-  </main>
+<main id="sectionScreen" class="screen content-screen">
+<section class="page-card">
+<div class="page-label">POLLY'S PETS DOG FOOD FINDER</div><h1 id="sectionTitle"></h1><p id="sectionDescription"></p>
+<div class="info-box"><div class="info-icon">🐾</div><div><div class="info-title">This section will use the same product database.</div><div class="info-text">As we enter products, these screens will automatically filter them.</div></div></div>
+<button class="back-btn" onclick="showHome()">← Back to Home</button>
+</section>
+</main>
 
-  <!-- FROMM DETAIL -->
-  <main id="frommScreen" class="screen content-screen">
-    <section class="brand-page">
-      <div class="wood-header">
-        <div class="mini-kicker">FROMM FAMILY FOODS</div>
-        <h1>Fromm at Polly's Pets</h1>
-        <p>Built from your actual in-store shelf photos.</p>
-      </div>
+<main id="guideScreen" class="screen content-screen">
+<section class="page-card">
+<div class="page-label">PROFESSOR POLLY'S HELP ME CHOOSE</div><h1 id="questionTitle"></h1><p id="questionSubtitle"></p>
+<div id="answerGrid" class="answer-grid"></div>
+<div class="button-row"><button class="back-btn secondary" onclick="previousGuideStep()">← Back</button><button class="back-btn" onclick="showHome()">Home</button></div>
+</section>
+</main>
 
-      <div class="quick-tags">
-        <div class="tag-pill">Classic</div>
-        <div class="tag-pill">Gold</div>
-        <div class="tag-pill">Four-Star</div>
-        <div class="tag-pill">Puppy</div>
-        <div class="tag-pill">Adult</div>
-        <div class="tag-pill">Large Breed</div>
-        <div class="tag-pill">Mature Adult</div>
-        <div class="tag-pill">Frozen / Cold Dog Food</div>
-      </div>
-
-      <div class="info-box">
-        <div class="info-icon">📷</div>
-        <div>
-          <div class="info-title">These are your real Fromm shelf photos.</div>
-          <div class="info-text">This gives us a real working Fromm section right away. Next we can turn each photo group into individual products and filters.</div>
-        </div>
-      </div>
-
-      <div id="frommGallery" class="gallery-grid"></div>
-
-      <div class="button-row bottom-buttons">
-        <button class="back-btn secondary" type="button" onclick="showBrandScreen()">← All Brands</button>
-        <button class="back-btn" type="button" onclick="showHome()">Home</button>
-      </div>
-    </section>
-  </main>
-
-  <!-- GENERIC BRAND DETAIL -->
-  <main id="brandDetailScreen" class="screen content-screen">
-    <section class="page-card brand-detail-card">
-      <div class="page-label">SHOP BY BRAND</div>
-      <h1 id="brandDetailTitle">Brand</h1>
-      <p id="brandDetailText">Products for this brand will appear here.</p>
-
-      <div class="shelf-panel">
-        <div class="shelf-icon">🐾</div>
-        <div>
-          <div class="info-title">Brand screen is working.</div>
-          <div class="info-text">Next we'll add the actual products, package images, life stage, protein, and special-needs tags for this brand.</div>
-        </div>
-      </div>
-
-      <div class="button-row">
-        <button class="back-btn secondary" type="button" onclick="showBrandScreen()">← All Brands</button>
-        <button class="back-btn" type="button" onclick="showHome()">Home</button>
-      </div>
-    </section>
-  </main>
-
-  <!-- GENERIC SECTION -->
-  <main id="sectionScreen" class="screen content-screen">
-    <section class="page-card">
-      <div class="page-label">POLLY'S PETS DOG FOOD FINDER</div>
-      <h1 id="sectionTitle">Section</h1>
-      <p id="sectionDescription"></p>
-
-      <div class="info-box">
-        <div class="info-icon">🐾</div>
-        <div>
-          <div class="info-title">This section is ready for real products.</div>
-          <div class="info-text">Once the brand database is built, these sections will automatically filter the same products.</div>
-        </div>
-      </div>
-
-      <button class="back-btn" type="button" onclick="showHome()">← Back to Home</button>
-    </section>
-  </main>
-
-  <!-- GUIDE -->
-  <main id="guideScreen" class="screen content-screen">
-    <section class="page-card">
-      <div class="page-label">PROFESSOR POLLY'S HELP ME CHOOSE</div>
-      <h1 id="questionTitle">How old is your dog?</h1>
-      <p id="questionSubtitle">Choose the closest match.</p>
-
-      <div id="answerGrid" class="answer-grid"></div>
-
-      <div class="button-row">
-        <button class="back-btn secondary" type="button" onclick="previousGuideStep()">← Back</button>
-        <button class="back-btn" type="button" onclick="showHome()">Home</button>
-      </div>
-    </section>
-  </main>
-
-  <main id="guideResultScreen" class="screen content-screen">
-    <section class="page-card">
-      <div class="page-label">YOUR STARTING POINT</div>
-      <h1>Great — Professor Polly has a starting point!</h1>
-      <p id="guideSummary"></p>
-
-      <div class="info-box">
-        <div class="info-icon">★</div>
-        <div>
-          <div class="info-title">Next we'll connect this to actual dog foods.</div>
-          <div class="info-text">Your answers will eventually filter the products Polly's Pets actually carries.</div>
-        </div>
-      </div>
-
-      <button class="back-btn" type="button" onclick="showHome()">Start Over</button>
-    </section>
-  </main>
-
+<main id="guideResultScreen" class="screen content-screen">
+<section class="page-card">
+<div class="page-label">YOUR STARTING POINT</div><h1>Professor Polly has a starting point!</h1><p id="guideSummary"></p>
+<button class="back-btn" onclick="showHome()">Start Over</button>
+</section>
+</main>
 </div>
-
-<script src="brands.js?v=7.2"></script>
-<script src="app.js?v=7.2"></script>
+<script src="brands.js?v=7.3"></script>
+<script src="app.js?v=7.3"></script>
 </body>
 </html>
