@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style.css?v=7.3">
+<link rel="stylesheet" href="style.css?v=7.4">
 </head>
 <body>
 <div class="app-shell">
+
 <main id="homeScreen" class="screen active-screen">
-  <section class="scene-frame">
+  <section class="scene-frame" aria-label="Polly's Pets Dog Food Finder">
     <button class="hotspot brand" onclick="showBrandScreen()">Shop by Brand</button>
     <button class="hotspot puppy" onclick="openSection('Puppy Food','View formulas for puppies.')">Puppy Food</button>
     <button class="hotspot adult" onclick="openSection('Adult Dog Food','View everyday foods for adult dogs.')">Adult Dog Food</button>
@@ -39,8 +40,9 @@
   <div class="wood-header">
     <div class="mini-kicker">FROMM FAMILY FOODS</div>
     <h1>Fromm Dog Food</h1>
-    <p>Individual bags currently carried at Polly's Pets.</p>
+    <p>Clean official package images matched to products carried at Polly's Pets.</p>
   </div>
+
   <div class="filter-row">
     <button class="filter-btn active" onclick="filterFromm('All',this)">All</button>
     <button class="filter-btn" onclick="filterFromm('Classic',this)">Classic</button>
@@ -49,7 +51,11 @@
     <button class="filter-btn" onclick="filterFromm('Puppy',this)">Puppy</button>
     <button class="filter-btn" onclick="filterFromm('Senior',this)">Senior</button>
   </div>
+
+  <div class="image-note">Official Fromm package art is used for the recipe. The size badge shows the bag size carried at Polly's Pets.</div>
+
   <div id="frommProductGrid" class="product-grid"></div>
+
   <div class="button-row bottom-buttons">
     <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
     <button class="back-btn" onclick="showHome()">Home</button>
@@ -88,8 +94,9 @@
 <button class="back-btn" onclick="showHome()">Start Over</button>
 </section>
 </main>
+
 </div>
-<script src="brands.js?v=7.3"></script>
-<script src="app.js?v=7.3"></script>
+<script src="brands.js?v=7.4"></script>
+<script src="app.js?v=7.4"></script>
 </body>
 </html>
