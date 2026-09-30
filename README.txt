@@ -1,8 +1,9 @@
-V7.8 adds tappable product detail pages for Fromm.
+V7.9 themes the Shop by Brand screen so it feels more like part of Grandpa Norm's Chow Barn.
 
-New behavior:
-- Tap a Fromm product card or More Info button
-- Opens a full product-detail screen inside the kiosk
-- Includes an Official Fromm Page button for extra information
+Changes:
+- themed brand selection screen
+- hanging barn-sign look for each brand
+- feed-room / barn-aisle intro panel
+- all existing Fromm product and detail-page features remain
 
 Upload: index.html, style.css, app.js, brands.js, home-scene-16x9.png

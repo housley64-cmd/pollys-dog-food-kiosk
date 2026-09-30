@@ -13,11 +13,7 @@ button{font:inherit;cursor:pointer}.app-shell{width:100vw;height:100vh}.screen{d
 .wood-header h1,.page-card h1{margin:6px 0;font-size:38px}
 .wood-header p,.page-card p{margin:0;font-size:19px;line-height:1.4}
 
-.brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
-.brand-sign{min-height:110px;border:4px solid #5f331a;border-radius:18px;color:white;padding:16px;font-weight:bold;box-shadow:0 6px 0 rgba(75,40,20,.2)}
-.brand-sign:nth-child(6n+1){background:#2e87dd}.brand-sign:nth-child(6n+2){background:#52b43d}.brand-sign:nth-child(6n+3){background:#eb8a27}.brand-sign:nth-child(6n+4){background:#9a55d2}.brand-sign:nth-child(6n+5){background:#df4a44}.brand-sign:nth-child(6n+6){background:#2da5a8}
-.brand-name{display:block;font-size:26px}.brand-note{display:block;margin-top:7px;font-size:14px;font-weight:normal}
-
+....
 .filter-row{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}
 .filter-btn{padding:10px 15px;border:3px solid #82501f;border-radius:999px;background:#fff0bd;color:#5d3417;font-weight:bold}
 .filter-btn.active{background:#8c481f;color:white}
@@ -64,4 +60,129 @@ button{font:inherit;cursor:pointer}.app-shell{width:100vw;height:100vh}.screen{d
 .button-row{display:flex;gap:14px}.bottom-buttons{margin-top:20px}
 .back-btn{flex:1;min-height:70px;border:0;border-radius:18px;background:#9a2e24;color:#fff;font-size:22px;font-weight:bold}
 .back-btn.secondary{background:#7c613f}
-@media(max-width:1100px){.product-grid,.brand-grid{grid-template-columns:repeat(2,1fr)}.detail-layout{grid-template-columns:1fr}.detail-image-wrap{height:360px}}
+@media(max-width:1100px){.product-grid{grid-template-columns:repeat(2,1fr)}.detail-layout{grid-template-columns:1fr}.detail-image-wrap{height:360px}}
+
+
+/* THEMED BRAND SCREEN */
+.brand-barn-screen{
+  background:
+    linear-gradient(rgba(65,31,13,.12), rgba(65,31,13,.12)),
+    repeating-linear-gradient(90deg,#cb9050 0,#cb9050 78px,#c48646 79px,#c48646 82px);
+}
+.themed-brand-page{
+  background:
+    linear-gradient(180deg,#fff8e8 0%,#f7e2be 46%,#efd0a1 100%);
+  position:relative;
+}
+.brand-barn-header{
+  background:
+    linear-gradient(180deg,#ac5e2e 0%,#7e3f1f 100%);
+}
+
+.brand-scene-intro{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin:0 0 18px;
+  padding:16px 18px;
+  border:3px solid #c89143;
+  border-radius:18px;
+  background:
+    linear-gradient(180deg,#fff2c9 0%,#fde6b1 100%);
+  box-shadow:0 4px 0 rgba(74,38,16,.12);
+}
+.brand-scene-badge{
+  flex:0 0 auto;
+  padding:12px 16px;
+  border-radius:14px;
+  background:#8b431e;
+  color:#fff3d2;
+  font-size:15px;
+  font-weight:bold;
+  letter-spacing:.8px;
+  border:3px solid #efc56d;
+}
+.brand-scene-text{
+  color:#5b391f;
+  font-size:18px;
+  line-height:1.35;
+}
+
+.brand-grid-wrap{
+  padding:18px;
+  border-radius:24px;
+  background:
+    linear-gradient(180deg,rgba(255,252,244,.55),rgba(255,241,210,.45));
+  border:4px solid #b47838;
+  box-shadow:inset 0 0 0 3px rgba(255,222,161,.35);
+  margin-bottom:20px;
+}
+
+.brand-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-bottom:0;
+}
+
+.brand-sign{
+  position:relative;
+  min-height:150px;
+  border:4px solid #5f331a;
+  border-radius:22px;
+  color:#fff8eb;
+  padding:18px 16px 16px;
+  font-weight:bold;
+  box-shadow:0 8px 0 rgba(75,40,20,.22);
+  text-shadow:0 2px 0 rgba(0,0,0,.20);
+  overflow:hidden;
+}
+.brand-sign:before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:50%;
+  width:6px;
+  height:24px;
+  transform:translateX(-50%);
+  background:#e7c382;
+  border-radius:0 0 6px 6px;
+}
+.brand-sign:after{
+  content:'';
+  position:absolute;
+  top:8px;
+  left:50%;
+  width:18px;
+  height:18px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:#f8d88f;
+  box-shadow:0 1px 0 rgba(0,0,0,.18);
+}
+.brand-sign:nth-child(6n+1){background:linear-gradient(180deg,#348cdc,#246dba);}
+.brand-sign:nth-child(6n+2){background:linear-gradient(180deg,#59b746,#3c9530);}
+.brand-sign:nth-child(6n+3){background:linear-gradient(180deg,#ee9631,#d46f13);}
+.brand-sign:nth-child(6n+4){background:linear-gradient(180deg,#a05bd7,#7d3fb8);}
+.brand-sign:nth-child(6n+5){background:linear-gradient(180deg,#e25049,#c2332c);}
+.brand-sign:nth-child(6n+6){background:linear-gradient(180deg,#2da9ad,#237f83);}
+.brand-sign:hover{transform:translateY(1px);}
+.brand-name{
+  display:block;
+  font-size:29px;
+  line-height:1.05;
+  margin-top:16px;
+}
+.brand-note{
+  display:block;
+  margin-top:10px;
+  font-size:15px;
+  line-height:1.35;
+  font-weight:normal;
+  color:#fff1d5;
+}
+
+@media(max-width:950px){
+  .brand-grid{grid-template-columns:repeat(2,1fr)}
+  .brand-scene-intro{flex-direction:column;align-items:flex-start}
+}
