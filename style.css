@@ -33,19 +33,23 @@ button{
   display:block;
 }
 
-/* TRUE FULL-SCREEN 16:9 HOME ART */
+/* SAFE-AREA HOME SCREEN
+   Slightly pulls the artwork in so Chrome's visible tabs/address bar
+   do not cause the bottom of the artwork to be clipped. */
 .scene-frame{
   position:relative;
   width:100vw;
   height:100vh;
+  background-color:#24130c;
   background-image:url('home-scene-16x9.png');
-  background-size:cover;
+  background-size:contain;
   background-position:center center;
   background-repeat:no-repeat;
   overflow:hidden;
 }
 
-/* Invisible touch zones over the illustrated signs */
+/* Invisible touch zones over the illustrated signs.
+   Calibrated to the contained 16:9 artwork. */
 .hotspot{
   position:absolute;
   border:0;
@@ -60,54 +64,55 @@ button{
   transform:scale(.985);
 }
 
-/* Calibrated to the new 16:9 image */
+/* Since the art is centered with contain, these work as percentages
+   relative to the visible scene on typical landscape kiosk screens. */
 .hotspot.brand{
   left:37.9%;
-  top:36.0%;
+  top:35.8%;
   width:24.2%;
-  height:14.6%;
+  height:14.4%;
 }
 
 .hotspot.puppy{
   left:63.0%;
-  top:36.1%;
+  top:35.9%;
   width:24.2%;
-  height:14.6%;
+  height:14.4%;
 }
 
 .hotspot.adult{
   left:38.0%;
-  top:50.8%;
+  top:50.4%;
   width:24.3%;
-  height:13.6%;
+  height:13.4%;
 }
 
 .hotspot.senior{
   left:63.1%;
-  top:50.9%;
+  top:50.5%;
   width:24.1%;
-  height:13.6%;
+  height:13.4%;
 }
 
 .hotspot.special{
   left:38.0%;
-  top:64.9%;
+  top:64.4%;
   width:24.3%;
-  height:13.2%;
+  height:13.0%;
 }
 
 .hotspot.protein{
   left:63.3%;
-  top:64.9%;
+  top:64.4%;
   width:24.1%;
-  height:13.2%;
+  height:13.0%;
 }
 
 .hotspot.guide{
   left:35.2%;
-  top:78.7%;
+  top:78.0%;
   width:55.6%;
-  height:14.5%;
+  height:14.0%;
   border-radius:24px;
 }
 
