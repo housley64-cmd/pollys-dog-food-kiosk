@@ -1,10 +1,13 @@
-POLLY'S PETS DOG FOOD FINDER - VERSION 4
+POLLY'S PETS DOG FOOD FINDER - VERSION 5
 
 This version adds:
+- Themed Disneyesque Grandpa Norm's Chow Barn styling
 - Updated Professor Polly image
-- More fun, colorful, playful home page
-- Brighter sign-style category cards
-- A more energetic Polly's Pets feel
+- Cleaner main screen with only functional buttons
+- Colorful wood-sign navigation
+- Working Help Me Choose questionnaire
+- Automatic return to Home after inactivity
+- Periodic refresh while sitting on Home
 
 UPLOAD THESE FILES TO GITHUB:
 index.html

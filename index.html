@@ -3,31 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="theme-color" content="#922b22">
+  <meta name="theme-color" content="#8a2b1f">
   <title>Polly's Pets Dog Food Finder</title>
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <div class="topbar-left">
-        <img src="pollys-logo.png" alt="Polly's Pets logo" class="top-logo">
-        <div class="title-wrap">
-          <div class="tiny-kicker">WELCOME TO</div>
-          <div class="main-title">Polly's Pets Dog Food Finder</div>
-          <div class="sub-title">Inside Grandpa Norm's Chow Barn</div>
+      <div class="brand-wrap">
+        <img src="pollys-logo.png" alt="Polly's Pets logo" class="brand-logo">
+        <div class="brand-copy">
+          <div class="brand-kicker">WELCOME TO</div>
+          <div class="brand-title">Polly's Pets Dog Food Finder</div>
+          <div class="brand-subtitle">Grandpa Norm's Chow Barn</div>
         </div>
       </div>
 
-      <button id="homeBtn" class="top-home-btn" type="button" onclick="showHome()">HOME</button>
+      <button id="homeBtn" class="home-btn" type="button" onclick="showHome()">HOME</button>
     </header>
 
     <main id="homeScreen" class="screen active-screen">
       <section class="hero-card">
         <div class="hero-left">
-          <div class="hero-badge">PROFESSOR POLLY'S NUTRITION LAB</div>
-          <h1>Let’s find a great food for your dog!</h1>
-          <p class="hero-text">Choose a fun path below, or let Professor Polly guide you through a few quick questions.</p>
+          <div class="hero-label">PROFESSOR POLLY'S DOG FOOD RESEARCH LAB</div>
+          <h1>Let's find a great food for your dog!</h1>
+          <p class="hero-text">
+            Explore by brand, age, special needs, or protein — or let Professor Polly guide you.
+          </p>
 
           <div class="speech-bubble">
             <strong>Professor Polly says:</strong><br>
@@ -42,66 +44,60 @@
 
       <section class="barn-banner">
         <div class="barn-overlay">
-          <div class="barn-kicker">GRANDPA NORM'S CHOW BARN</div>
+          <div class="barn-kicker">INSIDE GRANDPA NORM'S CHOW BARN</div>
           <div class="barn-title">Explore foods by brand, life stage, special needs, or protein.</div>
         </div>
       </section>
 
-      <section class="menu-grid">
-        <button class="menu-card card-red" type="button" onclick="openSection('Shop by Brand', 'Browse the dog food brands available at Polly\'s Pets.')">
-          <div class="rope"></div>
-          <div class="card-emoji">★</div>
-          <div class="card-title">Shop by Brand</div>
-          <div class="card-text">Find the brands you already know and trust.</div>
+      <section class="button-grid">
+        <button class="wood-card blue" type="button" onclick="openSection('Shop by Brand', 'Browse the dog food brands available at Polly\'s Pets.')">
+          <span class="wood-icon">★</span>
+          <span class="wood-title">Shop by Brand</span>
+          <span class="wood-text">Find the brands you already know and trust.</span>
         </button>
 
-        <button class="menu-card card-gold" type="button" onclick="openSection('Puppy Food', 'View formulas that are a great starting point for puppies.')">
-          <div class="rope"></div>
-          <div class="card-emoji">🐶</div>
-          <div class="card-title">Puppy Food</div>
-          <div class="card-text">Growing puppy formulas and all-life-stage options.</div>
+        <button class="wood-card green" type="button" onclick="openSection('Puppy Food', 'View formulas that are a great starting point for puppies.')">
+          <span class="wood-icon">🐶</span>
+          <span class="wood-title">Puppy Food</span>
+          <span class="wood-text">Growing puppy formulas and all-life-stage options.</span>
         </button>
 
-        <button class="menu-card card-teal" type="button" onclick="openSection('Adult Dog Food', 'View everyday foods for adult dogs.')">
-          <div class="rope"></div>
-          <div class="card-emoji">🐾</div>
-          <div class="card-title">Adult Dog Food</div>
-          <div class="card-text">Everyday formulas for most adult dogs.</div>
+        <button class="wood-card orange" type="button" onclick="openSection('Adult Dog Food', 'View everyday foods for adult dogs.')">
+          <span class="wood-icon">🐾</span>
+          <span class="wood-title">Adult Dog Food</span>
+          <span class="wood-text">Everyday formulas for most adult dogs.</span>
         </button>
 
-        <button class="menu-card card-green" type="button" onclick="openSection('Senior Dog Food', 'View foods commonly chosen for senior dogs.')">
-          <div class="rope"></div>
-          <div class="card-emoji">❤</div>
-          <div class="card-title">Senior Dog Food</div>
-          <div class="card-text">Options for aging dogs and lighter nutritional needs.</div>
+        <button class="wood-card purple" type="button" onclick="openSection('Senior Dog Food', 'View foods commonly chosen for senior dogs.')">
+          <span class="wood-icon">❤</span>
+          <span class="wood-title">Senior Dog Food</span>
+          <span class="wood-text">Options for aging dogs and lighter nutritional needs.</span>
         </button>
 
-        <button class="menu-card card-blue" type="button" onclick="openSection('Special Needs', 'Explore foods for special nutrition needs.')">
-          <div class="rope"></div>
-          <div class="card-emoji">✓</div>
-          <div class="card-title">Special Needs</div>
-          <div class="card-text">Sensitive stomach, skin & coat, weight support and more.</div>
+        <button class="wood-card red" type="button" onclick="openSection('Special Needs', 'Explore foods for special nutrition needs.')">
+          <span class="wood-icon">✚</span>
+          <span class="wood-title">Special Needs</span>
+          <span class="wood-text">Sensitive stomach, skin &amp; coat, weight support and more.</span>
         </button>
 
-        <button class="menu-card card-purple" type="button" onclick="openSection('Protein', 'Browse foods by their main protein source.')">
-          <div class="rope"></div>
-          <div class="card-emoji">🥩</div>
-          <div class="card-title">Protein</div>
-          <div class="card-text">Chicken, beef, lamb, salmon, turkey, duck and more.</div>
+        <button class="wood-card gold" type="button" onclick="openSection('Protein', 'Browse foods by their main protein source.')">
+          <span class="wood-icon">🥩</span>
+          <span class="wood-title">Protein</span>
+          <span class="wood-text">Chicken, beef, lamb, salmon, turkey, duck and more.</span>
         </button>
       </section>
 
-      <button class="guided-card" type="button" onclick="startGuide()">
-        <div class="guided-star">?</div>
-        <div class="guided-copy">
-          <div class="guided-kicker">NEED A LITTLE HELP?</div>
-          <div class="guided-title">Help Me Choose</div>
-          <div class="guided-text">Answer a few quick questions and Professor Polly will point you in the right direction.</div>
+      <button class="guide-banner" type="button" onclick="startGuide()">
+        <div class="guide-badge">?</div>
+        <div class="guide-copy">
+          <div class="guide-kicker">NOT SURE WHERE TO START?</div>
+          <div class="guide-title">Help Me Choose</div>
+          <div class="guide-text">Answer a few quick questions and Professor Polly will point you in the right direction.</div>
         </div>
-        <div class="guided-arrow">→</div>
+        <div class="guide-arrow">→</div>
       </button>
 
-      <div class="footer-message">Need extra help? A Polly's Pets team member is always happy to help.</div>
+      <div class="help-note">Need extra help? A Polly's Pets team member is always happy to help.</div>
     </main>
 
     <main id="sectionScreen" class="screen">
@@ -110,11 +106,11 @@
         <h2 id="sectionTitle">Section</h2>
         <p id="sectionDescription"></p>
 
-        <div class="coming-box">
-          <div class="coming-icon">🐾</div>
+        <div class="info-box">
+          <div class="info-icon">🐾</div>
           <div>
-            <div class="coming-title">This section is ready for real products.</div>
-            <div class="coming-text">Next we can fill this page with the actual dog foods Polly's Pets carries.</div>
+            <div class="info-title">This section is ready for real products.</div>
+            <div class="info-text">The next version can fill this page with the actual foods Polly's Pets carries.</div>
           </div>
         </div>
 
@@ -127,7 +123,9 @@
         <div class="page-label">HELP ME CHOOSE</div>
         <h2 id="questionTitle">How old is your dog?</h2>
         <p id="questionSubtitle">Choose the closest match.</p>
+
         <div id="answerGrid" class="answer-grid"></div>
+
         <button class="back-btn secondary" type="button" onclick="previousGuideStep()">← Back</button>
       </section>
     </main>
@@ -138,11 +136,11 @@
         <h2>Great — here is your starting point!</h2>
         <p id="guideSummary"></p>
 
-        <div class="coming-box">
-          <div class="coming-icon">★</div>
+        <div class="info-box">
+          <div class="info-icon">★</div>
           <div>
-            <div class="coming-title">Professor Polly is ready for the next step.</div>
-            <div class="coming-text">Next we can connect these answers to actual brands and products in the store.</div>
+            <div class="info-title">Professor Polly is ready for the next step.</div>
+            <div class="info-text">Next we can connect your answers to actual brands and products in the store.</div>
           </div>
         </div>
 
@@ -153,6 +151,6 @@
     <footer>Family Owned Since 1977</footer>
   </div>
 
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>
