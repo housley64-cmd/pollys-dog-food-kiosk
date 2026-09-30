@@ -1,5 +1,10 @@
-V7.10 fixes browser caching from V7.9.
+V7.13 changes the Shop by Brand screen to a true illustrated barn scene, much closer to the concept image shown in chat.
 
-The themed Shop by Brand screen was present in V7.9, but index.html was still requesting cached v7.8 CSS/JS files. V7.10 updates the cache-busting version numbers so the new barn-themed brand screen actually loads.
-
-Upload: index.html, style.css, app.js, brands.js, home-scene-16x9.png
+The brand names shown as clickable wooden signs are the actual current Polly's Pets brand list.
+Upload ALL of these files:
+- index.html
+- style-v713.css
+- app-v713.js
+- brands-v713.js
+- home-scene-16x9.png
+- brand-barn-scene.png
