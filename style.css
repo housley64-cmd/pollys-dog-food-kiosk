@@ -1,249 +1,88 @@
 *{box-sizing:border-box}
-
 html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
+  margin:0;padding:0;width:100%;height:100%;
   overflow:hidden;
   font-family:Arial,Helvetica,sans-serif;
+  background:#24130c;color:#2f1c13;
+  -webkit-tap-highlight-color:transparent;user-select:none;
+}
+button{font:inherit;cursor:pointer}
+.app-shell{width:100vw;height:100vh}
+.screen{display:none;width:100vw;height:100vh}
+.active-screen{display:block}
+
+/* V6.4: slightly reduced home scene for Chrome with visible browser bars.
+   Keeps the entire 16:9 design visible with a small, intentional border. */
+#homeScreen{
   background:#24130c;
-  color:#2f1c13;
-  -webkit-tap-highlight-color:transparent;
-  user-select:none;
+  padding:10px 14px 12px;
 }
 
-button{
-  font:inherit;
-  cursor:pointer;
-}
-
-.app-shell{
-  width:100vw;
-  height:100vh;
-}
-
-.screen{
-  display:none;
-  width:100vw;
-  height:100vh;
-}
-
-.active-screen{
-  display:block;
-}
-
-/* SAFE-AREA HOME SCREEN
-   Slightly pulls the artwork in so Chrome's visible tabs/address bar
-   do not cause the bottom of the artwork to be clipped. */
 .scene-frame{
   position:relative;
-  width:100vw;
-  height:100vh;
-  background-color:#24130c;
+  width:100%;
+  height:100%;
+  max-width:calc((100vh - 22px) * 16 / 9);
+  max-height:calc(100vh - 22px);
+  margin:0 auto;
   background-image:url('home-scene-16x9.png');
-  background-size:contain;
+  background-size:100% 100%;
   background-position:center center;
   background-repeat:no-repeat;
   overflow:hidden;
+  border-radius:10px;
 }
 
-/* Invisible touch zones over the illustrated signs.
-   Calibrated to the contained 16:9 artwork. */
+/* Touch zones calibrated to the 16:9 artwork itself. */
 .hotspot{
-  position:absolute;
-  border:0;
+  position:absolute;border:0;
   background:rgba(255,255,255,0.01);
-  color:transparent;
-  font-size:0;
-  outline:none;
-  border-radius:18px;
+  color:transparent;font-size:0;outline:none;border-radius:18px;
 }
-
-.hotspot:active{
-  transform:scale(.985);
-}
-
-/* Since the art is centered with contain, these work as percentages
-   relative to the visible scene on typical landscape kiosk screens. */
-.hotspot.brand{
-  left:37.9%;
-  top:35.8%;
-  width:24.2%;
-  height:14.4%;
-}
-
-.hotspot.puppy{
-  left:63.0%;
-  top:35.9%;
-  width:24.2%;
-  height:14.4%;
-}
-
-.hotspot.adult{
-  left:38.0%;
-  top:50.4%;
-  width:24.3%;
-  height:13.4%;
-}
-
-.hotspot.senior{
-  left:63.1%;
-  top:50.5%;
-  width:24.1%;
-  height:13.4%;
-}
-
-.hotspot.special{
-  left:38.0%;
-  top:64.4%;
-  width:24.3%;
-  height:13.0%;
-}
-
-.hotspot.protein{
-  left:63.3%;
-  top:64.4%;
-  width:24.1%;
-  height:13.0%;
-}
-
-.hotspot.guide{
-  left:35.2%;
-  top:78.0%;
-  width:55.6%;
-  height:14.0%;
-  border-radius:24px;
-}
+.hotspot:active{transform:scale(.985)}
+.hotspot.brand{left:37.9%;top:36.0%;width:24.2%;height:14.6%}
+.hotspot.puppy{left:63.0%;top:36.1%;width:24.2%;height:14.6%}
+.hotspot.adult{left:38.0%;top:50.8%;width:24.3%;height:13.6%}
+.hotspot.senior{left:63.1%;top:50.9%;width:24.1%;height:13.6%}
+.hotspot.special{left:38.0%;top:64.9%;width:24.3%;height:13.2%}
+.hotspot.protein{left:63.3%;top:64.9%;width:24.1%;height:13.2%}
+.hotspot.guide{left:35.2%;top:78.7%;width:55.6%;height:14.5%;border-radius:24px}
 
 /* Secondary screens */
 .content-screen{
-  overflow:auto;
-  padding:18px;
-  background:
-    linear-gradient(rgba(78,36,15,.18),rgba(78,36,15,.18)),
-    linear-gradient(#f4ddb2,#dfb674);
+  overflow:auto;padding:18px;
+  background:linear-gradient(rgba(78,36,15,.18),rgba(78,36,15,.18)),linear-gradient(#f4ddb2,#dfb674);
 }
-
 .page-card{
-  max-width:1080px;
-  margin:24px auto;
-  padding:32px;
+  max-width:1080px;margin:24px auto;padding:32px;
   background:linear-gradient(180deg,#fffaf0,#fff0d5);
-  border:5px solid #d99d45;
-  border-radius:28px;
+  border:5px solid #d99d45;border-radius:28px;
   box-shadow:0 9px 0 rgba(74,38,16,.18);
 }
-
-.page-label{
-  color:#8d541f;
-  font-size:15px;
-  font-weight:bold;
-  letter-spacing:1.5px;
-}
-
-.page-card h1{
-  margin:10px 0 8px;
-  font-size:38px;
-  line-height:1.08;
-  color:#3d2416;
-}
-
-.page-card p{
-  font-size:21px;
-  line-height:1.45;
-  color:#604939;
-}
-
+.page-label{color:#8d541f;font-size:15px;font-weight:bold;letter-spacing:1.5px}
+.page-card h1{margin:10px 0 8px;font-size:38px;line-height:1.08;color:#3d2416}
+.page-card p{font-size:21px;line-height:1.45;color:#604939}
 .info-box{
-  display:flex;
-  align-items:center;
-  gap:17px;
-  margin:26px 0;
-  padding:21px;
-  background:#fff1bd;
-  border:3px solid #edbd50;
-  border-radius:20px;
+  display:flex;align-items:center;gap:17px;margin:26px 0;padding:21px;
+  background:#fff1bd;border:3px solid #edbd50;border-radius:20px
 }
-
 .info-icon{
-  width:66px;
-  height:66px;
-  flex:0 0 66px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:#ffd260;
-  color:#643515;
-  font-size:32px;
-  font-weight:bold;
+  width:66px;height:66px;flex:0 0 66px;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:#ffd260;color:#643515;font-size:32px;font-weight:bold
 }
-
-.info-title{
-  font-size:22px;
-  font-weight:bold;
-  color:#4f301c;
-}
-
-.info-text{
-  margin-top:5px;
-  font-size:17px;
-  color:#6b4c2f;
-}
-
-.answer-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin:24px 0;
-}
-
+.info-title{font-size:22px;font-weight:bold;color:#4f301c}
+.info-text{margin-top:5px;font-size:17px;color:#6b4c2f}
+.answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
 .answer-btn{
-  min-height:96px;
-  padding:16px;
-  border:4px solid #d99d45;
-  border-radius:20px;
-  background:#fff;
-  color:#472c1a;
-  font-size:23px;
-  font-weight:bold;
-  box-shadow:0 5px 0 rgba(74,38,16,.12);
+  min-height:96px;padding:16px;border:4px solid #d99d45;border-radius:20px;
+  background:#fff;color:#472c1a;font-size:23px;font-weight:bold;
+  box-shadow:0 5px 0 rgba(74,38,16,.12)
 }
-
-.button-row{
-  display:flex;
-  gap:14px;
-}
-
+.button-row{display:flex;gap:14px}
 .back-btn{
-  flex:1;
-  min-height:72px;
-  border:0;
-  border-radius:18px;
-  background:#9a2e24;
-  color:white;
-  font-size:22px;
-  font-weight:bold;
+  flex:1;min-height:72px;border:0;border-radius:18px;background:#9a2e24;
+  color:#fff;font-size:22px;font-weight:bold
 }
-
-.back-btn.secondary{
-  background:#7c613f;
-}
-
-.answer-btn:active,
-.back-btn:active{
-  transform:translateY(2px);
-}
-
-@media(max-width:900px){
-  .answer-grid{grid-template-columns:1fr}
-}
-
-@media(max-width:760px){
-  .content-screen{padding:10px}
-  .page-card{margin:8px auto;padding:18px}
-  .page-card h1{font-size:30px}
-  .page-card p{font-size:18px}
-  .button-row{flex-direction:column}
-}
+.back-btn.secondary{background:#7c613f}
+.answer-btn:active,.back-btn:active{transform:translateY(2px)}
+@media(max-width:900px){.answer-grid{grid-template-columns:1fr}}
