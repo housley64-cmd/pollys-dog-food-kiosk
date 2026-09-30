@@ -7,9 +7,7 @@ var guideQuestions=[
   {key:'protein',title:'Any protein preference?',subtitle:'Choose the protein you would like to start with.',answers:['Chicken','Beef','Lamb','Fish / Salmon']}
 ];
 
-/* Fix older Android Chrome viewport sizing on first load.
-   It can report 100vh too tall until the first interaction.
-   We measure the real visible height and store it as a CSS variable. */
+/* Fix older Android Chrome viewport sizing on first load. */
 function setAppHeight(){
   var h = window.innerHeight;
   if(window.visualViewport && window.visualViewport.height){
@@ -17,18 +15,13 @@ function setAppHeight(){
   }
   document.documentElement.style.setProperty('--app-height', h + 'px');
 }
-
 setAppHeight();
 window.addEventListener('resize', setAppHeight);
 window.addEventListener('orientationchange', function(){
   setTimeout(setAppHeight, 100);
   setTimeout(setAppHeight, 500);
 });
-if(window.visualViewport){
-  window.visualViewport.addEventListener('resize', setAppHeight);
-}
-
-/* Re-measure a few times after page load because old Chrome may settle late. */
+if(window.visualViewport){window.visualViewport.addEventListener('resize', setAppHeight);}
 window.addEventListener('load', function(){
   setAppHeight();
   setTimeout(setAppHeight, 150);
@@ -37,7 +30,7 @@ window.addEventListener('load', function(){
 });
 
 function hideAllScreens(){
-  var ids=['homeScreen','brandScreen','brandDetailScreen','sectionScreen','guideScreen','guideResultScreen'];
+  var ids=['homeScreen','brandScreen','frommScreen','brandDetailScreen','sectionScreen','guideScreen','guideResultScreen'];
   for(var i=0;i<ids.length;i++){document.getElementById(ids[i]).className='screen'}
 }
 
@@ -70,7 +63,31 @@ function buildBrandGrid(){
   }
 }
 
+function buildFrommGallery(){
+  var grid=document.getElementById('frommGallery');
+  if(grid.children.length>0){return}
+  for(var i=0;i<FROMM_GALLERY.length;i++){
+    var item=FROMM_GALLERY[i];
+    var card=document.createElement('div');
+    card.className='gallery-card';
+    card.innerHTML=
+      '<img src="'+item.image+'" alt="'+item.title+'">' +
+      '<div class="gallery-body">' +
+      '<div class="gallery-title">'+item.title+'</div>' +
+      '<div class="gallery-desc">'+item.desc+'</div>' +
+      '</div>';
+    grid.appendChild(card);
+  }
+}
+
 function openBrand(name){
+  if(name === 'Fromm'){
+    hideAllScreens();
+    buildFrommGallery();
+    document.getElementById('frommScreen').className='screen content-screen active-screen';
+    window.scrollTo(0,0);
+    return;
+  }
   hideAllScreens();
   document.getElementById('brandDetailTitle').innerHTML=name;
   document.getElementById('brandDetailText').innerHTML='Explore <strong>'+name+'</strong> dog foods carried at Polly\'s Pets.';
@@ -120,14 +137,8 @@ function showGuideResult(){
 }
 
 document.addEventListener('contextmenu',function(e){e.preventDefault()});
-
-document.addEventListener('touchstart',function(){
-  setAppHeight();
-}, {passive:true});
-
-document.addEventListener('click',function(){
-  setAppHeight();
-});
+document.addEventListener('touchstart',function(){setAppHeight()},{passive:true});
+document.addEventListener('click',function(){setAppHeight()});
 
 var idleTimer;
 function resetIdleTimer(){clearTimeout(idleTimer);idleTimer=setTimeout(function(){showHome()},180000)}

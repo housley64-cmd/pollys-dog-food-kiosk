@@ -16,29 +16,16 @@ button{font:inherit;cursor:pointer}
 }
 .active-screen{display:block}
 
-/* HOME
-   Uses the actual browser viewport height measured in JavaScript.
-   This avoids older Android Chrome initially treating 100vh as taller
-   than the visible area before the first touch. */
-#homeScreen{
-  background:#24130c;
-  padding:8px 10px;
-}
+/* HOME */
+#homeScreen{background:#24130c;padding:8px 10px}
 .scene-frame{
-  position:relative;
-  width:100%;
-  height:100%;
+  position:relative;width:100%;height:100%;
   max-width:calc((var(--app-height,100vh) - 16px) * 16 / 9);
-  max-height:calc(var(--app-height,100vh) - 16px);
-  margin:0 auto;
+  max-height:calc(var(--app-height,100vh) - 16px);margin:0 auto;
   background-image:url('home-scene-16x9.png');
-  background-size:100% 100%;
-  background-position:center;
-  background-repeat:no-repeat;
-  overflow:hidden;
-  border-radius:8px
+  background-size:100% 100%;background-position:center;background-repeat:no-repeat;
+  overflow:hidden;border-radius:8px
 }
-
 .hotspot{
   position:absolute;border:0;background:rgba(255,255,255,.01);
   color:transparent;font-size:0;outline:none;border-radius:16px
@@ -61,7 +48,7 @@ button{font:inherit;cursor:pointer}
     repeating-linear-gradient(90deg,#d49a57 0,#d49a57 72px,#cc8f4d 73px,#cc8f4d 75px);
 }
 .brand-page,.page-card{
-  max-width:1120px;margin:12px auto 24px;padding:22px;
+  max-width:1140px;margin:12px auto 24px;padding:22px;
   background:linear-gradient(180deg,#fff7e7,#f7dfb6);
   border:5px solid #7e431e;border-radius:26px;
   box-shadow:0 9px 0 rgba(74,38,16,.20)
@@ -84,6 +71,16 @@ button{font:inherit;cursor:pointer}
 .page-card h1{color:#3d2416}
 .page-card p{color:#604939}
 
+.quick-tags{
+  display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px
+}
+.tag-pill{
+  padding:10px 14px;border-radius:999px;
+  background:#fff0bd;border:3px solid #d5a34a;
+  color:#623916;font-size:16px;font-weight:bold
+}
+
+/* BRAND SIGNS */
 .brand-grid{
   display:grid;grid-template-columns:repeat(3,1fr);gap:16px
 }
@@ -107,6 +104,26 @@ button{font:inherit;cursor:pointer}
 .brand-sign:nth-child(6n+6){background:linear-gradient(#2da5a8,#23888b)}
 .brand-sign:active{transform:translateY(2px)}
 
+/* FROMM GALLERY */
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:18px
+}
+.gallery-card{
+  background:#fff9ea;border:4px solid #d6a14b;border-radius:20px;
+  overflow:hidden;box-shadow:0 6px 0 rgba(74,38,16,.12)
+}
+.gallery-card img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#ddd
+}
+.gallery-body{padding:14px 14px 16px}
+.gallery-title{
+  font-size:24px;font-weight:bold;color:#462918;line-height:1.08;margin-bottom:6px
+}
+.gallery-desc{
+  font-size:16px;line-height:1.38;color:#654935
+}
+
+/* PANELS */
 .info-box,.shelf-panel{
   display:flex;align-items:center;gap:17px;margin:24px 0;padding:20px;
   background:#fff1bd;border:3px solid #d9a642;border-radius:20px
@@ -134,5 +151,6 @@ button{font:inherit;cursor:pointer}
 
 @media(max-width:900px){
   .brand-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:1fr}
   .answer-grid{grid-template-columns:1fr}
 }
