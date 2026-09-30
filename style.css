@@ -1,224 +1,244 @@
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#24130c;
+  color:#2f1c13;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #e7c790;
-  color: #2f1c13;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
+button{
+  font:inherit;
+  cursor:pointer;
 }
 
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
+.app-shell{
+  width:100vw;
+  height:100vh;
 }
 
-button {
-  font: inherit;
-  cursor: pointer;
+.screen{
+  display:none;
+  width:100vw;
+  height:100vh;
 }
 
-.app-shell {
-  min-height: 100vh;
-  background: linear-gradient(#f4dfb7, #e4bc79);
+.active-screen{
+  display:block;
 }
 
-.screen {
-  display: none;
-  min-height: 100vh;
-  padding: 12px;
+/* TRUE FULL-SCREEN 16:9 HOME ART */
+.scene-frame{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  background-image:url('home-scene-16x9.png');
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  overflow:hidden;
 }
 
-.active-screen {
-  display: block;
+/* Invisible touch zones over the illustrated signs */
+.hotspot{
+  position:absolute;
+  border:0;
+  background:rgba(255,255,255,0.01);
+  color:transparent;
+  font-size:0;
+  outline:none;
+  border-radius:18px;
 }
 
-.scene-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 24px);
+.hotspot:active{
+  transform:scale(.985);
 }
 
-.scene-frame {
-  position: relative;
-  width: min(100%, 1448px);
-  aspect-ratio: 4 / 3;
-  background-image: url('home-scene.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 10px 28px rgba(74, 38, 16, .30);
+/* Calibrated to the new 16:9 image */
+.hotspot.brand{
+  left:37.9%;
+  top:36.0%;
+  width:24.2%;
+  height:14.6%;
 }
 
-/* Invisible touch zones over the approved sign art. */
-.hotspot {
-  position: absolute;
-  border: 0;
-  background: rgba(255,255,255,0.01);
-  color: transparent;
-  font-size: 0;
-  border-radius: 18px;
-  outline: none;
+.hotspot.puppy{
+  left:63.0%;
+  top:36.1%;
+  width:24.2%;
+  height:14.6%;
 }
 
-.hotspot:active {
-  transform: scale(0.99);
+.hotspot.adult{
+  left:38.0%;
+  top:50.8%;
+  width:24.3%;
+  height:13.6%;
 }
 
-/* Approximate positions for the seven sign areas */
-.hotspot.brand   { left: 35.2%; top: 28.4%; width: 20.0%; height: 16.4%; }
-.hotspot.puppy  { left: 57.1%; top: 28.2%; width: 19.6%; height: 16.4%; }
-.hotspot.adult  { left: 35.1%; top: 45.8%; width: 20.2%; height: 16.7%; }
-.hotspot.senior { left: 57.1%; top: 45.6%; width: 19.8%; height: 16.7%; }
-.hotspot.special{ left: 35.2%; top: 63.3%; width: 20.0%; height: 16.6%; }
-.hotspot.protein{ left: 57.2%; top: 63.2%; width: 19.8%; height: 16.6%; }
-.hotspot.guide  { left: 34.6%; top: 81.2%; width: 42.8%; height: 10.4%; border-radius: 20px; }
-
-.page-card {
-  max-width: 1100px;
-  margin: 24px auto;
-  padding: 30px;
-  background: linear-gradient(180deg, #fff9ee, #fff0d5);
-  border: 4px solid #dfb15d;
-  border-radius: 26px;
-  box-shadow: 0 8px 0 rgba(84,50,22,.14);
+.hotspot.senior{
+  left:63.1%;
+  top:50.9%;
+  width:24.1%;
+  height:13.6%;
 }
 
-.page-label {
-  color: #985d22;
-  font-size: 15px;
-  font-weight: bold;
-  letter-spacing: 1.4px;
+.hotspot.special{
+  left:38.0%;
+  top:64.9%;
+  width:24.3%;
+  height:13.2%;
 }
 
-.page-card h1 {
-  font-size: 38px;
-  margin: 10px 0 8px;
-  line-height: 1.08;
+.hotspot.protein{
+  left:63.3%;
+  top:64.9%;
+  width:24.1%;
+  height:13.2%;
 }
 
-.page-card p {
-  font-size: 21px;
-  line-height: 1.45;
-  color: #5b493c;
+.hotspot.guide{
+  left:35.2%;
+  top:78.7%;
+  width:55.6%;
+  height:14.5%;
+  border-radius:24px;
 }
 
-.info-box {
-  margin: 26px 0;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  border-radius: 20px;
-  background: #fff3c9;
-  border: 2px solid #efc457;
+/* Secondary screens */
+.content-screen{
+  overflow:auto;
+  padding:18px;
+  background:
+    linear-gradient(rgba(78,36,15,.18),rgba(78,36,15,.18)),
+    linear-gradient(#f4ddb2,#dfb674);
 }
 
-.info-icon {
-  width: 64px;
-  height: 64px;
-  flex: 0 0 64px;
-  border-radius: 50%;
-  background: #ffd36b;
-  color: #653716;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  font-weight: bold;
+.page-card{
+  max-width:1080px;
+  margin:24px auto;
+  padding:32px;
+  background:linear-gradient(180deg,#fffaf0,#fff0d5);
+  border:5px solid #d99d45;
+  border-radius:28px;
+  box-shadow:0 9px 0 rgba(74,38,16,.18);
 }
 
-.info-title {
-  font-size: 22px;
-  font-weight: bold;
-  color: #53351d;
+.page-label{
+  color:#8d541f;
+  font-size:15px;
+  font-weight:bold;
+  letter-spacing:1.5px;
 }
 
-.info-text {
-  margin-top: 5px;
-  font-size: 17px;
-  color: #6a4a2e;
+.page-card h1{
+  margin:10px 0 8px;
+  font-size:38px;
+  line-height:1.08;
+  color:#3d2416;
 }
 
-.answer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin: 24px 0;
+.page-card p{
+  font-size:21px;
+  line-height:1.45;
+  color:#604939;
 }
 
-.answer-btn {
-  min-height: 94px;
-  border: 3px solid #dfb15d;
-  border-radius: 18px;
-  background: white;
-  color: #482e1d;
-  font-size: 23px;
-  font-weight: bold;
-  padding: 16px;
-  text-align: center;
-  box-shadow: 0 4px 0 rgba(84,50,22,.10);
+.info-box{
+  display:flex;
+  align-items:center;
+  gap:17px;
+  margin:26px 0;
+  padding:21px;
+  background:#fff1bd;
+  border:3px solid #edbd50;
+  border-radius:20px;
 }
 
-.button-row {
-  display: flex;
-  gap: 14px;
+.info-icon{
+  width:66px;
+  height:66px;
+  flex:0 0 66px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#ffd260;
+  color:#643515;
+  font-size:32px;
+  font-weight:bold;
 }
 
-.back-btn {
-  flex: 1;
-  min-height: 72px;
-  border: 0;
-  border-radius: 18px;
-  background: #922b22;
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
+.info-title{
+  font-size:22px;
+  font-weight:bold;
+  color:#4f301c;
 }
 
-.back-btn.secondary {
-  background: #7d6443;
+.info-text{
+  margin-top:5px;
+  font-size:17px;
+  color:#6b4c2f;
+}
+
+.answer-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin:24px 0;
+}
+
+.answer-btn{
+  min-height:96px;
+  padding:16px;
+  border:4px solid #d99d45;
+  border-radius:20px;
+  background:#fff;
+  color:#472c1a;
+  font-size:23px;
+  font-weight:bold;
+  box-shadow:0 5px 0 rgba(74,38,16,.12);
+}
+
+.button-row{
+  display:flex;
+  gap:14px;
+}
+
+.back-btn{
+  flex:1;
+  min-height:72px;
+  border:0;
+  border-radius:18px;
+  background:#9a2e24;
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.back-btn.secondary{
+  background:#7c613f;
 }
 
 .answer-btn:active,
-.back-btn:active {
-  transform: translateY(2px);
+.back-btn:active{
+  transform:translateY(2px);
 }
 
-@media (max-width: 900px) {
-  .answer-grid {
-    grid-template-columns: 1fr;
-  }
+@media(max-width:900px){
+  .answer-grid{grid-template-columns:1fr}
 }
 
-@media (max-width: 760px) {
-  .screen {
-    padding: 8px;
-  }
-
-  .page-card {
-    margin: 10px auto;
-    padding: 18px;
-  }
-
-  .page-card h1 {
-    font-size: 30px;
-  }
-
-  .page-card p {
-    font-size: 18px;
-  }
-
-  .button-row {
-    flex-direction: column;
-  }
+@media(max-width:760px){
+  .content-screen{padding:10px}
+  .page-card{margin:8px auto;padding:18px}
+  .page-card h1{font-size:30px}
+  .page-card p{font-size:18px}
+  .button-row{flex-direction:column}
 }
