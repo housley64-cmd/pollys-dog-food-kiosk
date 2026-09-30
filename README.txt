@@ -1,9 +1,5 @@
-V7.9 themes the Shop by Brand screen so it feels more like part of Grandpa Norm's Chow Barn.
+V7.10 fixes browser caching from V7.9.
 
-Changes:
-- themed brand selection screen
-- hanging barn-sign look for each brand
-- feed-room / barn-aisle intro panel
-- all existing Fromm product and detail-page features remain
+The themed Shop by Brand screen was present in V7.9, but index.html was still requesting cached v7.8 CSS/JS files. V7.10 updates the cache-busting version numbers so the new barn-themed brand screen actually loads.
 
 Upload: index.html, style.css, app.js, brands.js, home-scene-16x9.png
