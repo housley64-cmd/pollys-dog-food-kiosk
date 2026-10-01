@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v714.css">
+<link rel="stylesheet" href="style-v715.css">
 </head>
 <body>
 <div class="app-shell">
@@ -72,55 +72,52 @@
 </main>
 
 <main id="productDetailScreen" class="screen content-screen">
-<section class="brand-page detail-page">
-  <div class="wood-header">
-    <div class="mini-kicker" id="detailLine">FROMM FAMILY FOODS</div>
-    <h1 id="detailName">Product Name</h1>
-    <p id="detailTagline">More information about this food.</p>
+<section class="brand-page ingredient-page">
+
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="showFromm()">← Back to Fromm</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
   </div>
 
-  <div class="detail-layout">
-    <div class="detail-image-card">
-      <div class="detail-image-wrap">
-        <img id="detailImage" src="" alt="">
+  <div class="wood-header ingredient-header">
+    <div class="mini-kicker" id="detailLine">FROMM FAMILY FOODS</div>
+    <h1 id="detailName">Ingredients & Nutrition</h1>
+    <p>Ingredients and basic nutrition information for this recipe.</p>
+  </div>
+
+  <div class="ingredient-layout">
+    <div class="ingredient-product-card">
+      <img id="detailImage" src="" alt="">
+      <div class="ingredient-size-strip">
+        <span>Polly's Size:</span>
+        <strong id="detailCarrySize"></strong>
       </div>
-      <div class="detail-size-panel">
-        <div class="detail-size-title">Polly's Size</div>
-        <div class="detail-size-value" id="detailCarrySize">30 lb</div>
+      <div class="ingredient-size-strip secondary-strip">
+        <span>Available Sizes:</span>
+        <strong id="detailSizes"></strong>
       </div>
     </div>
 
-    <div class="detail-info-card">
-      <div class="detail-grid">
-        <div class="detail-info-box">
-          <div class="detail-info-label">Line</div>
-          <div class="detail-info-value" id="detailLineValue">Gold</div>
+    <div class="ingredient-content-card">
+      <div class="ingredient-section">
+        <h2 id="ingredientsHeading">Ingredients</h2>
+        <p id="detailIngredients"></p>
+      </div>
+
+      <div class="nutrition-row">
+        <div class="nutrition-box">
+          <div class="nutrition-label">Guaranteed Analysis</div>
+          <div class="nutrition-value" id="detailAnalysis"></div>
         </div>
-        <div class="detail-info-box">
-          <div class="detail-info-label">Life Stage</div>
-          <div class="detail-info-value" id="detailLife">Adult</div>
-        </div>
-        <div class="detail-info-box">
-          <div class="detail-info-label">Main Protein</div>
-          <div class="detail-info-value" id="detailProtein">Chicken</div>
-        </div>
-        <div class="detail-info-box">
-          <div class="detail-info-label">Available Sizes</div>
-          <div class="detail-info-value" id="detailSizes">5 lb • 15 lb • 30 lb</div>
+        <div class="nutrition-box">
+          <div class="nutrition-label">Calories</div>
+          <div class="nutrition-value" id="detailCalories"></div>
         </div>
       </div>
 
-      <div class="detail-description" id="detailDescription">
-        Product description goes here.
-      </div>
-
-      <div class="detail-note">
-        <strong>Note:</strong> Official Fromm product image shown. Polly's Pets may carry selected sizes in store.
-      </div>
-
-      <div class="button-row detail-buttons">
+      <div class="button-row ingredient-buttons">
         <button class="back-btn secondary" onclick="showFromm()">← Back to Fromm</button>
-        <button class="back-btn website-btn" id="detailWebsiteBtn" onclick="openOfficialPage()">Official Fromm Page</button>
+        <button class="back-btn website-btn" onclick="openOfficialPage()">Official Fromm Ingredients</button>
       </div>
     </div>
   </div>
@@ -160,7 +157,7 @@
 </main>
 
 </div>
-<script src="brands-v714.js"></script>
-<script src="app-v714.js"></script>
+<script src="brands-v715.js"></script>
+<script src="app-v715.js"></script>
 </body>
 </html>
