@@ -14,3 +14,6 @@ Upload these 6 files:
 - brands-v716.js
 - home-scene-16x9.png
 - brand-barn-scene.png
+
+
+Version 7.17 adds an ACANA brand page with themed product cards, filter buttons, and ingredient detail screens.

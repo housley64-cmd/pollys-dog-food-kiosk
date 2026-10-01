@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v716.css">
+<link rel="stylesheet" href="style-v717.css">
 </head>
 <body>
 <div class="app-shell">
@@ -52,7 +52,7 @@
   <div class="wood-header">
     <div class="mini-kicker">FROMM FAMILY FOODS</div>
     <h1>Fromm Dog Food</h1>
-    <p>Tap a bag or the More Info button for additional details.</p>
+    <p>Tap a bag or the Ingredients button for additional details.</p>
   </div>
 
   <div class="filter-row">
@@ -75,16 +75,48 @@
 </section>
 </main>
 
+<main id="acanaScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="showBrandScreen()">← Previous Page</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header acana-wood-header">
+    <div class="mini-kicker">ACANA</div>
+    <h1>ACANA Dog Food</h1>
+    <p>Tap a bag or the Ingredients button to see more information.</p>
+  </div>
+
+  <div class="filter-row acana-filter">
+    <button class="filter-btn active" onclick="filterAcana('All',this)">All</button>
+    <button class="filter-btn" onclick="filterAcana('Highest Protein',this)">Highest Protein</button>
+    <button class="filter-btn" onclick="filterAcana('Singles',this)">Singles</button>
+    <button class="filter-btn" onclick="filterAcana('Wholesome Grains',this)">Wholesome Grains</button>
+    <button class="filter-btn" onclick="filterAcana('Classics',this)">Classics</button>
+    <button class="filter-btn" onclick="filterAcana('Puppy',this)">Puppy</button>
+  </div>
+
+  <div class="image-note">This ACANA section now opens to ingredient pages just like Fromm. The bag art is organized into clean kiosk cards so the screen stays polished while keeping each recipe easy to find.</div>
+
+  <div id="acanaProductGrid" class="product-grid"></div>
+
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="productDetailScreen" class="screen content-screen">
 <section class="brand-page ingredient-page">
-
   <div class="top-nav-bar">
-    <button class="top-nav-btn secondary" onclick="showFromm()">← Back to Fromm</button>
+    <button id="detailBackTop" class="top-nav-btn secondary" onclick="showFromm()">← Back</button>
     <button class="top-nav-btn" onclick="showHome()">Home</button>
   </div>
 
   <div class="wood-header ingredient-header">
-    <div class="mini-kicker" id="detailLine">FROMM FAMILY FOODS</div>
+    <div id="detailBrandAccent" class="detail-brand-accent">PRODUCT DETAILS</div>
+    <div class="mini-kicker" id="detailLine">BRAND</div>
     <h1 id="detailName">Ingredients & Nutrition</h1>
     <p>Ingredients and basic nutrition information for this recipe.</p>
   </div>
@@ -93,7 +125,7 @@
     <div class="ingredient-product-card">
       <img id="detailImage" src="" alt="">
       <div class="ingredient-size-strip">
-        <span>Polly's Size:</span>
+        <span>Polly's Sizes:</span>
         <strong id="detailCarrySize"></strong>
       </div>
       <div class="ingredient-size-strip secondary-strip">
@@ -120,7 +152,7 @@
       </div>
 
       <div class="button-row ingredient-buttons">
-        <button class="back-btn secondary" onclick="showFromm()">← Back to Fromm</button>
+        <button id="detailBackBottom" class="back-btn secondary" onclick="showFromm()">← Back</button>
         <button class="back-btn website-btn" onclick="openPollysWebsite()">Visit Polly's Pets Website</button>
       </div>
     </div>
@@ -132,7 +164,7 @@
 <section class="page-card">
 <div class="page-label">SHOP BY BRAND</div>
 <h1 id="brandDetailTitle"></h1><p id="brandDetailText"></p>
-<div class="info-box"><div class="info-icon">🐾</div><div><div class="info-title">This brand is ready for products.</div><div class="info-text">We'll build it the same way as Fromm.</div></div></div>
+<div class="info-box"><div class="info-icon">🐾</div><div><div class="info-title">This brand is ready for products.</div><div class="info-text">We'll build it the same way as Fromm and ACANA.</div></div></div>
 <div class="button-row"><button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button><button class="back-btn" onclick="showHome()">Home</button></div>
 </section>
 </main>
@@ -161,7 +193,7 @@
 </main>
 
 </div>
-<script src="brands-v716.js"></script>
-<script src="app-v716.js"></script>
+<script src="brands-v717.js"></script>
+<script src="app-v717.js"></script>
 </body>
 </html>
