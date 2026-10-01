@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v715.css">
+<link rel="stylesheet" href="style-v716.css">
 </head>
 <body>
 <div class="app-shell">
@@ -25,6 +25,11 @@
 
 <main id="brandScreen" class="screen brand-picture-screen">
   <section class="brand-picture-scene">
+    <div class="brand-top-nav">
+      <button class="brand-top-btn brand-top-prev" onclick="showHome()">← Previous Page</button>
+      <button class="brand-top-btn brand-top-home" onclick="showHome()">Home</button>
+    </div>
+
     <div class="brand-picture-header">
       <div class="brand-picture-kicker">GRANDPA NORM'S CHOW BARN</div>
       <h1>SHOP BY BRAND</h1>
@@ -35,7 +40,6 @@
       <div id="brandGrid" class="brand-picture-grid"></div>
     </div>
 
-    <button class="brand-home-btn" onclick="showHome()">← BACK TO HOME</button>
   </section>
 </main>
 
@@ -117,7 +121,7 @@
 
       <div class="button-row ingredient-buttons">
         <button class="back-btn secondary" onclick="showFromm()">← Back to Fromm</button>
-        <button class="back-btn website-btn" onclick="openOfficialPage()">Official Fromm Ingredients</button>
+        <button class="back-btn website-btn" onclick="openPollysWebsite()">Visit Polly's Pets Website</button>
       </div>
     </div>
   </div>
@@ -157,7 +161,7 @@
 </main>
 
 </div>
-<script src="brands-v715.js"></script>
-<script src="app-v715.js"></script>
+<script src="brands-v716.js"></script>
+<script src="app-v716.js"></script>
 </body>
 </html>

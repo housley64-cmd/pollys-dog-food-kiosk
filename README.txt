@@ -1,12 +1,16 @@
-V7.15 changes the Fromm product link from More Info to Ingredients.
+V7.16 fixes the Shop by Brand page and changes the Ingredients page website button.
 
-Tap any Fromm product -> dedicated Ingredients & Nutrition page.
-The page shows product image, Polly's size, available sizes, ingredients/key ingredients, guaranteed analysis, calories, Back to Fromm, Home, and an Official Fromm Ingredients button.
+Changes:
+- Ingredients page button now says Visit Polly's Pets Website and opens https://www.pollyspets.com/
+- Shop by Brand now has Previous Page and Home buttons at the TOP
+- Removed the troublesome bottom brand-page button
+- Fixed the Shop by Brand JavaScript so it preserves the illustrated barn screen class
+- Fixed click/touch layering so brand signs and top navigation buttons work reliably
 
-Upload:
+Upload these 6 files:
 - index.html
-- style-v715.css
-- app-v715.js
-- brands-v715.js
+- style-v716.css
+- app-v716.js
+- brands-v716.js
 - home-scene-16x9.png
 - brand-barn-scene.png
