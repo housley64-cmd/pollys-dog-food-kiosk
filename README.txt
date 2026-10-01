@@ -17,3 +17,6 @@ Upload these 6 files:
 
 
 Version 7.17 adds an ACANA brand page with themed product cards, filter buttons, and ingredient detail screens.
+
+
+V7.18 fixes a JavaScript syntax error in V7.17 that prevented all home-screen touch buttons from responding.
