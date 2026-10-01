@@ -26,3 +26,7 @@ V7.19 swaps the illustrated ACANA mockups for real product photo images using yo
 
 
 V7.20 fixes missing ACANA images by placing all ACANA JPG files in the main/root GitHub folder instead of an acana-bags subfolder.
+
+
+V7.21 replaces ACANA shelf-photo images with clean official ACANA product images served from ACANA's website.
+The ACANA JPG files are no longer needed for this version.
