@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v721.css">
+<link rel="stylesheet" href="style-v722.css">
 </head>
 <body>
 <div class="app-shell">
@@ -91,6 +91,7 @@
     <button class="filter-btn active" onclick="filterAcana('All',this)">All</button>
     <button class="filter-btn" onclick="filterAcana('Highest Protein',this)">Highest Protein</button>
     <button class="filter-btn" onclick="filterAcana('Singles',this)">Singles</button>
+    <button class="filter-btn" onclick="filterAcana('Butcher's Favorites',this)">Butcher's Favorites</button>
     <button class="filter-btn" onclick="filterAcana('Wholesome Grains',this)">Wholesome Grains</button>
     <button class="filter-btn" onclick="filterAcana('Classics',this)">Classics</button>
     <button class="filter-btn" onclick="filterAcana('Puppy',this)">Puppy</button>
@@ -141,6 +142,10 @@
       </div>
 
       <div class="nutrition-row">
+        <div class="nutrition-box protein-highlight-box">
+          <div class="nutrition-label">Crude Protein</div>
+          <div class="nutrition-value protein-highlight" id="detailProteinAmount"></div>
+        </div>
         <div class="nutrition-box">
           <div class="nutrition-label">Guaranteed Analysis</div>
           <div class="nutrition-value" id="detailAnalysis"></div>
@@ -193,7 +198,7 @@
 </main>
 
 </div>
-<script src="brands-v721.js"></script>
-<script src="app-v721.js"></script>
+<script src="brands-v722.js"></script>
+<script src="app-v722.js"></script>
 </body>
 </html>
