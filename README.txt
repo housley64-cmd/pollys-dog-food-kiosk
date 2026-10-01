@@ -23,3 +23,6 @@ V7.18 fixes a JavaScript syntax error in V7.17 that prevented all home-screen to
 
 
 V7.19 swaps the illustrated ACANA mockups for real product photo images using your ACANA photos.
+
+
+V7.20 fixes missing ACANA images by placing all ACANA JPG files in the main/root GitHub folder instead of an acana-bags subfolder.
