@@ -20,3 +20,6 @@ Version 7.17 adds an ACANA brand page with themed product cards, filter buttons,
 
 
 V7.18 fixes a JavaScript syntax error in V7.17 that prevented all home-screen touch buttons from responding.
+
+
+V7.19 swaps the illustrated ACANA mockups for real product photo images using your ACANA photos.
