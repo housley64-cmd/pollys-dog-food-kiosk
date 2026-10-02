@@ -88,3 +88,9 @@ V7.33 updates:
 - Added full Nulo brand screen with 22 identified dry-food formulas.
 - Added Nulo filters for Puppy, Adult, Senior, Small Breed, Weight, Sensitive, Grain-Free, Ancient Grains, and Oven-Baked.
 - Used clean product images for Nulo rather than shelf photos.
+
+
+V7.34 updates:
+- Removed the mismatched Nulo generic packshots.
+- Replaced them with formula-specific Nulo reference cards so each Nulo image now matches the exact product name and details.
+- This avoids showing the wrong bag on the wrong formula.
