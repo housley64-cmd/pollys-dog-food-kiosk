@@ -63,3 +63,10 @@ V7.28 Science Diet verification pass:
 V7.29 adds protein data to all Science Diet items currently in the kiosk.
 - Science Diet protein values are shown on a dry-matter basis (DM), matching Hill's published nutrient tables where available.
 - Values were cross-checked against current Hill's pages and current retailer nutrient tables for formulas where Hill's site text did not expose the table cleanly.
+
+
+V7.30 adds Ultimates Dog Food.
+- Uses shelf photos only to identify Polly's inventory.
+- Uses current clean manufacturer packshots hosted by Salsify from Ultimates product pages.
+- Adds Adult, Puppy, Sensitive, Grain-Free and All Life Stages filters.
+- Adds current guaranteed-analysis protein values, ingredients and calories from Ultimates product pages.
