@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v731.css">
+<link rel="stylesheet" href="style-v732.css">
 </head>
 <body>
 <div class="app-shell">
@@ -212,6 +212,40 @@
 </section>
 </main>
 
+
+<main id="squarePetScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="showBrandScreen()">← Previous Page</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+
+  <div class="wood-header squarepet-wood-header">
+    <div class="mini-kicker">SQUAREPET® VETERINARIAN FORMULATED</div>
+    <h1>SquarePet Dog Food</h1>
+    <p>Tap a bag or the Ingredients button for product details.</p>
+  </div>
+
+  <div class="filter-row squarepet-filter">
+    <button class="filter-btn active" onclick="filterSquarePet('All',this)">All</button>
+    <button class="filter-btn" onclick="filterSquarePet('Digestive Support',this)">Digestive</button>
+    <button class="filter-btn" onclick="filterSquarePet('Joint Support',this)">Joints</button>
+    <button class="filter-btn" onclick="filterSquarePet('Sensitive',this)">Sensitive</button>
+    <button class="filter-btn" onclick="filterSquarePet('Low Phosphorus',this)">Low Phosphorus</button>
+    <button class="filter-btn" onclick="filterSquarePet('High Protein',this)">High Protein</button>
+  </div>
+
+  <div class="image-note">Your shelf photos were used only to identify what Polly's carries. The kiosk uses clean current SquarePet product packshots from SquarePet's product pages.</div>
+
+  <div id="squarePetProductGrid" class="product-grid"></div>
+
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="productDetailScreen" class="screen content-screen">
 <section class="brand-page ingredient-page">
   <div class="top-nav-bar">
@@ -302,7 +336,7 @@
 </main>
 
 </div>
-<script src="brands-v731.js"></script>
-<script src="app-v731.js"></script>
+<script src="brands-v732.js"></script>
+<script src="app-v732.js"></script>
 </body>
 </html>

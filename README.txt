@@ -75,3 +75,10 @@ V7.30 adds Ultimates Dog Food.
 V7.31 fixes Ultimates size information.
 - Replaced 'Ask an associate' with actual Polly's carried sizes identified from the shelf photos.
 - Added current available package sizes where verified.
+
+
+V7.32 adds SquarePet Dog Food.
+- Shelf photos are used only to identify Polly's inventory.
+- Uses clean current SquarePet manufacturer packshots.
+- Adds Ideal Digestion, Active Joints, Low Fat, Skin & Digestive Support, PhosFriendly / Low Phosphorus, and both PowerHound recipes.
+- Adds Polly's carried sizes, currently available sizes, protein, ingredients, calories, and nutrition details.
