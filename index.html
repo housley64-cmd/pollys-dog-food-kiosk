@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v738.css">
+<link rel="stylesheet" href="style-v739.css">
 </head>
 <body>
 <div class="app-shell">
@@ -328,6 +328,38 @@
 </section>
 </main>
 
+<main id="diamondNaturalsScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="showBrandScreen()">← Previous Page</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header diamond-wood-header">
+    <div class="mini-kicker">DIAMOND NATURALS</div>
+    <h1>Diamond Naturals Dog Food</h1>
+    <p>Tap a bag or the Ingredients button for recipe details.</p>
+  </div>
+  <div class="filter-row diamond-filter">
+    <button class="filter-btn active" onclick="filterDiamondNaturals('All',this)">All</button>
+    <button class="filter-btn" onclick="filterDiamondNaturals('Puppy',this)">Puppy</button>
+    <button class="filter-btn" onclick="filterDiamondNaturals('Adult',this)">Adult</button>
+    <button class="filter-btn" onclick="filterDiamondNaturals('Senior',this)">Senior</button>
+    <button class="filter-btn" onclick="filterDiamondNaturals('Small Breed',this)">Small Breed</button>
+    <button class="filter-btn" onclick="filterDiamondNaturals('Large Breed',this)">Large Breed</button>
+    <button class="filter-btn" onclick="filterDiamondNaturals('All Life Stages',this)">All Life Stages</button>
+    <button class="filter-btn" onclick="filterDiamondNaturals('Performance',this)">Performance</button>
+    <button class="filter-btn" onclick="filterDiamondNaturals('Weight',this)">Weight</button>
+    <button class="filter-btn" onclick="filterDiamondNaturals('Skin & Coat',this)">Skin & Coat</button>
+  </div>
+  <div class="image-note">Your shelf photos were used only to identify the Diamond Naturals foods and sizes Polly's carries. Product cards use exact current Diamond Naturals packshots.</div>
+  <div id="diamondNaturalsProductGrid" class="product-grid"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="productDetailScreen" class="screen content-screen">
 <section class="brand-page ingredient-page">
   <div class="top-nav-bar">
@@ -418,7 +450,7 @@
 </main>
 
 </div>
-<script src="brands-v738.js"></script>
-<script src="app-v738.js"></script>
+<script src="brands-v739.js"></script>
+<script src="app-v739.js"></script>
 </body>
 </html>

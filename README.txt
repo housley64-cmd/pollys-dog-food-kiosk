@@ -107,3 +107,9 @@ V7.38 updates:
 - Made the Shop by Brand screen more themed with a stronger Chow Barn look.
 - Added a themed marquee, wood-framed sign wall, decorative lanterns/hay bales, and richer wooden hanging brand signs.
 - Kept the same kiosk structure and brand navigation.
+
+
+V7.39 updates:
+- Added Diamond Naturals to the themed Shop by Brand page.
+- Added a full Diamond Naturals brand screen with filters, current ingredient lists, nutrition, calories and exact official packshot URLs.
+- Shelf photos are used only to identify Polly's inventory and stocked sizes.
