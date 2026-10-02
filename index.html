@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v724.css">
+<link rel="stylesheet" href="style-v725.css">
 </head>
 <body>
 <div class="app-shell">
@@ -108,6 +108,40 @@
 </section>
 </main>
 
+
+<main id="tasteWildScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="showBrandScreen()">← Previous Page</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+
+  <div class="wood-header totw-wood-header">
+    <div class="mini-kicker">TASTE OF THE WILD</div>
+    <h1>Taste of the Wild Dog Food</h1>
+    <p>Tap a bag or the Ingredients button to see recipe details.</p>
+  </div>
+
+  <div class="filter-row totw-filter">
+    <button class="filter-btn active" onclick="filterTasteWild('All',this)">All</button>
+    <button class="filter-btn" onclick="filterTasteWild('Grain-Free',this)">Grain-Free</button>
+    <button class="filter-btn" onclick="filterTasteWild('Ancient Grains',this)">Ancient Grains</button>
+    <button class="filter-btn" onclick="filterTasteWild('Puppy',this)">Puppy</button>
+    <button class="filter-btn" onclick="filterTasteWild('Small Breed',this)">Small Breed</button>
+    <button class="filter-btn" onclick="filterTasteWild('PREY',this)">PREY</button>
+  </div>
+
+  <div class="image-note">The shelf photos you provided were used only to identify the formulas Polly's carries. The kiosk uses clean product images instead.</div>
+
+  <div id="tasteWildProductGrid" class="product-grid"></div>
+
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="productDetailScreen" class="screen content-screen">
 <section class="brand-page ingredient-page">
   <div class="top-nav-bar">
@@ -198,7 +232,7 @@
 </main>
 
 </div>
-<script src="brands-v724.js"></script>
-<script src="app-v724.js"></script>
+<script src="brands-v725.js"></script>
+<script src="app-v725.js"></script>
 </body>
 </html>

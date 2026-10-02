@@ -36,3 +36,10 @@ V7.22 adds a prominent Crude Protein percentage to ACANA product cards and ingre
 
 
 V7.24 adds missing ACANA formulas using clean official ACANA bag images and adds a Butcher's Favorites filter.
+
+
+V7.25 adds the Taste of the Wild brand page.
+- Uses the user's shelf photos only to identify carried formulas
+- Uses clean online product images for the kiosk cards
+- Adds filters for Grain-Free, Ancient Grains, Puppy, Small Breed and PREY
+- Adds crude protein, sizes and ingredient/nutrition pages
