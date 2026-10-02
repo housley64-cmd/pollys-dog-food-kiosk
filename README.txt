@@ -35,7 +35,4 @@ The ACANA JPG files are no longer needed for this version.
 V7.22 adds a prominent Crude Protein percentage to ACANA product cards and ingredient pages. For Fromm products, the kiosk also pulls the percentage from the guaranteed analysis when it is already present in the product data.
 
 
-V7.23 update:
-- Added missing ACANA products that were pointed out from the latest photo zip
-- Added a Butcher's Favorites filter
-- Added local bag image crops so these items display reliably
+V7.24 adds missing ACANA formulas using clean official ACANA bag images and adds a Butcher's Favorites filter.
