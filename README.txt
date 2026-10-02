@@ -113,3 +113,9 @@ V7.39 updates:
 - Added Diamond Naturals to the themed Shop by Brand page.
 - Added a full Diamond Naturals brand screen with filters, current ingredient lists, nutrition, calories and exact official packshot URLs.
 - Shelf photos are used only to identify Polly's inventory and stocked sizes.
+
+
+V7.40 updates:
+- Reworked Shop by Brand signs to look more like wood plank panels with hanging supports and nail details.
+- Added a thicker old wood frame with corner blocks around the brand wall.
+- Added more visible hay details around and inside the brand wall scene.
