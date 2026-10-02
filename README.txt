@@ -89,3 +89,8 @@ V7.35 - Nulo rebuild from V7.32 baseline
 - Shelf photos are only for identifying Polly's inventory and stocked sizes.
 - Nulo display images are clean recipe-matched packshots; no shelf photos, generic line images, or generated reference cards are used.
 - Added Nulo filters for life stage and recipe type.
+
+
+V7.36 updates:
+- Replaced all 16 remaining Nulo ingredient placeholders with the full current ingredient lists from Nulo product pages.
+- Nulo ingredient detail pages are now self-contained; guests no longer need to leave the kiosk for ingredient lists.
