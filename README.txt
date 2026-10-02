@@ -70,3 +70,8 @@ V7.30 adds Ultimates Dog Food.
 - Uses current clean manufacturer packshots hosted by Salsify from Ultimates product pages.
 - Adds Adult, Puppy, Sensitive, Grain-Free and All Life Stages filters.
 - Adds current guaranteed-analysis protein values, ingredients and calories from Ultimates product pages.
+
+
+V7.31 fixes Ultimates size information.
+- Replaced 'Ask an associate' with actual Polly's carried sizes identified from the shelf photos.
+- Added current available package sizes where verified.
