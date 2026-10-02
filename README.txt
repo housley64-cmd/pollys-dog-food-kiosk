@@ -82,3 +82,9 @@ V7.32 adds SquarePet Dog Food.
 - Uses clean current SquarePet manufacturer packshots.
 - Adds Ideal Digestion, Active Joints, Low Fat, Skin & Digestive Support, PhosFriendly / Low Phosphorus, and both PowerHound recipes.
 - Adds Polly's carried sizes, currently available sizes, protein, ingredients, calories, and nutrition details.
+
+
+V7.33 updates:
+- Added full Nulo brand screen with 22 identified dry-food formulas.
+- Added Nulo filters for Puppy, Adult, Senior, Small Breed, Weight, Sensitive, Grain-Free, Ancient Grains, and Oven-Baked.
+- Used clean product images for Nulo rather than shelf photos.
