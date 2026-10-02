@@ -84,13 +84,8 @@ V7.32 adds SquarePet Dog Food.
 - Adds Polly's carried sizes, currently available sizes, protein, ingredients, calories, and nutrition details.
 
 
-V7.33 updates:
-- Added full Nulo brand screen with 22 identified dry-food formulas.
-- Added Nulo filters for Puppy, Adult, Senior, Small Breed, Weight, Sensitive, Grain-Free, Ancient Grains, and Oven-Baked.
-- Used clean product images for Nulo rather than shelf photos.
-
-
-V7.34 updates:
-- Removed the mismatched Nulo generic packshots.
-- Replaced them with formula-specific Nulo reference cards so each Nulo image now matches the exact product name and details.
-- This avoids showing the wrong bag on the wrong formula.
+V7.35 - Nulo rebuild from V7.32 baseline
+- Nulo added using the same brand/product-card/detail-page system already used by the finished brands.
+- Shelf photos are only for identifying Polly's inventory and stocked sizes.
+- Nulo display images are clean recipe-matched packshots; no shelf photos, generic line images, or generated reference cards are used.
+- Added Nulo filters for life stage and recipe type.
