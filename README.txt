@@ -58,3 +58,8 @@ V7.28 Science Diet verification pass:
 - Confirmed the formula names and clean packshot selections.
 - Corrected current available sizes where needed, including Adult Light and Sensitive Stomach & Skin Small Bites.
 - Shelf photos remain reference-only and are not used as kiosk product images.
+
+
+V7.29 adds protein data to all Science Diet items currently in the kiosk.
+- Science Diet protein values are shown on a dry-matter basis (DM), matching Hill's published nutrient tables where available.
+- Values were cross-checked against current Hill's pages and current retailer nutrient tables for formulas where Hill's site text did not expose the table cleanly.
