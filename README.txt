@@ -101,3 +101,9 @@ V7.37 updates:
 - Added 17 NutriSource / PureVita / Choice dry-food formulas identified from Polly's shelf photos.
 - Shelf photos are identification-only and are not included in the kiosk.
 - Uses clean current manufacturer packshots and includes full ingredient lists, nutrition, calories, Polly's stocked sizes, and current available sizes.
+
+
+V7.38 updates:
+- Made the Shop by Brand screen more themed with a stronger Chow Barn look.
+- Added a themed marquee, wood-framed sign wall, decorative lanterns/hay bales, and richer wooden hanging brand signs.
+- Kept the same kiosk structure and brand navigation.

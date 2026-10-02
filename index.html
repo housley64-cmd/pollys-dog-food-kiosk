@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v737.css">
+<link rel="stylesheet" href="style-v738.css">
 </head>
 <body>
 <div class="app-shell">
@@ -25,6 +25,12 @@
 
 <main id="brandScreen" class="screen brand-picture-screen">
   <section class="brand-picture-scene">
+    <div class="brand-barn-lantern lantern-left"></div>
+    <div class="brand-barn-lantern lantern-right"></div>
+    <div class="brand-hay hay-left"></div>
+    <div class="brand-hay hay-right"></div>
+    <div class="brand-feed-sign">Professor Polly's Pick Wall</div>
+
     <div class="brand-top-nav">
       <button class="brand-top-btn brand-top-prev" onclick="showHome()">← Previous Page</button>
       <button class="brand-top-btn brand-top-home" onclick="showHome()">Home</button>
@@ -33,11 +39,16 @@
     <div class="brand-picture-header">
       <div class="brand-picture-kicker">GRANDPA NORM'S CHOW BARN</div>
       <h1>SHOP BY BRAND</h1>
-      <div class="brand-picture-subtitle">Tap a wooden sign to explore the dog food brands Polly's Pets carries.</div>
+      <div class="brand-picture-subtitle">Browse Polly's Pets dog food brands on our chow barn sign wall.</div>
     </div>
 
     <div class="brand-picture-grid-panel">
-      <div id="brandGrid" class="brand-picture-grid"></div>
+      <div class="brand-grid-marquee">Choose a Brand</div>
+      <div class="brand-grid-footnote top">Tap any hanging sign to open that brand.</div>
+      <div class="brand-grid-frame">
+        <div id="brandGrid" class="brand-picture-grid"></div>
+      </div>
+      <div class="brand-grid-footnote bottom">From dry food to frozen favorites — all roads start here.</div>
     </div>
 
   </section>
@@ -407,7 +418,7 @@
 </main>
 
 </div>
-<script src="brands-v737.js"></script>
-<script src="app-v737.js"></script>
+<script src="brands-v738.js"></script>
+<script src="app-v738.js"></script>
 </body>
 </html>
