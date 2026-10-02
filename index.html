@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v736.css">
+<link rel="stylesheet" href="style-v737.css">
 </head>
 <body>
 <div class="app-shell">
@@ -278,6 +278,45 @@
 </section>
 </main>
 
+
+<main id="nutriSourceScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="showBrandScreen()">← Previous Page</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+
+  <div class="wood-header nutrisource-wood-header">
+    <div class="mini-kicker">NUTRISOURCE</div>
+    <h1>NutriSource Dog Food</h1>
+    <p>Tap a bag or the Ingredients button for recipe details.</p>
+  </div>
+
+  <div class="filter-row nutrisource-filter">
+    <button class="filter-btn active" onclick="filterNutriSource('All',this)">All</button>
+    <button class="filter-btn" onclick="filterNutriSource('Puppy',this)">Puppy</button>
+    <button class="filter-btn" onclick="filterNutriSource('Adult',this)">Adult</button>
+    <button class="filter-btn" onclick="filterNutriSource('Senior',this)">Senior</button>
+    <button class="filter-btn" onclick="filterNutriSource('Small Bites',this)">Small Bites</button>
+    <button class="filter-btn" onclick="filterNutriSource('Large Breed',this)">Large Breed</button>
+    <button class="filter-btn" onclick="filterNutriSource('Weight Management',this)">Weight</button>
+    <button class="filter-btn" onclick="filterNutriSource('Performance',this)">Performance</button>
+    <button class="filter-btn" onclick="filterNutriSource('Grain-Free',this)">Grain-Free</button>
+    <button class="filter-btn" onclick="filterNutriSource('PureVita',this)">PureVita</button>
+    <button class="filter-btn" onclick="filterNutriSource('Choice',this)">Choice</button>
+  </div>
+
+  <div class="image-note">Your shelf photos were used only to identify the NutriSource foods and sizes Polly's carries. The kiosk uses clean current manufacturer product packshots.</div>
+
+  <div id="nutriSourceProductGrid" class="product-grid"></div>
+
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="productDetailScreen" class="screen content-screen">
 <section class="brand-page ingredient-page">
   <div class="top-nav-bar">
@@ -368,7 +407,7 @@
 </main>
 
 </div>
-<script src="brands-v736.js"></script>
-<script src="app-v736.js"></script>
+<script src="brands-v737.js"></script>
+<script src="app-v737.js"></script>
 </body>
 </html>

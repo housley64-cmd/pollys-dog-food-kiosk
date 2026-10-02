@@ -94,3 +94,10 @@ V7.35 - Nulo rebuild from V7.32 baseline
 V7.36 updates:
 - Replaced all 16 remaining Nulo ingredient placeholders with the full current ingredient lists from Nulo product pages.
 - Nulo ingredient detail pages are now self-contained; guests no longer need to leave the kiosk for ingredient lists.
+
+
+V7.37 updates:
+- Added NutriSource to Shop by Brand.
+- Added 17 NutriSource / PureVita / Choice dry-food formulas identified from Polly's shelf photos.
+- Shelf photos are identification-only and are not included in the kiosk.
+- Uses clean current manufacturer packshots and includes full ingredient lists, nutrition, calories, Polly's stocked sizes, and current available sizes.
