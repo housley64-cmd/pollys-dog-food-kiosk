@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v740.css">
+<link rel="stylesheet" href="style-v741.css">
 </head>
 <body>
 <div class="app-shell">
@@ -367,6 +367,40 @@
 </section>
 </main>
 
+<main id="redbarnScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="showBrandScreen()">← Previous Page</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header redbarn-wood-header">
+    <div class="mini-kicker">REDBARN</div>
+    <h1>Redbarn Dog Food</h1>
+    <p>Tap a bag or the Ingredients button for recipe details.</p>
+  </div>
+  <div class="filter-row redbarn-filter">
+    <button class="filter-btn active" onclick="filterRedbarn('All',this)">All</button>
+    <button class="filter-btn" onclick="filterRedbarn('Puppy',this)">Puppy</button>
+    <button class="filter-btn" onclick="filterRedbarn('Adult',this)">Adult</button>
+    <button class="filter-btn" onclick="filterRedbarn('Senior',this)">Senior</button>
+    <button class="filter-btn" onclick="filterRedbarn('All Life Stages',this)">All Life Stages</button>
+    <button class="filter-btn" onclick="filterRedbarn('Large Breed',this)">Large Breed</button>
+    <button class="filter-btn" onclick="filterRedbarn('Whole Grain',this)">Whole Grain</button>
+    <button class="filter-btn" onclick="filterRedbarn('Grain-Free',this)">Grain-Free</button>
+    <button class="filter-btn" onclick="filterRedbarn('Land',this)">Land</button>
+    <button class="filter-btn" onclick="filterRedbarn('Sky',this)">Sky</button>
+    <button class="filter-btn" onclick="filterRedbarn('Ocean',this)">Ocean</button>
+    <button class="filter-btn" onclick="filterRedbarn('Powerfood Fusion',this)">Powerfood Fusion</button>
+  </div>
+  <div class="image-note">Your shelf photos were used only to identify the Redbarn foods and sizes Polly's carries. Product cards use exact current Redbarn product images.</div>
+  <div id="redbarnProductGrid" class="product-grid"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="productDetailScreen" class="screen content-screen">
 <section class="brand-page ingredient-page">
   <div class="top-nav-bar">
@@ -457,7 +491,7 @@
 </main>
 
 </div>
-<script src="brands-v740.js"></script>
-<script src="app-v740.js"></script>
+<script src="brands-v741.js"></script>
+<script src="app-v741.js"></script>
 </body>
 </html>

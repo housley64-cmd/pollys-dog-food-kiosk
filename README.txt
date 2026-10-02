@@ -119,3 +119,10 @@ V7.40 updates:
 - Reworked Shop by Brand signs to look more like wood plank panels with hanging supports and nail details.
 - Added a thicker old wood frame with corner blocks around the brand wall.
 - Added more visible hay details around and inside the brand wall scene.
+
+
+V7.41 updates:
+- Added Redbarn as a full Shop by Brand section.
+- Added 14 Redbarn First-Five Kibble and Powerfood Fusion recipes identified from Polly's shelf photos.
+- Added full ingredients, guaranteed analysis, calories, filters, stocked sizes, and exact Redbarn product images.
+- Shelf photos are not used as kiosk product art.
