@@ -45,3 +45,16 @@ V7.25 adds the Taste of the Wild brand page.
 - Adds crude protein, sizes and ingredient/nutrition pages
 
 V7.26 fixes the missing Taste of the Wild images for High Prairie Puppy and Ancient Prairie by bundling local image files in the kiosk package.
+
+
+V7.27 adds the Science Diet brand page using the user's shelf photos only to identify the formulas carried.
+- Uses clean Hill's product packshots
+- Adds Puppy, Adult 1-6, Weight, Digestion, Sensitive, Mobility and Senior filters
+- Includes sizes, ingredients, calories where available and protein information
+
+
+V7.28 Science Diet verification pass:
+- Rechecked every Science Diet entry against the current Hill's product page.
+- Confirmed the formula names and clean packshot selections.
+- Corrected current available sizes where needed, including Adult Light and Sensitive Stomach & Skin Small Bites.
+- Shelf photos remain reference-only and are not used as kiosk product images.
