@@ -43,3 +43,5 @@ V7.25 adds the Taste of the Wild brand page.
 - Uses clean online product images for the kiosk cards
 - Adds filters for Grain-Free, Ancient Grains, Puppy, Small Breed and PREY
 - Adds crude protein, sizes and ingredient/nutrition pages
+
+V7.26 fixes the missing Taste of the Wild images for High Prairie Puppy and Ancient Prairie by bundling local image files in the kiosk package.
