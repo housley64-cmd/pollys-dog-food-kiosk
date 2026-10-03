@@ -126,3 +126,10 @@ V7.41 updates:
 - Added 14 Redbarn First-Five Kibble and Powerfood Fusion recipes identified from Polly's shelf photos.
 - Added full ingredients, guaranteed analysis, calories, filters, stocked sizes, and exact Redbarn product images.
 - Shelf photos are not used as kiosk product art.
+
+
+V7.42 updates:
+- Added Zignature to Shop by Brand.
+- Added 13 Zignature Original dry food formulas identified from Polly's shelf photos.
+- Added current formula-matched Zignature packshots, full ingredient lists, guaranteed analysis, calories, stocked sizes, and filters.
+- Shelf photos remain reference-only and are not used as kiosk product images.
