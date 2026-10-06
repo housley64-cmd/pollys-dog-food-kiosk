@@ -23,3 +23,11 @@ Current active code:
 - style-v753.css
 - brands-v753.js
 - app-v753.js
+
+
+V7.54 updates:
+- Added KOHA to Shop by Brand.
+- Added KOHA Limited Ingredient Bland Diet dry formulas: Chicken, Beef, and Salmon with brown rice and pumpkin.
+- Added KOHA filters for protein, Sensitive Stomach, and Limited Ingredient.
+- KOHA products now feed into the main Puppy/Adult/Special Needs/Protein category screens through the completed catalog.
+- Retained the clean V7.53 package structure with only current active files.

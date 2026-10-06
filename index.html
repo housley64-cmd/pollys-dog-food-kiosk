@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v753.css">
+<link rel="stylesheet" href="style-v754.css">
 </head>
 <body>
 <div class="app-shell">
@@ -486,6 +486,35 @@
 </section>
 </main>
 
+
+<main id="kohaScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="showBrandScreen()">← Previous Page</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header zignature-wood-header">
+    <div class="mini-kicker">KOHA</div>
+    <h1>KOHA Bland Diet Dry Dog Food</h1>
+    <p>Limited-ingredient recipes designed for sensitive stomachs.</p>
+  </div>
+  <div class="filter-row zignature-filter">
+    <button class="filter-btn active" onclick="filterKoha('All',this)">All</button>
+    <button class="filter-btn" onclick="filterKoha('Chicken',this)">Chicken</button>
+    <button class="filter-btn" onclick="filterKoha('Beef',this)">Beef</button>
+    <button class="filter-btn" onclick="filterKoha('Salmon',this)">Salmon</button>
+    <button class="filter-btn" onclick="filterKoha('Sensitive Stomach',this)">Sensitive Stomach</button>
+    <button class="filter-btn" onclick="filterKoha('Limited Ingredient',this)">Limited Ingredient</button>
+  </div>
+  <div class="image-note">Polly's shelf photos were used only to identify the KOHA recipes and stocked sizes. Product images are clean KOHA manufacturer images.</div>
+  <div id="kohaProductGrid" class="product-grid"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="showBrandScreen()">← All Brands</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="productDetailScreen" class="screen content-screen">
 <section class="brand-page ingredient-page">
   <div class="top-nav-bar">
@@ -590,7 +619,7 @@
 </main>
 
 </div>
-<script src="brands-v753.js"></script>
-<script src="app-v753.js"></script>
+<script src="brands-v754.js"></script>
+<script src="app-v754.js"></script>
 </body>
 </html>
