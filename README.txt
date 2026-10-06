@@ -15,3 +15,10 @@ GitHub upload:
 3. Drag all files from inside the extracted folder into GitHub.
 4. Wait for processing to finish.
 5. Commit changes.
+
+
+NEW IN V7.59
+- Refreshed the Shop by Brand screen to feel more like the main page.
+- Made the whole brands page read as a fun barn wall instead of signs pasted on top.
+- Gave the brand name plates a more playful bold display style.
+- Raised and tightened the brand wall layout so it feels more integrated.
