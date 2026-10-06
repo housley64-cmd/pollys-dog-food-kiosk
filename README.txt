@@ -158,3 +158,10 @@ V7.47 updates:
 - Added more ORIJEN formulas identified from archive 23: Fit & Trim, Amazing Grains Six Fish, and Amazing Grains Small Breed.
 - Moved the Shop by Brand page higher on screen so it no longer sits too low.
 - Kept the 5x4 brand sign layout so all brands remain visible.
+
+
+V7.48 updates:
+- Added ORIJEN Large Breed Adult.
+- Added ORIJEN Amazing Grains Puppy Large.
+- Added a Large Breed filter to the ORIJEN page.
+- Retained V7.47 image cleanup and higher Shop by Brand positioning.
