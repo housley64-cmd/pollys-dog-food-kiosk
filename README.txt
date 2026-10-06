@@ -172,3 +172,16 @@ V7.49 updates:
 - Added Open Farm Grain-Free Dry, RawMix, and Epic Blend sections from archive 24.
 - Shelf photos used only for identifying formulas and stocked sizes.
 - Open Farm cards use clean formula-matched Open Farm packshots.
+
+
+V7.50 updates:
+- Raised the Shop by Brand page again so the full wall sits higher in the kiosk viewport.
+- Removed the small bottom corner boxes, frame-corner blocks, extra inner hay boxes, and both pill-shaped footnotes.
+- Removed the large opaque panel effect behind the brands.
+- Reworked the brand area as an integrated barn wall with subtle wooden rails/beams behind the signs.
+- Kept the three-plank brand signs, barn scene, and floor-level hay.
+
+
+V7.51 updates:
+- Fixed blank Open Farm page by adding the missing Open Farm product-grid builder and filter functions.
+- Kept the V7.50 themed Shop by Brand redesign intact.
