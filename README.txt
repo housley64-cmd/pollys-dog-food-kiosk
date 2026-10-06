@@ -1,15 +1,16 @@
-Polly's Pets Dog Food Finder - V7.56 CLEAN GITHUB BUILD
+Polly's Pets Dog Food Finder - V7.57 CLEAN GITHUB BUILD
 
-NEW IN V7.56
-- Added CanineX Beef Protein as the single CanineX formula carried by Polly's.
-- Added a full CanineX brand page.
-- Added CanineX to:
-  • Adult Dog Food
-  • Special Needs > Active / Performance
-  • Protein > Beef
-  • Grain-Free
-- Replaced the old "Other Brands" placeholder sign with CanineX so the Shop by Brand wall stays at 20 signs and remains inside the 5x4 layout.
-- Preserved all V7.55 features including Fromm Nutritionals, KOHA, Open Farm, corrected ORIJEN, category tabs, and the redesigned Shop by Brand page.
+NEW IN V7.57
+- Rebuilt the Shop by Brand page to feel like the original Grandpa Norm's Chow Barn screen.
+- Removed the layered / pasted-on look from the brand page.
+- Removed the floating brown header panel and the separate “Choose a Brand” box.
+- Replaced them with a single integrated barn-wall layout:
+  • original-style header
+  • painted chow-barn wall background
+  • mounted brand plaques directly on the wall
+  • no duplicate old text showing through behind the current signs
+- Preserved all V7.56 functionality, including CanineX, Fromm Nutritionals, KOHA,
+  Open Farm, corrected ORIJEN, and working category tabs.
 
 GitHub upload:
 1. Extract this ZIP.
@@ -20,6 +21,6 @@ GitHub upload:
 
 Active code:
 - index.html
-- style-v756.css
-- brands-v756.js
-- app-v756.js
+- style-v757.css
+- brands-v757.js
+- app-v757.js
