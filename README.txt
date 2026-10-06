@@ -1,11 +1,2 @@
-Polly's Pets Dog Food Finder — V7.64 ORIJEN FRESHPREY CORRECTED
-
-Base: V7.62 Tucker's Fixed.
-The approved Shop by Brand screen is unchanged.
-ORIJEN FreshPrey was rebuilt using archive (29) only to identify Polly's stocked products/sizes.
-Kiosk product images now use clean official ORIJEN product artwork, not the user's shelf photos.
-
-FreshPrey products:
-- Beef, Pork & Lamb Recipe — 7 x 16 oz multipack
-- Turkey, Salmon & Pork Recipe — 7 x 16 oz multipack
-- Chicken & Duck Recipe With Grains — 16 oz pouch
+Polly's Pets Dog Food Finder V7.66
+Built from V7.65. Adds OC Raw frozen/raw section from archive 31. Shop by Brand screen design/content unchanged. User shelf photos used only to identify stocked products; clean product artwork is referenced for OC Raw cards.
