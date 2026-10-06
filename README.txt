@@ -139,3 +139,8 @@ V7.43 updates:
 - Restyled Shop by Brand buttons to match the uploaded 3-plank wood sign reference.
 - Brand signs now use the wood plate artwork with centered brand names only.
 - Kept the old wood frame and hay details from the previous themed brand page.
+
+
+V7.45 updates:
+- Replaced all ORIJEN placeholder/display graphics with clean official ORIJEN formula-matched packshots.
+- Shelf photos remain identification-only and are not used as kiosk product art.
