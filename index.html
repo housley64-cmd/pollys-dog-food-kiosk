@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v751.css">
+<link rel="stylesheet" href="style-v753.css">
 </head>
 <body>
 <div class="app-shell">
@@ -553,10 +553,24 @@
 </main>
 
 <main id="sectionScreen" class="screen content-screen">
-<section class="page-card">
-<div class="page-label">POLLY'S PETS DOG FOOD FINDER</div><h1 id="sectionTitle"></h1><p id="sectionDescription"></p>
-<div class="info-box"><div class="info-icon">🐾</div><div><div class="info-title">This section will use the same product database.</div><div class="info-text">As we enter products, these screens will automatically filter them.</div></div></div>
-<button class="back-btn" onclick="showHome()">← Back to Home</button>
+<section class="brand-page category-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="showHome()">← Previous Page</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header category-wood-header">
+    <div class="mini-kicker">PROFESSOR POLLY'S DOG FOOD FINDER</div>
+    <h1 id="sectionTitle"></h1>
+    <p id="sectionDescription"></p>
+  </div>
+  <div id="sectionFilterRow" class="filter-row category-filter-row"></div>
+  <div id="sectionCount" class="category-count"></div>
+  <div id="sectionProductGrid" class="product-grid category-product-grid"></div>
+  <div id="coldBrandGrid" class="cold-brand-grid" style="display:none"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="showHome()">← Back to Home</button>
+    <button class="back-btn" onclick="showBrandScreen()">Shop by Brand</button>
+  </div>
 </section>
 </main>
 
@@ -576,7 +590,7 @@
 </main>
 
 </div>
-<script src="brands-v751.js"></script>
-<script src="app-v751.js"></script>
+<script src="brands-v753.js"></script>
+<script src="app-v753.js"></script>
 </body>
 </html>
