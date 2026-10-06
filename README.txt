@@ -151,3 +151,10 @@ V7.46 updates:
 - Changed the visible brand plate grid from 4x4 to 5x4 so all current brands fit on-screen.
 - ORIJEN is now visible as a wood-plank brand sign and opens the ORIJEN section.
 - Kept the V7.43 wood sign artwork and V7.45 ORIJEN product section/images.
+
+
+V7.47 updates:
+- Fixed ORIJEN images that were showing with black boxes by replacing/cleaning them into transparent-background local PNGs.
+- Added more ORIJEN formulas identified from archive 23: Fit & Trim, Amazing Grains Six Fish, and Amazing Grains Small Breed.
+- Moved the Shop by Brand page higher on screen so it no longer sits too low.
+- Kept the 5x4 brand sign layout so all brands remain visible.
