@@ -5,7 +5,7 @@ var guideQuestions=[
   {key:'protein',title:'Any protein preference?',subtitle:'Choose a protein.',answers:['Chicken','Beef','Lamb','Fish / Salmon']}
 ];
 
-function hideAllScreens(){['homeScreen','brandScreen','frommScreen','acanaScreen','tasteWildScreen','scienceDietScreen','ultimatesScreen','squarePetScreen','nuloScreen','nutriSourceScreen','diamondNaturalsScreen','redbarnScreen','zignatureScreen','orijenScreen','openFarmScreen','kohaScreen','caninexScreen','myPerfectPetScreen','aPupAboveScreen','tuckersScreen','orijenFreshPreyScreen','omasPrideScreen','ocRawScreen','productDetailScreen','brandDetailScreen','sectionScreen','guideScreen','guideResultScreen'].forEach(function(id){var el=document.getElementById(id);if(el){el.className='screen';}})}
+function hideAllScreens(){['homeScreen','brandScreen','frommScreen','acanaScreen','tasteWildScreen','scienceDietScreen','ultimatesScreen','squarePetScreen','nuloScreen','nutriSourceScreen','diamondNaturalsScreen','redbarnScreen','zignatureScreen','orijenScreen','openFarmScreen','kohaScreen','caninexScreen','myPerfectPetScreen','aPupAboveScreen','tuckersScreen','orijenFreshPreyScreen','omasPrideScreen','ocRawScreen','muttGutScreen','productDetailScreen','brandDetailScreen','sectionScreen','guideScreen','guideResultScreen'].forEach(function(id){var el=document.getElementById(id);if(el){el.className='screen';}})}
 function showHome(){hideAllScreens();document.getElementById('homeScreen').className='screen active-screen';guideStep=0;guideAnswers={};window.scrollTo(0,0)}
 function showBrandScreen(){hideAllScreens();buildBrandGrid();document.getElementById('brandScreen').className='screen brand-picture-screen active-screen';window.scrollTo(0,0)}
 function showFromm(){hideAllScreens();buildFrommProducts(FROMM_PRODUCTS);resetFilterRow(document.querySelectorAll('#frommScreen .filter-btn'));document.querySelector('#frommScreen .filter-btn').className='filter-btn active';document.getElementById('frommScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
@@ -283,7 +283,7 @@ function filterMuttGut(filter,btn){
 }
 
 function buildBrandGrid(){var g=document.getElementById('brandGrid');if(g.children.length)return;DOG_FOOD_BRANDS.forEach(function(b,i){var x=document.createElement('button');x.className='brand-sign wood-brand-sign';x.innerHTML='<span class="brand-name">'+b.name+'</span>';x.title=b.note||'';x.onclick=function(){openBrand(b.name)};g.appendChild(x)})}
-function openBrand(name){if(name==='OC Raw'){showOCRaw();return}if(name==="Tucker's"){showTuckers();return}if(name==='A Pup Above'){showAPupAbove();return}if(name==='My Perfect Pet'){showMyPerfectPet();return}if(name==='Fromm'){showFromm();return}if(name==='ACANA'){showAcana();return}if(name==='Taste of the Wild'){showTasteWild();return}if(name==='Science Diet'){showScienceDiet();return}if(name==='Ultimates'){showUltimates();return}if(name==='SquarePet'){showSquarePet();return}if(name==='Nulo'){showNulo();return}if(name==='NutriSource'){showNutriSource();return}if(name==='Diamond Naturals'){showDiamondNaturals();return}if(name==='Redbarn'){showRedbarn();return}if(name==='Zignature'){showZignature();return}if(name==='ORIJEN'){showOrijen();return}if(name==='Open Farm'){showOpenFarm();return}if(name==='KOHA'){showKoha();return}if(name==='CanineX'){showCanineX();return}hideAllScreens();document.getElementById('brandDetailTitle').innerHTML=name;document.getElementById('brandDetailText').innerHTML="Explore <strong>"+name+"</strong> dog foods carried at Polly's Pets.";document.getElementById('brandDetailScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function openBrand(name){if(name==='MuttGut'){showMuttGut();return}if(name==='OC Raw'){showOCRaw();return}if(name==="Tucker's"){showTuckers();return}if(name==='A Pup Above'){showAPupAbove();return}if(name==='My Perfect Pet'){showMyPerfectPet();return}if(name==='Fromm'){showFromm();return}if(name==='ACANA'){showAcana();return}if(name==='Taste of the Wild'){showTasteWild();return}if(name==='Science Diet'){showScienceDiet();return}if(name==='Ultimates'){showUltimates();return}if(name==='SquarePet'){showSquarePet();return}if(name==='Nulo'){showNulo();return}if(name==='NutriSource'){showNutriSource();return}if(name==='Diamond Naturals'){showDiamondNaturals();return}if(name==='Redbarn'){showRedbarn();return}if(name==='Zignature'){showZignature();return}if(name==='ORIJEN'){showOrijen();return}if(name==='Open Farm'){showOpenFarm();return}if(name==='KOHA'){showKoha();return}if(name==='CanineX'){showCanineX();return}hideAllScreens();document.getElementById('brandDetailTitle').innerHTML=name;document.getElementById('brandDetailText').innerHTML="Explore <strong>"+name+"</strong> dog foods carried at Polly's Pets.";document.getElementById('brandDetailScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
 
 function getProteinAmount(product){
   if(product.proteinAmount){ return product.proteinAmount; }
@@ -545,6 +545,7 @@ function openBrandProduct(product, brandKey){
     brandKey === 'ORIJEN FreshPrey' ? '← Back to ORIJEN FreshPrey' :
     brandKey === "Oma's Pride" ? "← Back to Oma's Pride" :
     brandKey === 'OC Raw' ? '← Back to OC Raw' :
+    brandKey === 'MuttGut' ? '← Back to MuttGut' :
     brandKey === 'ORIJEN' ? '← Back to ORIJEN' :
     '← Back to Fromm';
   var backFn =
@@ -567,6 +568,7 @@ function openBrandProduct(product, brandKey){
     brandKey === 'ORIJEN FreshPrey' ? showOrijenFreshPrey :
     brandKey === "Oma's Pride" ? showOmasPride :
     brandKey === 'OC Raw' ? showOCRaw :
+    brandKey === 'MuttGut' ? showMuttGut :
     brandKey === 'ORIJEN' ? showOrijen :
     showFromm;
   var topBtn = document.getElementById('detailBackTop');
