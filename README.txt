@@ -144,3 +144,10 @@ V7.43 updates:
 V7.45 updates:
 - Replaced all ORIJEN placeholder/display graphics with clean official ORIJEN formula-matched packshots.
 - Shelf photos remain identification-only and are not used as kiosk product art.
+
+
+V7.46 updates:
+- Fixed Shop by Brand wall capacity.
+- Changed the visible brand plate grid from 4x4 to 5x4 so all current brands fit on-screen.
+- ORIJEN is now visible as a wood-plank brand sign and opens the ORIJEN section.
+- Kept the V7.43 wood sign artwork and V7.45 ORIJEN product section/images.
