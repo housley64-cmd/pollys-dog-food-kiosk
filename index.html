@@ -697,6 +697,35 @@
 </section>
 </main>
 
+
+<main id="omasPrideScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Food</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header">
+    <div class="mini-kicker">RAW FROZEN • SMALL BATCH</div>
+    <h1>Oma's Pride</h1>
+    <p>Raw frozen foods identified from Polly's freezer selection in archive 30.</p>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterOmasPride('All',this)">All</button>
+    <button class="filter-btn" onclick="filterOmasPride('Complete',this)">Complete Meals</button>
+    <button class="filter-btn" onclick="filterOmasPride('Beef',this)">Beef</button>
+    <button class="filter-btn" onclick="filterOmasPride('Chicken',this)">Chicken</button>
+    <button class="filter-btn" onclick="filterOmasPride('Turkey',this)">Turkey</button>
+    <button class="filter-btn" onclick="filterOmasPride('Fish',this)">Fish</button>
+  </div>
+  <div class="image-note">Archive 30 was used only to identify the products Polly's carries. Clean product artwork is used for the kiosk images.</div>
+  <div id="omasPrideProductGrid" class="product-grid"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Dog Food</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="brandDetailScreen" class="screen content-screen">
 <section class="page-card">
 <div class="page-label">SHOP BY BRAND</div>
@@ -744,7 +773,7 @@
 </main>
 
 </div>
-<script src="brands-v764.js"></script>
-<script src="app-v764.js"></script>
+<script src="brands-v765.js"></script>
+<script src="app-v765.js"></script>
 </body>
 </html>
