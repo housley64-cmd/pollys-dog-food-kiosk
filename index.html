@@ -760,6 +760,37 @@
 </section>
 </main>
 
+
+
+<main id="muttGutScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Food</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header">
+    <div class="mini-kicker">RAW FROZEN • SOUS VIDE / GENTLY COOKED</div>
+    <h1>MuttGut</h1>
+    <p>Fresh frozen recipes identified from Polly's freezer selection in archive 33.</p>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterMuttGut('All',this)">All</button>
+    <button class="filter-btn" onclick="filterMuttGut('Raw',this)">Raw</button>
+    <button class="filter-btn" onclick="filterMuttGut('Sous Vide',this)">Sous Vide / Gently Cooked</button>
+    <button class="filter-btn" onclick="filterMuttGut('Beef',this)">Beef</button>
+    <button class="filter-btn" onclick="filterMuttGut('Chicken',this)">Chicken</button>
+    <button class="filter-btn" onclick="filterMuttGut('Pork',this)">Pork</button>
+    <button class="filter-btn" onclick="filterMuttGut('Turkey',this)">Turkey</button>
+  </div>
+  <div class="image-note">Archive 33 was used only to identify what Polly's carries. Product cards use clean current MuttGut product artwork.</div>
+  <div id="muttGutProductGrid" class="product-grid"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Dog Food</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="brandDetailScreen" class="screen content-screen">
 <section class="page-card">
 <div class="page-label">SHOP BY BRAND</div>
@@ -807,7 +838,7 @@
 </main>
 
 </div>
-<script src="brands-v766.js"></script>
-<script src="app-v766.js"></script>
+<script src="brands-v767.js"></script>
+<script src="app-v767.js"></script>
 </body>
 </html>
