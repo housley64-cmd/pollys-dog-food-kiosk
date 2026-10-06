@@ -8,5 +8,3 @@ V7.67: Added MuttGut Raw and Sous Vide frozen sections from archive 33. Shop by 
 V7.70: Redesigned the Cold Dog Food landing page with a Chow Barn wood-wall look and wood-panel brand choices. Product data and Shop by Brand screen unchanged.
 
 V7.76: Removed Vital Essentials from Shop by Brand and Cold Dog Food. Rebuilt Cold Dog Food landing as a standalone barn wall with mounted wood signs.
-
-V7.79: full barn theme pass for category and Help Me Choose screens; Cold Food integrated barn styling; Shop by Brand and Cold brand choices centered.
