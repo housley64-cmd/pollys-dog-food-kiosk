@@ -1,29 +1,25 @@
-Polly's Pets Dog Food Finder - V7.55 CLEAN GITHUB BUILD
+Polly's Pets Dog Food Finder - V7.56 CLEAN GITHUB BUILD
 
-Built from the clean V7.54 package.
-
-NEW IN V7.55
-- Added 3 Fromm Family Nutritionals dry formulas:
-  • Sensitive Skin & Stomach Salmon & Whole Oats
-  • Mobility Chicken & Whole Oats
-  • Digestive Support Low Fat Chicken & Oatmeal
-- Added a Nutritionals filter to the Fromm brand page.
-- Added functional Special Needs filters for:
-  • Sensitive
-  • Digestive / Low Fat
-  • Mobility / Joint
-- Preserved KOHA, Open Farm, ORIJEN corrections, category tabs,
-  and the redesigned Shop by Brand page.
+NEW IN V7.56
+- Added CanineX Beef Protein as the single CanineX formula carried by Polly's.
+- Added a full CanineX brand page.
+- Added CanineX to:
+  • Adult Dog Food
+  • Special Needs > Active / Performance
+  • Protein > Beef
+  • Grain-Free
+- Replaced the old "Other Brands" placeholder sign with CanineX so the Shop by Brand wall stays at 20 signs and remains inside the 5x4 layout.
+- Preserved all V7.55 features including Fromm Nutritionals, KOHA, Open Farm, corrected ORIJEN, category tabs, and the redesigned Shop by Brand page.
 
 GitHub upload:
 1. Extract this ZIP.
-2. Open the GitHub repository and choose Add file > Upload files.
+2. Open your repository and choose Add file > Upload files.
 3. Drag ALL files from inside this folder into the upload area.
-4. Wait for GitHub to finish processing every file.
+4. Wait for GitHub to finish processing.
 5. Commit the changes.
 
-Current active code:
+Active code:
 - index.html
-- style-v755.css
-- brands-v755.js
-- app-v755.js
+- style-v756.css
+- brands-v756.js
+- app-v756.js
