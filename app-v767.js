@@ -707,6 +707,8 @@ function showColdDogFood(){
 }
 function openSection(t,d){
   hideAllScreens();sectionState.title=t;sectionState.description=d;sectionState.filter='All';
+  var sectionScreen=document.getElementById('sectionScreen');
+  sectionScreen.classList.remove('cold-barn-screen');
   document.getElementById('sectionTitle').innerHTML=t;document.getElementById('sectionDescription').innerHTML=d;
   if(t==='Puppy Food')sectionState.mode='Puppy';
   else if(t==='Adult Dog Food')sectionState.mode='Adult';
@@ -714,7 +716,7 @@ function openSection(t,d){
   else if(t==='Special Needs')sectionState.mode='Special';
   else if(t==='Protein')sectionState.mode='Protein';
   else if(t==='Cold Dog Food')sectionState.mode='Cold';
-  document.getElementById('sectionScreen').className='screen content-screen active-screen';
+  sectionScreen.className='screen content-screen active-screen'+(sectionState.mode==='Cold'?' cold-barn-screen':'');
   if(sectionState.mode==='Cold'){showColdDogFood()}else{var items=getSectionBaseItems(sectionState.mode);buildSectionFilters(sectionState.mode,items);renderSectionProducts()}
   window.scrollTo(0,0);
 }

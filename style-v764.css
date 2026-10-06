@@ -1658,3 +1658,143 @@ button{font:inherit;cursor:pointer}.app-shell{width:100vw;height:100vh}.screen{d
 /* V7.63 ORIJEN FreshPrey */
 #orijenFreshPreyScreen .wood-header{margin-bottom:16px;}
 #orijenFreshPreyScreen .product-image-wrap img{object-fit:contain;background:#fff;}
+
+/* V7.70 – Cold Dog Food barn landing page redesign */
+#sectionScreen.cold-barn-screen{
+  padding:14px;
+  background:
+    linear-gradient(180deg,rgba(36,18,9,.28),rgba(36,18,9,.12) 34%,rgba(36,18,9,.30)),
+    repeating-linear-gradient(90deg,
+      #674129 0 74px,
+      #74492f 74px 78px,
+      #5f3b26 78px 152px,
+      #74492f 152px 156px);
+}
+#sectionScreen.cold-barn-screen .category-page{
+  position:relative;
+  max-width:1180px;
+  min-height:calc(100vh - 28px);
+  margin:0 auto;
+  padding:20px 24px 24px;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(255,239,196,.08),transparent 18%),
+    repeating-linear-gradient(90deg,
+      #7a4c30 0 84px,
+      #855437 84px 88px,
+      #71452d 88px 172px,
+      #875538 172px 176px);
+  border:7px solid #3f2517;
+  border-radius:28px;
+  box-shadow:inset 0 0 0 4px #9b673f,0 10px 0 rgba(34,17,8,.35);
+}
+#sectionScreen.cold-barn-screen .category-page:before,
+#sectionScreen.cold-barn-screen .category-page:after{
+  content:'';
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+  left:0;right:0;
+  height:24px;
+  background:linear-gradient(180deg,#422719,#654027 45%,#382116);
+  border-top:3px solid #2c180f;
+  border-bottom:3px solid #2c180f;
+}
+#sectionScreen.cold-barn-screen .category-page:before{top:108px;transform:rotate(-.35deg)}
+#sectionScreen.cold-barn-screen .category-page:after{bottom:90px;transform:rotate(.25deg)}
+#sectionScreen.cold-barn-screen .category-page > *{position:relative;z-index:1}
+#sectionScreen.cold-barn-screen .top-nav-bar{margin-bottom:12px}
+#sectionScreen.cold-barn-screen .top-nav-btn{
+  border:3px solid #e0b86d;
+  box-shadow:0 4px 0 rgba(34,17,8,.28);
+}
+#sectionScreen.cold-barn-screen .category-wood-header{
+  max-width:850px;
+  margin:0 auto 12px;
+  padding:17px 24px 18px;
+  background:
+    linear-gradient(rgba(108,55,23,.06),rgba(65,31,12,.16)),
+    linear-gradient(180deg,#b86d33,#8e4e26 52%,#773d1e);
+  border:6px solid #4d2a16;
+  border-radius:22px;
+  box-shadow:inset 0 0 0 3px rgba(244,194,108,.35),0 7px 0 rgba(40,20,9,.28);
+}
+#sectionScreen.cold-barn-screen .category-wood-header .mini-kicker{color:#ffe0a0}
+#sectionScreen.cold-barn-screen .category-wood-header h1{
+  font-size:42px;
+  line-height:1;
+  color:#fff7dc;
+  text-shadow:0 3px 0 #572b16;
+}
+#sectionScreen.cold-barn-screen .category-wood-header p{color:#fff1cb;font-weight:700}
+#sectionScreen.cold-barn-screen .category-count{
+  width:max-content;
+  max-width:92%;
+  margin:12px auto 16px;
+  padding:9px 18px;
+  color:#4b2a18;
+  background:#f5d494;
+  border:3px solid #71401f;
+  border-radius:999px;
+  box-shadow:0 4px 0 rgba(48,24,11,.22);
+  font-size:16px;
+}
+#sectionScreen.cold-barn-screen .cold-brand-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px 20px;
+  max-width:1080px;
+  margin:14px auto 26px;
+  padding:18px;
+  border-radius:24px;
+  background:rgba(48,25,12,.23);
+  border:3px solid rgba(246,207,135,.30);
+}
+#sectionScreen.cold-barn-screen .cold-brand-card{
+  position:relative;
+  min-height:154px;
+  padding:30px 28px 23px;
+  border:0;
+  border-radius:12px;
+  background-color:transparent;
+  background-image:url('wood-brand-plate.png');
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+  color:#fff4d4;
+  box-shadow:none;
+  text-shadow:0 2px 0 #5b2e16,0 3px 5px rgba(39,18,7,.38);
+  overflow:visible;
+  transform:rotate(-.25deg);
+}
+#sectionScreen.cold-barn-screen .cold-brand-card:nth-child(even){transform:rotate(.25deg)}
+#sectionScreen.cold-barn-screen .cold-brand-card:active{transform:translateY(3px) scale(.985)}
+#sectionScreen.cold-barn-screen .cold-brand-name{
+  display:block;
+  font-size:28px;
+  line-height:1.03;
+  font-weight:900;
+  color:#fff5d8;
+}
+#sectionScreen.cold-barn-screen .cold-brand-note{
+  display:block;
+  max-width:90%;
+  margin:9px auto 0;
+  font-size:14px;
+  line-height:1.2;
+  font-weight:800;
+  color:#5a301a;
+  text-shadow:none;
+  background:rgba(255,231,174,.86);
+  border:2px solid rgba(91,48,26,.36);
+  border-radius:10px;
+  padding:5px 8px;
+}
+#sectionScreen.cold-barn-screen .bottom-buttons{max-width:850px;margin:8px auto 0}
+#sectionScreen.cold-barn-screen .back-btn{box-shadow:0 5px 0 rgba(38,18,8,.28);border:3px solid #d7ad65}
+@media(max-width:1000px){
+  #sectionScreen.cold-barn-screen .cold-brand-grid{grid-template-columns:repeat(3,1fr);gap:12px;padding:13px}
+  #sectionScreen.cold-barn-screen .cold-brand-card{min-height:128px;padding:24px 18px 18px}
+  #sectionScreen.cold-barn-screen .cold-brand-name{font-size:22px}
+  #sectionScreen.cold-barn-screen .cold-brand-note{font-size:12px}
+}
