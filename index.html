@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v757.css">
+<link rel="stylesheet" href="style-v758.css">
 </head>
 <body>
 <div class="app-shell">
@@ -597,6 +597,64 @@
 </section>
 </main>
 
+
+<main id="myPerfectPetScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Food</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header">
+    <div class="mini-kicker">GENTLY COOKED • FROZEN</div>
+    <h1>My Perfect Pet</h1>
+    <p>Fresh, gently cooked frozen blends carried in Polly's cold section.</p>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterMyPerfectPet('All',this)">All</button>
+    <button class="filter-btn" onclick="filterMyPerfectPet('Beef',this)">Beef</button>
+    <button class="filter-btn" onclick="filterMyPerfectPet('Chicken',this)">Chicken</button>
+    <button class="filter-btn" onclick="filterMyPerfectPet('Fish',this)">Fish</button>
+    <button class="filter-btn" onclick="filterMyPerfectPet('Pork',this)">Pork</button>
+    <button class="filter-btn" onclick="filterMyPerfectPet('Turkey',this)">Turkey</button>
+    <button class="filter-btn" onclick="filterMyPerfectPet('Specialty',this)">Specialty</button>
+  </div>
+  <div class="image-note">Clean current manufacturer product images are shown. Polly's shelf photos were used only to identify the recipes carried.</div>
+  <div id="myPerfectPetProductGrid" class="product-grid"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Dog Food</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
+<main id="aPupAboveScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Food</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header">
+    <div class="mini-kicker">SOUS-VIDE • GENTLY COOKED • FROZEN</div>
+    <h1>A Pup Above</h1>
+    <p>Fresh frozen recipes with bone broth carried in Polly's cold section.</p>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterAPupAbove('All',this)">All</button>
+    <button class="filter-btn" onclick="filterAPupAbove('Chicken',this)">Chicken</button>
+    <button class="filter-btn" onclick="filterAPupAbove('Beef',this)">Beef</button>
+    <button class="filter-btn" onclick="filterAPupAbove('Pork',this)">Pork</button>
+    <button class="filter-btn" onclick="filterAPupAbove('Turkey',this)">Turkey</button>
+    <button class="filter-btn" onclick="filterAPupAbove('Grain-Free',this)">Grain-Free</button>
+  </div>
+  <div class="image-note">Clean current manufacturer product images are shown. Polly's shelf photos were used only to identify the recipes carried.</div>
+  <div id="aPupAboveProductGrid" class="product-grid"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Dog Food</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="brandDetailScreen" class="screen content-screen">
 <section class="page-card">
 <div class="page-label">SHOP BY BRAND</div>
@@ -644,7 +702,7 @@
 </main>
 
 </div>
-<script src="brands-v757.js"></script>
-<script src="app-v757.js"></script>
+<script src="brands-v758.js"></script>
+<script src="app-v758.js"></script>
 </body>
 </html>

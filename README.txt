@@ -1,26 +1,17 @@
-Polly's Pets Dog Food Finder - V7.57 CLEAN GITHUB BUILD
+Polly's Pets Dog Food Finder - V7.58 CLEAN GITHUB BUILD
 
-NEW IN V7.57
-- Rebuilt the Shop by Brand page to feel like the original Grandpa Norm's Chow Barn screen.
-- Removed the layered / pasted-on look from the brand page.
-- Removed the floating brown header panel and the separate “Choose a Brand” box.
-- Replaced them with a single integrated barn-wall layout:
-  • original-style header
-  • painted chow-barn wall background
-  • mounted brand plaques directly on the wall
-  • no duplicate old text showing through behind the current signs
-- Preserved all V7.56 functionality, including CanineX, Fromm Nutritionals, KOHA,
-  Open Farm, corrected ORIJEN, and working category tabs.
+NEW IN V7.58
+- Built out the Cold Dog Food section from archive 27.
+- Added My Perfect Pet with 7 carried recipes.
+- Added A Pup Above with 5 carried recipes.
+- Uses clean manufacturer product images instead of shelf photos.
+- Added My Perfect Pet Controlled Phosphorus and Reduced Carbohydrates foods to Special Needs.
+- A Pup Above now opens a real product page from the brand wall.
+- Preserved the V7.57 Shop by Brand redesign and all dry-food work.
 
 GitHub upload:
 1. Extract this ZIP.
-2. Open your repository and choose Add file > Upload files.
-3. Drag ALL files from inside this folder into the upload area.
-4. Wait for GitHub to finish processing.
-5. Commit the changes.
-
-Active code:
-- index.html
-- style-v757.css
-- brands-v757.js
-- app-v757.js
+2. Choose Add file > Upload files in GitHub.
+3. Drag all files from inside the extracted folder into GitHub.
+4. Wait for processing to finish.
+5. Commit changes.
