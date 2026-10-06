@@ -17,8 +17,9 @@ GitHub upload:
 5. Commit changes.
 
 
-NEW IN V7.59
-- Refreshed the Shop by Brand screen to feel more like the main page.
-- Made the whole brands page read as a fun barn wall instead of signs pasted on top.
-- Gave the brand name plates a more playful bold display style.
-- Raised and tightened the brand wall layout so it feels more integrated.
+NEW IN V7.60
+- Rebuilt Shop by Brand to use a full illustrated barn scene like the main screen.
+- Removed the CSS-made barn wall look from V7.59.
+- Brand names now sit directly on wood signs inside the scene.
+- Added a playful Cooper/rounded display font stack for brand names.
+- Restored home-scene-16x9.png, brand-barn-scene.png and wood-brand-plate.png to the clean GitHub package.
