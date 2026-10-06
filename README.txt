@@ -133,3 +133,9 @@ V7.42 updates:
 - Added 13 Zignature Original dry food formulas identified from Polly's shelf photos.
 - Added current formula-matched Zignature packshots, full ingredient lists, guaranteed analysis, calories, stocked sizes, and filters.
 - Shelf photos remain reference-only and are not used as kiosk product images.
+
+
+V7.43 updates:
+- Restyled Shop by Brand buttons to match the uploaded 3-plank wood sign reference.
+- Brand signs now use the wood plate artwork with centered brand names only.
+- Kept the old wood frame and hay details from the previous themed brand page.
