@@ -523,6 +523,36 @@
 </section>
 </main>
 
+
+<main id="primalScreen" class="screen content-screen">
+<section class="brand-page">
+  <div class="top-nav-bar">
+    <button class="top-nav-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Food</button>
+    <button class="top-nav-btn" onclick="showHome()">Home</button>
+  </div>
+  <div class="wood-header">
+    <div class="mini-kicker">FROZEN RAW • TOPPERS & HYDRATORS</div>
+    <h1>Primal Pet Foods</h1>
+    <p>Frozen Primal foods identified from Polly's freezer selection in archive 32.</p>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterPrimal('All',this)">All</button>
+    <button class="filter-btn" onclick="filterPrimal('Pronto',this)">Pronto</button>
+    <button class="filter-btn" onclick="filterPrimal('Nuggets',this)">Nuggets</button>
+    <button class="filter-btn" onclick="filterPrimal('Patties',this)">Patties</button>
+    <button class="filter-btn" onclick="filterPrimal('Bone Broth',this)">Bone Broth</button>
+    <button class="filter-btn" onclick="filterPrimal('Chicken',this)">Chicken</button>
+    <button class="filter-btn" onclick="filterPrimal('Beef',this)">Beef</button>
+  </div>
+  <div class="image-note">Archive 32 was used only to identify the products Polly's carries. Clean current Primal product artwork is shown.</div>
+  <div id="primalProductGrid" class="product-grid"></div>
+  <div class="button-row bottom-buttons">
+    <button class="back-btn secondary" onclick="openSection('Cold Dog Food','Explore refrigerated and frozen foods.')">← Cold Dog Food</button>
+    <button class="back-btn" onclick="showHome()">Home</button>
+  </div>
+</section>
+</main>
+
 <main id="productDetailScreen" class="screen content-screen">
 <section class="brand-page ingredient-page">
   <div class="top-nav-bar">
@@ -840,7 +870,7 @@
 </main>
 
 </div>
-<script src="brands-v773.js?v=773"></script>
-<script src="app-v773.js?v=773"></script>
+<script src="brands-v774.js?v=774"></script>
+<script src="app-v774.js?v=774"></script>
 </body>
 </html>
