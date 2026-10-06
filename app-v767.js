@@ -602,7 +602,10 @@ function getCompletedProductCatalog(){
     ['My Perfect Pet',typeof MY_PERFECT_PET_PRODUCTS!=='undefined'?MY_PERFECT_PET_PRODUCTS:[]],
     ['A Pup Above',typeof A_PUP_ABOVE_COLD_PRODUCTS!=='undefined'?A_PUP_ABOVE_COLD_PRODUCTS:[]],
     ["Tucker's",typeof TUCKERS_PRODUCTS!=='undefined'?TUCKERS_PRODUCTS:[]],
-    ['OC Raw',typeof OC_RAW_PRODUCTS!=='undefined'?OC_RAW_PRODUCTS:[]]
+    ['ORIJEN FreshPrey',typeof ORIJEN_FRESHPREY_PRODUCTS!=='undefined'?ORIJEN_FRESHPREY_PRODUCTS:[]],
+    ["Oma's Pride",typeof OMAS_PRIDE_PRODUCTS!=='undefined'?OMAS_PRIDE_PRODUCTS:[]],
+    ['OC Raw',typeof OC_RAW_PRODUCTS!=='undefined'?OC_RAW_PRODUCTS:[]],
+    ['MuttGut',typeof MUTTGUT_PRODUCTS!=='undefined'?MUTTGUT_PRODUCTS:[]]
   ];
   var out=[];
   sets.forEach(function(set){set[1].forEach(function(p){out.push({brand:set[0],product:p})})});
@@ -724,7 +727,84 @@ function startGuide(){guideStep=0;guideAnswers={};showGuideQuestion()}
 function showGuideQuestion(){hideAllScreens();var q=guideQuestions[guideStep];document.getElementById('questionTitle').innerHTML=q.title;document.getElementById('questionSubtitle').innerHTML=q.subtitle;var g=document.getElementById('answerGrid');g.innerHTML='';q.answers.forEach(function(a){var b=document.createElement('button');b.className='answer-btn';b.innerHTML=a;b.onclick=function(){selectGuideAnswer(a)};g.appendChild(b)});document.getElementById('guideScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
 function selectGuideAnswer(v){var q=guideQuestions[guideStep];guideAnswers[q.key]=v;if(guideStep<guideQuestions.length-1){guideStep++;showGuideQuestion()}else{showGuideResult()}}
 function previousGuideStep(){if(guideStep===0)showHome();else{guideStep--;showGuideQuestion()}}
-function showGuideResult(){hideAllScreens();document.getElementById('guideSummary').innerHTML='You selected <strong>'+guideAnswers.age+'</strong>, focused on <strong>'+guideAnswers.need+'</strong>, with <strong>'+guideAnswers.protein+'</strong>.';document.getElementById('guideResultScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function guideAgeMatches(entry){
+  var age=guideAnswers.age||'All Life Stages';
+  if(age==='Puppy')return isPuppyEntry(entry) || /all life stages|all lifestages/.test((entry.product.life||'').toLowerCase());
+  if(age==='Senior')return isSeniorEntry(entry) || /adult|all life stages|all lifestages/.test((entry.product.life||'').toLowerCase());
+  if(age==='Adult')return isAdultEntry(entry) || /all life stages|all lifestages/.test((entry.product.life||'').toLowerCase());
+  return true;
+}
+function guideNeedScore(entry){
+  var need=guideAnswers.need||'Everyday Nutrition';
+  var t=sectionText(entry), s=0;
+  if(need==='Everyday Nutrition'){
+    if(!specialNeedType(entry))s+=3;
+    if(/adult|all life stages|all lifestages|maintenance/.test((entry.product.life||'').toLowerCase()))s+=2;
+  }else if(need==='Sensitive Stomach'){
+    if(/sensitive|digest|stomach|limited|single protein|bland|gut|probiotic|low fat|low-fat/.test(t))s+=7;
+    if(/limited ingredient|digestive/.test(t))s+=2;
+  }else if(need==='Skin & Coat'){
+    if(/skin|coat|omega|salmon|fish|herring|trout|whitefish|sardine|mackerel/.test(t))s+=7;
+    if(/sensitive/.test(t))s+=2;
+  }else if(need==='Weight Support'){
+    if(/weight|trim|light|reduced activity|low fat|low-fat|healthy weight/.test(t))s+=8;
+    if(/senior/.test(t))s+=1;
+  }
+  return s;
+}
+function guideProteinScore(entry){
+  var pref=guideAnswers.protein||'';
+  var types=proteinTypes(entry), t=sectionText(entry);
+  if(pref==='Fish / Salmon')return (types.indexOf('Salmon')>=0 || types.indexOf('Fish')>=0 || /fish|salmon|trout|herring|whitefish|sardine|mackerel/.test(t))?5:0;
+  return types.indexOf(pref)>=0?5:0;
+}
+function getGuideRecommendations(){
+  var all=getCompletedProductCatalog();
+  var scored=all.map(function(entry){
+    var score=0;
+    if(guideAgeMatches(entry))score+=6; else score-=8;
+    score+=guideNeedScore(entry);
+    score+=guideProteinScore(entry);
+    if(entry.product && entry.product.carriedSize)score+=1;
+    return {entry:entry,score:score};
+  }).filter(function(x){return x.score>0});
+  scored.sort(function(a,b){
+    if(b.score!==a.score)return b.score-a.score;
+    return (a.entry.brand+' '+a.entry.product.name).localeCompare(b.entry.brand+' '+b.entry.product.name);
+  });
+  var out=[], seen={};
+  for(var i=0;i<scored.length && out.length<6;i++){
+    var key=scored[i].entry.brand+'|'+scored[i].entry.product.name;
+    if(!seen[key]){seen[key]=true;out.push(scored[i].entry)}
+  }
+  return out;
+}
+function guideMatchReason(entry){
+  var reasons=[];
+  if(guideAgeMatches(entry))reasons.push(guideAnswers.age==='All Life Stages'?'life-stage flexibility':guideAnswers.age.toLowerCase()+' life stage');
+  if(guideNeedScore(entry)>=5)reasons.push((guideAnswers.need||'').toLowerCase());
+  if(guideProteinScore(entry)>0)reasons.push((guideAnswers.protein||'').toLowerCase()+' preference');
+  return reasons.length?'Good match for '+reasons.slice(0,2).join(' + ')+'.':'A useful starting option based on your answers.';
+}
+function buildGuideRecommendationCard(entry){
+  var p=entry.product, c=document.createElement('div');
+  c.className='guide-rec-card';
+  c.innerHTML='<div class="guide-rec-image-wrap"><img src="'+p.image+'" alt="'+p.name+'" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'image-missing\')"><div class="image-fallback">'+entry.brand+'<br>Product Image</div></div>'+
+    '<div class="guide-rec-body"><div class="guide-rec-brand">'+entry.brand+'</div><div class="guide-rec-name">'+p.name+'</div><div class="guide-rec-reason">'+guideMatchReason(entry)+'</div><button class="guide-rec-btn" type="button">View Product Details</button></div>';
+  c.querySelector('.guide-rec-btn').onclick=function(){openBrandProduct(p,entry.brand)};
+  c.querySelector('.guide-rec-image-wrap').onclick=function(){openBrandProduct(p,entry.brand)};
+  return c;
+}
+function showGuideResult(){
+  hideAllScreens();
+  document.getElementById('guideSummary').innerHTML='You selected <strong>'+guideAnswers.age+'</strong>, focused on <strong>'+guideAnswers.need+'</strong>, with <strong>'+guideAnswers.protein+'</strong>.';
+  var grid=document.getElementById('guideRecommendations');
+  grid.innerHTML='';
+  var recs=getGuideRecommendations();
+  recs.forEach(function(entry){grid.appendChild(buildGuideRecommendationCard(entry))});
+  document.getElementById('guideResultNote').innerHTML=recs.length?'Here are Professor Polly\'s best starting points from foods already in this kiosk. Tap any recommendation to see the full product details.':'No strong matches were found with those exact choices. Try the guide again with a different protein or nutrition goal.';
+  document.getElementById('guideResultScreen').className='screen content-screen active-screen';window.scrollTo(0,0)
+}
 document.addEventListener('contextmenu',function(e){e.preventDefault()});
 var idleTimer;function resetIdleTimer(){clearTimeout(idleTimer);idleTimer=setTimeout(showHome,180000)}
 document.addEventListener('click',resetIdleTimer);document.addEventListener('touchstart',resetIdleTimer);resetIdleTimer();
