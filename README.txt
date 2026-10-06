@@ -165,3 +165,10 @@ V7.48 updates:
 - Added ORIJEN Amazing Grains Puppy Large.
 - Added a Large Breed filter to the ORIJEN page.
 - Retained V7.47 image cleanup and higher Shop by Brand positioning.
+
+
+V7.49 updates:
+- Added Open Farm to Shop by Brand.
+- Added Open Farm Grain-Free Dry, RawMix, and Epic Blend sections from archive 24.
+- Shelf photos used only for identifying formulas and stocked sizes.
+- Open Farm cards use clean formula-matched Open Farm packshots.
