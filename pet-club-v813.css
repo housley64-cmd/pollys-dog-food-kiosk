@@ -1,0 +1,188 @@
+
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{
+  font-family:'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif;
+  background:
+    linear-gradient(rgba(5,92,109,.94),rgba(4,72,87,.96)),
+    repeating-linear-gradient(90deg,#773b20 0 44px,#693219 44px 88px);
+  color:#25150d;
+}
+button{font:inherit}
+.petclub-page{
+  width:100vw;height:100vh;
+  display:grid;
+  grid-template-rows:64px minmax(0,1fr);
+  padding:10px 14px 14px;
+  gap:10px;
+}
+.petclub-topbar{
+  display:grid;
+  grid-template-columns:210px 1fr 150px;
+  align-items:center;
+  gap:12px;
+}
+.topbar-title{
+  text-align:center;
+  font-weight:900;
+  font-size:clamp(24px,3vw,42px);
+  color:#fff;
+  letter-spacing:1px;
+  text-shadow:0 3px 0 #173b43,0 5px 8px rgba(0,0,0,.3);
+}
+.nav-btn{
+  min-height:46px;
+  border:4px solid #56301a;
+  border-radius:12px;
+  background:linear-gradient(#f2cf83,#c88942);
+  color:#351c0d;
+  font-weight:900;
+  box-shadow:0 4px 0 rgba(31,15,7,.32);
+}
+.nav-btn:active{transform:translateY(2px)}
+.petclub-content{
+  min-height:0;
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(350px,.62fr);
+  gap:14px;
+}
+.flyer-panel,.join-panel{
+  min-height:0;
+  border:5px solid #4e2c19;
+  border-radius:18px;
+  box-shadow:0 9px 18px rgba(21,10,4,.34);
+  overflow:hidden;
+}
+.flyer-panel{
+  background:#d7f7fb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px;
+}
+.flyer-panel img{
+  display:block;
+  height:100%;
+  width:100%;
+  object-fit:contain;
+  object-position:center;
+}
+.join-panel{
+  background:#fff8e7;
+  padding:12px 14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:8px;
+}
+.join-heading{
+  text-align:center;
+  font-size:clamp(22px,2.3vw,34px);
+  font-weight:1000;
+  color:#0b8196;
+  text-shadow:0 2px 0 #fff;
+}
+.price-card,.free-card,.how-card,.astro-card,.ask-card{
+  border:3px solid #0b9db3;
+  border-radius:14px;
+  padding:9px 11px;
+}
+.price-card{
+  background:linear-gradient(#fff2a8,#ffd04f);
+  text-align:center;
+  border-color:#d88a14;
+}
+.save-line{font-size:15px;font-weight:1000;color:#15414a}
+.price{
+  font-size:clamp(42px,4.5vw,68px);
+  line-height:.95;
+  font-weight:1000;
+  color:#ee8f12;
+  -webkit-text-stroke:1.5px #321b0f;
+}
+.year-line{font-size:14px;font-weight:900}
+.free-card{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  background:#e8fbfd;
+}
+.free-word{
+  font-size:30px;
+  font-weight:1000;
+  color:#ef9715;
+  -webkit-text-stroke:1px #321b0f;
+}
+.free-copy{
+  font-size:16px;
+  line-height:1.05;
+  font-weight:1000;
+  text-align:center;
+}
+.how-card{background:#fff}
+.how-card h2{
+  margin:0 0 5px;
+  text-align:center;
+  color:#0b8196;
+  font-size:20px;
+}
+.how-card p{
+  margin:3px 0 6px 34px;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  line-height:1.2;
+}
+.step-num{
+  float:left;
+  width:26px;height:26px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f5a619;
+  color:#fff;
+  font-weight:1000;
+  border:2px solid #6d3d13;
+}
+.astro-card{
+  background:#e8fbfd;
+  text-align:center;
+}
+.astro-title{
+  color:#be2b20;
+  font-size:18px;
+  font-weight:1000;
+}
+.astro-copy{
+  margin-top:3px;
+  font-family:Arial,sans-serif;
+  font-size:13px;
+  line-height:1.2;
+  font-weight:700;
+}
+.ask-card{
+  background:linear-gradient(#61d8e4,#1ba9bd);
+  color:#fff;
+  border-color:#0c6878;
+  text-align:center;
+}
+.ask-card strong{display:block;font-size:18px}
+.ask-card span{display:block;font-size:13px;font-weight:900;margin-top:2px}
+@media(max-width:950px){
+  .petclub-page{grid-template-rows:54px minmax(0,1fr);padding:7px 9px 9px}
+  .petclub-topbar{grid-template-columns:170px 1fr 120px}
+  .nav-btn{min-height:40px;font-size:13px}
+  .petclub-content{grid-template-columns:1.08fr .64fr;gap:9px}
+  .join-panel{padding:8px 9px;gap:5px}
+  .join-heading{font-size:20px}
+  .price{font-size:42px}
+  .save-line,.year-line{font-size:11px}
+  .free-word{font-size:23px}
+  .free-copy{font-size:12px}
+  .how-card h2{font-size:15px}
+  .how-card p{font-size:10.5px;margin-left:30px;margin-bottom:4px}
+  .step-num{width:22px;height:22px;font-size:11px}
+  .astro-title,.ask-card strong{font-size:14px}
+  .astro-copy,.ask-card span{font-size:10.5px}
+}
