@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#6f2a16">
 <title>Polly's Pets Dog Food Finder</title>
-<link rel="stylesheet" href="style-v798.css?v=798">
+<link rel="stylesheet" href="style-v799.css?v=799">
 </head>
 <body>
 <div class="app-shell">
@@ -28,11 +28,18 @@
   </section>
 </main>
 
-<main id="brandScreen" class="screen brand-picture-screen">
-  <section class="brand-scene-frame" aria-label="Shop by Brand in Grandpa Norm's Chow Barn">
-    <div id="brandGrid" class="brand-scene-grid"></div>
-    <button class="brand-scene-nav brand-scene-back" onclick="showHome()" aria-label="Back"></button>
-    <button class="brand-scene-nav brand-scene-home" onclick="showHome()" aria-label="Home"></button>
+<main id="brandScreen" class="screen standalone-brand-screen">
+  <section class="standalone-brand-page" aria-label="Shop by Brand in Grandpa Norm's Chow Barn">
+    <div class="standalone-brand-header">
+      <div class="standalone-brand-kicker">GRANDPA NORM'S CHOW BARN</div>
+      <h1>SHOP BY BRAND</h1>
+      <p>Premium dog food for healthy, happy dogs</p>
+    </div>
+    <div id="brandGrid" class="standalone-brand-grid"></div>
+    <div class="standalone-brand-nav">
+      <button class="standalone-nav-btn" onclick="showHome()">← Back</button>
+      <button class="standalone-nav-btn" onclick="showHome()">Home</button>
+    </div>
   </section>
 </main>
 
@@ -1171,6 +1178,6 @@
 
 </div>
 <script src="brands-v795.js?v=796"></script>
-<script src="app-v797.js?v=797"></script>
+<script src="app-v799.js?v=799"></script>
 </body>
 </html>
