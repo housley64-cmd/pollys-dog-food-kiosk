@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="theme-color" content="#8f3020">
 <title>Search Dog Foods - Polly's Pets</title>
-<link rel="stylesheet" href="search-v803.css?v=803">
+<link rel="stylesheet" href="search-v805.css?v=805">
 </head>
 <body>
 <main class="search-shell">
@@ -18,15 +18,17 @@
     <h1>🔍 Search Dog Foods</h1>
     <p>Search by brand, recipe, protein, life stage, or nutrition need.</p>
   </section>
-  <section class="search-row">
+  <form id="searchForm" class="search-row" action="#" method="get">
     <input id="searchInput" type="search" autocomplete="off" spellcheck="false"
+      enterkeyhint="search" inputmode="search"
       placeholder="Try: Fromm, salmon, puppy, senior, grain free...">
+    <button id="searchButton" type="submit">SEARCH</button>
     <button id="clearSearch" type="button">Clear</button>
-  </section>
+  </form>
   <div id="status" class="status">Start typing to search the foods Polly's carries.</div>
   <section id="results" class="results"></section>
 </main>
 <script src="brands-v795.js?v=796"></script>
-<script src="search-v803.js?v=803"></script>
+<script src="search-v805.js?v=805"></script>
 </body>
 </html>
