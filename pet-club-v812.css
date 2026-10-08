@@ -1,0 +1,160 @@
+
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{
+  font-family:'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif;
+  background:
+    linear-gradient(rgba(5,92,109,.94),rgba(4,72,87,.96)),
+    repeating-linear-gradient(90deg,#773b20 0 44px,#693219 44px 88px);
+  color:#25150d;
+}
+button{font:inherit}
+.petclub-page{
+  width:100vw;height:100vh;
+  display:grid;
+  grid-template-rows:64px minmax(0,1fr);
+  padding:10px 14px 14px;
+  gap:10px;
+}
+.petclub-topbar{
+  display:grid;
+  grid-template-columns:210px 1fr 150px;
+  align-items:center;
+  gap:12px;
+}
+.topbar-title{
+  text-align:center;
+  font-weight:900;
+  font-size:clamp(24px,3vw,42px);
+  color:#fff;
+  letter-spacing:1px;
+  text-shadow:0 3px 0 #173b43,0 5px 8px rgba(0,0,0,.3);
+}
+.nav-btn{
+  min-height:46px;
+  border:4px solid #56301a;
+  border-radius:12px;
+  background:linear-gradient(#f2cf83,#c88942);
+  color:#351c0d;
+  font-weight:900;
+  box-shadow:0 4px 0 rgba(31,15,7,.32);
+}
+.nav-btn:active{transform:translateY(2px)}
+.petclub-content{
+  min-height:0;
+  display:grid;
+  grid-template-columns:minmax(0,1.03fr) minmax(360px,.72fr);
+  gap:14px;
+}
+.flyer-panel,.info-panel{
+  min-height:0;
+  border:5px solid #4e2c19;
+  border-radius:18px;
+  box-shadow:0 9px 18px rgba(21,10,4,.34);
+  overflow:hidden;
+}
+.flyer-panel{
+  background:#d7f7fb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:7px;
+}
+.flyer-panel img{
+  display:block;
+  height:100%;
+  width:100%;
+  object-fit:contain;
+  object-position:center;
+}
+.info-panel{
+  background:
+    radial-gradient(circle at 10% 10%,rgba(48,183,201,.10) 0 12px,transparent 13px),
+    #fffaf0;
+  padding:14px 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:9px;
+}
+.mini-title{
+  text-align:center;
+  font-size:clamp(17px,1.7vw,25px);
+  font-weight:900;
+  color:#087f96;
+}
+.price{
+  margin:-5px 0 -8px;
+  text-align:center;
+  font-size:clamp(50px,5.6vw,82px);
+  line-height:1;
+  font-weight:1000;
+  color:#f6a619;
+  -webkit-text-stroke:2px #24150c;
+  text-shadow:0 4px 0 rgba(0,0,0,.12);
+}
+.per-year{text-align:center;font-size:16px;font-weight:900}
+.free-box,.astro-box,.join-box,.benefit-box{
+  border-radius:14px;
+  border:3px solid #14a8bd;
+  padding:10px 12px;
+}
+.free-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  background:#e5f9fb;
+  text-align:center;
+}
+.free-box strong{
+  font-size:32px;
+  color:#f49b15;
+  -webkit-text-stroke:1px #3b2112;
+}
+.free-box span{font-size:18px;font-weight:900}
+.benefit-box{background:#fff3d5}
+.benefit-box h2{
+  margin:0 0 5px;
+  text-align:center;
+  color:#0b8298;
+  font-size:21px;
+}
+.benefit-box p{
+  margin:5px 0;
+  font-family:Arial,sans-serif;
+  font-size:14px;
+  line-height:1.22;
+}
+.benefit-box b{
+  font-family:'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif;
+  color:#dc8610;
+  font-size:15px;
+}
+.astro-box{
+  background:#e9fbfd;
+  text-align:center;
+}
+.astro-box strong{display:block;color:#b92b20;font-size:19px}
+.astro-box span{font-weight:900;color:#087f96}
+.join-box{
+  background:linear-gradient(#ffdd77,#f1a92f);
+  border-color:#8a501d;
+  text-align:center;
+}
+.join-box strong{display:block;font-size:21px}
+.join-box span{display:block;margin-top:3px;font-size:15px;font-weight:900}
+@media(max-width:950px){
+  .petclub-page{grid-template-rows:54px minmax(0,1fr);padding:7px 9px 9px}
+  .petclub-topbar{grid-template-columns:170px 1fr 120px}
+  .nav-btn{min-height:40px;font-size:13px}
+  .petclub-content{grid-template-columns:1.08fr .72fr;gap:9px}
+  .info-panel{padding:8px 10px;gap:6px}
+  .price{font-size:50px}
+  .free-box strong{font-size:25px}
+  .free-box span{font-size:14px}
+  .benefit-box p{font-size:11.5px;margin:3px 0}
+  .benefit-box b{font-size:12.5px}
+  .astro-box strong,.join-box strong{font-size:15px}
+  .astro-box span,.join-box span{font-size:12px}
+}
