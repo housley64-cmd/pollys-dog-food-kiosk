@@ -1,0 +1,61 @@
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{
+  font-family:'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif;
+  background:linear-gradient(180deg,#0d899d,#075a6b);
+}
+.rewards-page{
+  width:100vw;height:100vh;
+  display:grid;
+  grid-template-rows:64px minmax(0,1fr);
+  gap:10px;
+  padding:10px 14px 14px;
+}
+.rewards-topbar{
+  display:grid;
+  grid-template-columns:210px 1fr 150px;
+  gap:12px;
+  align-items:center;
+}
+.topbar-title{
+  text-align:center;
+  color:#fff;
+  font-size:clamp(23px,2.8vw,40px);
+  font-weight:1000;
+  letter-spacing:.5px;
+  text-shadow:0 3px 0 #173b43,0 5px 8px rgba(0,0,0,.3);
+}
+.nav-btn{
+  min-height:46px;
+  border:4px solid #56301a;
+  border-radius:12px;
+  background:linear-gradient(#f2cf83,#c88942);
+  color:#351c0d;
+  font-weight:900;
+  box-shadow:0 4px 0 rgba(31,15,7,.32);
+}
+.nav-btn:active{transform:translateY(2px)}
+.poster-wrap{
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border:5px solid #4e2c19;
+  border-radius:18px;
+  background:#fff4d9;
+  box-shadow:0 9px 18px rgba(21,10,4,.34);
+}
+.poster-wrap img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+@media(max-width:950px){
+  .rewards-page{grid-template-rows:54px minmax(0,1fr);padding:7px 9px 9px}
+  .rewards-topbar{grid-template-columns:170px 1fr 120px}
+  .nav-btn{min-height:40px;font-size:13px}
+  .topbar-title{font-size:21px}
+}
