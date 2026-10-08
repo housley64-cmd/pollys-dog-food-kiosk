@@ -1,0 +1,845 @@
+var guideStep=0,guideAnswers={},currentProduct=null,currentBrand='Fromm';
+var guideQuestions=[
+  {key:'age',title:'How old is your dog?',subtitle:'Choose the closest match.',answers:['Puppy','Adult','Senior','All Life Stages']},
+  {key:'need',title:'What is most important to you?',subtitle:'Choose the closest match.',answers:['Everyday Nutrition','Sensitive Stomach','Skin & Coat','Weight Support']},
+  {key:'protein',title:'Any protein preference?',subtitle:'Choose a protein.',answers:['Chicken','Beef','Lamb','Fish / Salmon']}
+];
+
+function hideAllScreens(){['homeScreen','brandScreen','brandIntroScreen','frommIntroScreen','frommScreen','acanaIntroScreen','tasteWildIntroScreen','scienceDietIntroScreen','squarePetIntroScreen','ultimatesIntroScreen','acanaScreen','tasteWildScreen','scienceDietScreen','ultimatesScreen','squarePetScreen','nuloScreen','nutriSourceScreen','diamondNaturalsScreen','redbarnScreen','zignatureScreen','orijenScreen','openFarmScreen','kohaScreen','caninexScreen','myPerfectPetScreen','aPupAboveScreen','tuckersScreen','orijenFreshPreyScreen','omasPrideScreen','ocRawScreen','muttGutScreen','primalScreen','productDetailScreen','brandDetailScreen','sectionScreen','guideScreen','guideResultScreen'].forEach(function(id){var el=document.getElementById(id);if(el){el.className='screen';}})}
+function showHome(){hideAllScreens();document.getElementById('homeScreen').className='screen active-screen';guideStep=0;guideAnswers={};window.scrollTo(0,0)}
+function showBrandScreen(){hideAllScreens();buildBrandGrid();document.getElementById('brandScreen').className='screen standalone-brand-screen active-screen';window.scrollTo(0,0)}
+function showFrommIntro(){hideAllScreens();document.getElementById('frommIntroScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function showFromm(){hideAllScreens();buildFrommProducts(FROMM_PRODUCTS);resetFilterRow(document.querySelectorAll('#frommScreen .filter-btn'));document.querySelector('#frommScreen .filter-btn').className='filter-btn active';document.getElementById('frommScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function showAcanaIntro(){hideAllScreens();document.getElementById('acanaIntroScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function showAcana(){hideAllScreens();buildAcanaProducts(ACANA_PRODUCTS);resetFilterRow(document.querySelectorAll('#acanaScreen .filter-btn'));document.querySelector('#acanaScreen .filter-btn').className='filter-btn active';document.getElementById('acanaScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function showTasteWildIntro(){hideAllScreens();document.getElementById('tasteWildIntroScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function showTasteWild(){
+  hideAllScreens();
+  buildTasteWildProducts(TASTE_WILD_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#tasteWildScreen .filter-btn'));
+  document.querySelector('#tasteWildScreen .filter-btn').className='filter-btn active';
+  document.getElementById('tasteWildScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+function showScienceDietIntro(){hideAllScreens();document.getElementById('scienceDietIntroScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function showScienceDiet(){
+  hideAllScreens();
+  buildScienceDietProducts(SCIENCE_DIET_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#scienceDietScreen .filter-btn'));
+  document.querySelector('#scienceDietScreen .filter-btn').className='filter-btn active';
+  document.getElementById('scienceDietScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+function showUltimatesIntro(){hideAllScreens();document.getElementById('ultimatesIntroScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function showUltimates(){
+  hideAllScreens();
+  buildUltimatesProducts(ULTIMATES_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#ultimatesScreen .filter-btn'));
+  document.querySelector('#ultimatesScreen .filter-btn').className='filter-btn active';
+  document.getElementById('ultimatesScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+function showSquarePetIntro(){hideAllScreens();document.getElementById('squarePetIntroScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function showSquarePet(){
+  hideAllScreens();
+  buildSquarePetProducts(SQUAREPET_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#squarePetScreen .filter-btn'));
+  document.querySelector('#squarePetScreen .filter-btn').className='filter-btn active';
+  document.getElementById('squarePetScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+
+function showNulo(){
+  hideAllScreens();
+  buildNuloProducts(NULO_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#nuloScreen .filter-btn'));
+  document.querySelector('#nuloScreen .filter-btn').className='filter-btn active';
+  document.getElementById('nuloScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+
+function showNutriSource(){
+  hideAllScreens();
+  buildNutriSourceProducts(NUTRISOURCE_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#nutriSourceScreen .filter-btn'));
+  document.querySelector('#nutriSourceScreen .filter-btn').className='filter-btn active';
+  document.getElementById('nutriSourceScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+
+function showDiamondNaturals(){
+  hideAllScreens();
+  buildDiamondNaturalsProducts(DIAMOND_NATURALS_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#diamondNaturalsScreen .filter-btn'));
+  document.querySelector('#diamondNaturalsScreen .filter-btn').className='filter-btn active';
+  document.getElementById('diamondNaturalsScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+
+function showRedbarn(){
+  hideAllScreens();
+  buildRedbarnProducts(REDBARN_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#redbarnScreen .filter-btn'));
+  document.querySelector('#redbarnScreen .filter-btn').className='filter-btn active';
+  document.getElementById('redbarnScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+
+function showZignature(){
+  hideAllScreens();
+  buildZignatureProducts(ZIGNATURE_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#zignatureScreen .filter-btn'));
+  document.querySelector('#zignatureScreen .filter-btn').className='filter-btn active';
+  document.getElementById('zignatureScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+
+function showOrijen(){
+  hideAllScreens();
+  buildOrijenProducts(ORIJEN_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#orijenScreen .filter-btn'));
+  document.querySelector('#orijenScreen .filter-btn').className='filter-btn active';
+  document.getElementById('orijenScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+
+function resetFilterRow(nodes){nodes.forEach(function(b){b.className='filter-btn'})}
+
+function showOpenFarm(){
+  hideAllScreens();
+  buildOpenFarmProducts(OPEN_FARM_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#openFarmScreen .filter-btn'));
+  document.querySelector('#openFarmScreen .filter-btn').className='filter-btn active';
+  document.getElementById('openFarmScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+
+
+function buildOpenFarmProducts(items){
+  var g=document.getElementById('openFarmProductGrid');
+  if(!g){ return; }
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'Open Farm','zignature-card'));});
+}
+function filterOpenFarm(filter,btn){
+  document.querySelectorAll('#openFarmScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  if(btn){btn.className='filter-btn active';}
+  if(filter==='All'){buildOpenFarmProducts(OPEN_FARM_PRODUCTS);return;}
+  var f=OPEN_FARM_PRODUCTS.filter(function(p){
+    var tags=p.tags||[];
+    return p.line===filter || (p.life||'').indexOf(filter)>=0 || tags.indexOf(filter)>=0;
+  });
+  buildOpenFarmProducts(f);
+}
+
+
+function showKoha(){
+  hideAllScreens();
+  buildKohaProducts(KOHA_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#kohaScreen .filter-btn'));
+  document.querySelector('#kohaScreen .filter-btn').className='filter-btn active';
+  document.getElementById('kohaScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+function buildKohaProducts(items){
+  var g=document.getElementById('kohaProductGrid');
+  if(!g){return;}
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'KOHA','zignature-card'));});
+}
+function filterKoha(filter,btn){
+  document.querySelectorAll('#kohaScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  if(btn){btn.className='filter-btn active';}
+  if(filter==='All'){buildKohaProducts(KOHA_PRODUCTS);return;}
+  var f=KOHA_PRODUCTS.filter(function(p){var tags=p.tags||[];return p.line===filter || (p.life||'').indexOf(filter)>=0 || tags.indexOf(filter)>=0 || p.protein===filter;});
+  buildKohaProducts(f);
+}
+
+
+function showCanineX(){
+  hideAllScreens();
+  buildCanineXProducts(CANINEX_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#caninexScreen .filter-btn'));
+  document.querySelector('#caninexScreen .filter-btn').className='filter-btn active';
+  document.getElementById('caninexScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+function buildCanineXProducts(items){
+  var g=document.getElementById('caninexProductGrid');
+  if(!g){return;}
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'CanineX','zignature-card'));});
+}
+function filterCanineX(filter,btn){
+  document.querySelectorAll('#caninexScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  if(btn){btn.className='filter-btn active';}
+  if(filter==='All'){buildCanineXProducts(CANINEX_PRODUCTS);return;}
+  var f=CANINEX_PRODUCTS.filter(function(p){
+    var tags=p.tags||[];
+    return p.line===filter || (p.life||'').indexOf(filter)>=0 || tags.indexOf(filter)>=0 || p.protein===filter;
+  });
+  buildCanineXProducts(f);
+}
+
+
+function showMyPerfectPet(){
+  hideAllScreens();buildMyPerfectPetProducts(MY_PERFECT_PET_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#myPerfectPetScreen .filter-btn'));
+  document.querySelector('#myPerfectPetScreen .filter-btn').className='filter-btn active';
+  document.getElementById('myPerfectPetScreen').className='screen content-screen active-screen';window.scrollTo(0,0);
+}
+function buildMyPerfectPetProducts(items){var g=document.getElementById('myPerfectPetProductGrid');g.innerHTML='';items.forEach(function(p){g.appendChild(buildProductCard(p,'My Perfect Pet','category-card'));});}
+function filterMyPerfectPet(filter,btn){
+  document.querySelectorAll('#myPerfectPetScreen .filter-btn').forEach(function(b){b.className='filter-btn'});if(btn)btn.className='filter-btn active';
+  if(filter==='All'){buildMyPerfectPetProducts(MY_PERFECT_PET_PRODUCTS);return;}
+  buildMyPerfectPetProducts(MY_PERFECT_PET_PRODUCTS.filter(function(p){var t=((p.name||'')+' '+(p.line||'')+' '+(p.protein||'')+' '+((p.tags||[]).join(' '))).toLowerCase();return t.indexOf(filter.toLowerCase())>=0;}));
+}
+function showAPupAbove(){
+  hideAllScreens();buildAPupAboveProducts(A_PUP_ABOVE_COLD_PRODUCTS);
+  resetFilterRow(document.querySelectorAll('#aPupAboveScreen .filter-btn'));
+  document.querySelector('#aPupAboveScreen .filter-btn').className='filter-btn active';
+  document.getElementById('aPupAboveScreen').className='screen content-screen active-screen';window.scrollTo(0,0);
+}
+function buildAPupAboveProducts(items){var g=document.getElementById('aPupAboveProductGrid');g.innerHTML='';items.forEach(function(p){g.appendChild(buildProductCard(p,'A Pup Above','category-card'));});}
+function filterAPupAbove(filter,btn){
+  document.querySelectorAll('#aPupAboveScreen .filter-btn').forEach(function(b){b.className='filter-btn'});if(btn)btn.className='filter-btn active';
+  if(filter==='All'){buildAPupAboveProducts(A_PUP_ABOVE_COLD_PRODUCTS);return;}
+  buildAPupAboveProducts(A_PUP_ABOVE_COLD_PRODUCTS.filter(function(p){var t=((p.name||'')+' '+(p.line||'')+' '+(p.protein||'')+' '+((p.tags||[]).join(' '))).toLowerCase();return t.indexOf(filter.toLowerCase())>=0;}));
+}
+
+
+function showTuckers(){
+  hideAllScreens();
+  buildTuckersProducts(typeof TUCKERS_PRODUCTS!=='undefined'?TUCKERS_PRODUCTS:[]);
+  resetFilterRow(document.querySelectorAll('#tuckersScreen .filter-btn'));
+  var first=document.querySelector('#tuckersScreen .filter-btn'); if(first) first.className='filter-btn active';
+  document.getElementById('tuckersScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+function buildTuckersProducts(items){
+  var g=document.getElementById('tuckersProductGrid'); if(!g)return; g.innerHTML='';
+  if(!items || !items.length){g.innerHTML='<div class="page-card"><h2>Tucker\'s products are loading...</h2><p>Please return Home and reopen Tucker\'s.</p></div>';return;}
+  items.forEach(function(p){g.appendChild(buildProductCard(p,"Tucker's",'category-card'));});
+}
+function filterTuckers(filter,btn){
+  document.querySelectorAll('#tuckersScreen .filter-btn').forEach(function(b){b.className='filter-btn'});if(btn)btn.className='filter-btn active';
+  var items=typeof TUCKERS_PRODUCTS!=='undefined'?TUCKERS_PRODUCTS:[];
+  if(filter==='All'){buildTuckersProducts(items);return;}
+  buildTuckersProducts(items.filter(function(p){var t=((p.name||'')+' '+(p.protein||'')+' '+((p.tags||[]).join(' '))).toLowerCase();return t.indexOf(filter.toLowerCase())>=0;}));
+}
+
+
+function showOrijenFreshPrey(){
+  hideAllScreens();buildOrijenFreshPreyProducts(typeof ORIJEN_FRESHPREY_PRODUCTS!=='undefined'?ORIJEN_FRESHPREY_PRODUCTS:[]);
+  resetFilterRow(document.querySelectorAll('#orijenFreshPreyScreen .filter-btn'));
+  var first=document.querySelector('#orijenFreshPreyScreen .filter-btn');if(first)first.className='filter-btn active';
+  document.getElementById('orijenFreshPreyScreen').className='screen content-screen active-screen';window.scrollTo(0,0);
+}
+function buildOrijenFreshPreyProducts(items){var g=document.getElementById('orijenFreshPreyProductGrid');g.innerHTML='';items.forEach(function(p){g.appendChild(buildProductCard(p,'ORIJEN FreshPrey','category-card'));});}
+function filterOrijenFreshPrey(filter,btn){
+  document.querySelectorAll('#orijenFreshPreyScreen .filter-btn').forEach(function(b){b.className='filter-btn'});if(btn)btn.className='filter-btn active';
+  var items=typeof ORIJEN_FRESHPREY_PRODUCTS!=='undefined'?ORIJEN_FRESHPREY_PRODUCTS:[];
+  if(filter==='All'){buildOrijenFreshPreyProducts(items);return;}
+  buildOrijenFreshPreyProducts(items.filter(function(p){var t=((p.name||'')+' '+(p.protein||'')+' '+((p.tags||[]).join(' '))).toLowerCase();return t.indexOf(filter.toLowerCase())>=0;}));
+}
+
+function showOmasPride(){
+  hideAllScreens();buildOmasPrideProducts(typeof OMAS_PRIDE_PRODUCTS!=='undefined'?OMAS_PRIDE_PRODUCTS:[]);
+  resetFilterRow(document.querySelectorAll('#omasPrideScreen .filter-btn'));
+  var first=document.querySelector('#omasPrideScreen .filter-btn');if(first)first.className='filter-btn active';
+  document.getElementById('omasPrideScreen').className='screen content-screen active-screen';window.scrollTo(0,0);
+}
+function buildOmasPrideProducts(items){var g=document.getElementById('omasPrideProductGrid');g.innerHTML='';items.forEach(function(p){g.appendChild(buildProductCard(p,"Oma's Pride",'category-card'));});}
+function filterOmasPride(filter,btn){
+  document.querySelectorAll('#omasPrideScreen .filter-btn').forEach(function(b){b.className='filter-btn'});if(btn)btn.className='filter-btn active';
+  var items=typeof OMAS_PRIDE_PRODUCTS!=='undefined'?OMAS_PRIDE_PRODUCTS:[];
+  if(filter==='All'){buildOmasPrideProducts(items);return;}
+  buildOmasPrideProducts(items.filter(function(p){var t=((p.name||'')+' '+(p.line||'')+' '+(p.protein||'')+' '+((p.tags||[]).join(' '))).toLowerCase();return t.indexOf(filter.toLowerCase())>=0;}));
+}
+
+
+function showOCRaw(){
+  hideAllScreens();buildOCRawProducts(typeof OC_RAW_PRODUCTS!=='undefined'?OC_RAW_PRODUCTS:[]);
+  resetFilterRow(document.querySelectorAll('#ocRawScreen .filter-btn'));
+  var first=document.querySelector('#ocRawScreen .filter-btn');if(first)first.className='filter-btn active';
+  document.getElementById('ocRawScreen').className='screen content-screen active-screen';window.scrollTo(0,0);
+}
+function buildOCRawProducts(items){var g=document.getElementById('ocRawProductGrid');g.innerHTML='';items.forEach(function(p){g.appendChild(buildProductCard(p,'OC Raw','category-card'));});}
+function filterOCRaw(filter,btn){
+  document.querySelectorAll('#ocRawScreen .filter-btn').forEach(function(b){b.className='filter-btn'});if(btn)btn.className='filter-btn active';
+  var items=typeof OC_RAW_PRODUCTS!=='undefined'?OC_RAW_PRODUCTS:[];
+  if(filter==='All'){buildOCRawProducts(items);return;}
+  buildOCRawProducts(items.filter(function(p){var t=((p.name||'')+' '+(p.line||'')+' '+(p.protein||'')+' '+((p.tags||[]).join(' '))).toLowerCase();return t.indexOf(filter.toLowerCase())>=0;}));
+}
+
+
+
+
+function showPrimal(){
+  hideAllScreens();buildPrimalProducts(typeof PRIMAL_PRODUCTS!=='undefined'?PRIMAL_PRODUCTS:[]);
+  resetFilterRow(document.querySelectorAll('#primalScreen .filter-btn'));
+  var first=document.querySelector('#primalScreen .filter-btn');if(first)first.className='filter-btn active';
+  document.getElementById('primalScreen').className='screen content-screen active-screen';window.scrollTo(0,0);
+}
+function buildPrimalProducts(items){var g=document.getElementById('primalProductGrid');g.innerHTML='';items.forEach(function(p){g.appendChild(buildProductCard(p,'Primal','category-card'));});}
+function filterPrimal(filter,btn){
+  document.querySelectorAll('#primalScreen .filter-btn').forEach(function(b){b.className='filter-btn'});if(btn)btn.className='filter-btn active';
+  var items=typeof PRIMAL_PRODUCTS!=='undefined'?PRIMAL_PRODUCTS:[];
+  if(filter==='All'){buildPrimalProducts(items);return;}
+  buildPrimalProducts(items.filter(function(p){var t=((p.name||'')+' '+(p.line||'')+' '+(p.protein||'')+' '+((p.tags||[]).join(' '))).toLowerCase();return t.indexOf(filter.toLowerCase())>=0;}));
+}
+
+function showMuttGut(){
+  hideAllScreens();buildMuttGutProducts(typeof MUTTGUT_PRODUCTS!=='undefined'?MUTTGUT_PRODUCTS:[]);
+  resetFilterRow(document.querySelectorAll('#muttGutScreen .filter-btn'));
+  var first=document.querySelector('#muttGutScreen .filter-btn');if(first)first.className='filter-btn active';
+  document.getElementById('muttGutScreen').className='screen content-screen active-screen';window.scrollTo(0,0);
+}
+function buildMuttGutProducts(items){var g=document.getElementById('muttGutProductGrid');g.innerHTML='';items.forEach(function(p){g.appendChild(buildProductCard(p,'MuttGut','category-card'));});}
+function filterMuttGut(filter,btn){
+  document.querySelectorAll('#muttGutScreen .filter-btn').forEach(function(b){b.className='filter-btn'});if(btn)btn.className='filter-btn active';
+  var items=typeof MUTTGUT_PRODUCTS!=='undefined'?MUTTGUT_PRODUCTS:[];
+  if(filter==='All'){buildMuttGutProducts(items);return;}
+  buildMuttGutProducts(items.filter(function(p){var t=((p.name||'')+' '+(p.line||'')+' '+(p.protein||'')+' '+((p.tags||[]).join(' '))).toLowerCase();return t.indexOf(filter.toLowerCase())>=0;}));
+}
+
+
+var BRAND_INTRO_INFO={
+  "Fromm":{subtitle:"Family-owned pet nutrition with a wide variety of recipes for different life stages, tastes, and needs.",why:["Wide variety of proteins and recipe styles","Puppy, adult, and senior formulas","Grain-inclusive and grain-free recipe choices","Great option for families who like lots of variety"],pills:["Needs a puppy formula","Needs a senior formula","Likes different proteins","Needs more recipe choices"],families:["Classic","Gold","Four-Star","Nutritionals"],show:showFromm},
+  "ACANA":{subtitle:"Protein-forward recipes with thoughtfully chosen ingredients and options for puppies, adults, and dogs with different ingredient preferences.",why:["High-protein recipe options","Choices for puppies, adults, and different activity levels","Singles recipes for certain protein preferences","Grain-free and wholesome-grain selections"],pills:["Does well on higher protein","Needs a puppy recipe","Needs a focused protein choice","Likes meat-first formulas"],families:["Highest Protein","Singles","Butcher's Favorites","Wholesome Grains","Classics"],show:showAcana},
+  "Taste of the Wild":{subtitle:"Flavorful protein-rich recipes with both grain-free and ancient-grains choices.",why:["Distinct proteins like bison, venison, salmon, lamb, and fowl","Grain-free and ancient-grains recipes","Puppy and small-breed options","PREY simplified recipes"],pills:["Likes fish, bison, or lamb","Needs a puppy food","Needs a small-breed option","Does well with grain-free or ancient grains"],families:["Grain-Free","Ancient Grains","Puppy","Small Breed","PREY"],show:showTasteWild},
+  "NutriSource":{subtitle:"A broad family of everyday and specialty recipes with choices for different proteins, activity levels, and sensitivities.",why:["Many protein choices","Puppy, adult, and performance formulas","PureVita options for focused ingredient needs","Grain-inclusive and grain-free selections"],pills:["Needs lots of recipe choices","Has a favorite protein","Needs an active-dog formula","May benefit from a focused recipe"],families:["NutriSource","Grain-Free","Performance","Choice","PureVita"],show:showNutriSource},
+  "Diamond Naturals":{subtitle:"Everyday nutrition with animal proteins and added fruits and vegetables across puppy, adult, senior, and size-specific recipes.",why:["Good everyday value","Puppy and adult choices","Small & medium and large-breed puppy options","Different protein choices"],pills:["Needs a puppy formula","Needs a large-breed option","Needs a senior food","Wants straightforward everyday nutrition"],families:["Puppy","Adult","Senior","Large Breed","Small & Medium Breed"],show:showDiamondNaturals},
+  "Science Diet":{subtitle:"Science-led nutrition with recipes designed around life stage, size, and common nutritional needs.",why:["Puppy, adult, and senior recipes","Small-breed and size-focused options","Sensitive stomach and skin choices","Weight, digestive, and mobility support formulas"],pills:["Needs a puppy or senior formula","Has a sensitive stomach or skin","Needs weight support","Could use mobility support"],families:["Puppy","Adult","Senior","Sensitive","Digestive","Weight","Mobility"],show:showScienceDiet},
+  "Ultimates":{subtitle:"Premium dry dog food with everyday, puppy, sensitive, grain-free, and all-life-stages choices.",why:["Everyday adult formulas","Puppy recipes","Sensitive-dog choices","Grain-free and all-life-stages selections"],pills:["Needs an everyday dry food","Needs a puppy formula","May need a sensitive recipe","Needs an all-life-stages choice"],families:["Adult","Puppy","Sensitive","Grain-Free","All Life Stages"],show:showUltimates},
+  "SquarePet":{subtitle:"Veterinarian-formulated nutrition with focused recipes for everyday feeding and specific dietary needs.",why:["Veterinarian-formulated recipes","Digestive support options","Sensitive-dog choices","Specialty formulas alongside everyday nutrition"],pills:["Has a sensitive stomach","Needs digestive support","Needs a specialty formula","Does well on premium protein recipes"],families:["Everyday Nutrition","Digestive Support","Sensitive Formulas","Specialty Recipes"],show:showSquarePet},
+  "Nulo":{subtitle:"Protein-focused nutrition with several recipe families for everyday feeding, limited ingredients, and different life stages.",why:["High-protein recipe choices","Puppy and adult options","Limited+ focused recipes","Several grain-inclusive and grain-free selections"],pills:["Does well on higher protein","Needs a puppy food","May need a limited recipe","Likes multiple protein choices"],families:["FreeStyle","Limited+","Culinary Harvest","Frontrunner"],show:showNulo},
+  "Tucker's":{subtitle:"Frozen raw nutrition with complete-and-balanced 95/5 recipes in several protein choices.",why:["Frozen raw format","Simple meat-forward recipes","Multiple protein choices","Convenient portioned frozen options"],pills:["Already eats raw","Needs a frozen raw option","Likes rotating proteins","Prefers meat-forward recipes"],families:["95/5 Raw Frozen"],show:showTuckers},
+  "A Pup Above":{subtitle:"Gently cooked dog food made for pet parents who want fresh-style meals with visible whole-food ingredients.",why:["Gently cooked format","Fresh-style meals","Multiple protein recipes","Easy refrigerated/frozen meal option"],pills:["Prefers gently cooked food","Is a picky eater","Likes fresh-style meals","Needs a different texture from kibble"],families:["Gently Cooked"],show:showAPupAbove},
+  "OC Raw":{subtitle:"Frozen raw diets with complete-and-balanced recipes plus meat-only options for experienced raw feeders.",why:["Frozen raw format","Complete-and-balanced recipes","Many protein choices","Meat-only selections for custom feeding plans"],pills:["Already eats raw","Needs a new raw protein","Likes rotating proteins","Uses a custom raw-feeding plan"],families:["Complete & Balanced","Meat Only"],show:showOCRaw},
+  "Redbarn":{subtitle:"Protein-forward dry dog food with recipes built around animal proteins and everyday feeding needs.",why:["Meat-forward recipes","Multiple protein options","Everyday dry-food convenience","Different recipe styles within the brand"],pills:["Likes meat-forward kibble","Needs another protein choice","Needs an everyday dry food","Enjoys richer flavors"],families:["First-Five Kibble","Powerfood Fusion"],show:showRedbarn},
+  "Primal":{subtitle:"Raw and fresh-food inspired nutrition with frozen meals, nuggets, patties, and supplemental bone broth.",why:["Frozen raw options","Scoopable Pronto format","Nuggets and patties","Bone broth for supplemental feeding"],pills:["Already feeds raw","Wants an easy scoopable raw option","Likes portioned nuggets or patties","Wants a broth topper"],families:["Pronto","Frozen Nuggets","Frozen Patties","Bone Broth"],show:showPrimal},
+  "Zignature":{subtitle:"Limited-ingredient style recipes centered around distinct animal proteins and simplified protein choices.",why:["Many single-protein style choices","Useful for protein rotation","Grain-free recipe selection","Distinct proteins such as lamb, turkey, fish, and more"],pills:["Needs a focused protein choice","Likes rotating proteins","Needs a grain-free option","Does better with a simpler protein approach"],families:["Zignature Original"],show:showZignature},
+  "ORIJEN":{subtitle:"High-protein recipes featuring a variety of animal ingredients, with both classic and Amazing Grains choices.",why:["High animal-protein emphasis","Puppy, adult, senior, and small-breed choices","Classic grain-free recipes","Amazing Grains selections"],pills:["Does well on high protein","Needs a puppy or senior food","Needs a small-breed option","Wants grain-free or grains"],families:["ORIJEN","Amazing Grains"],show:showOrijen},
+  "Open Farm":{subtitle:"Premium recipes known for ingredient transparency, with dry food, RawMix, and Epic Blend choices.",why:["Ingredient transparency focus","Dry and raw-inspired options","Multiple protein choices","RawMix and Epic Blend formats"],pills:["Cares about ingredient sourcing","Wants a raw-inspired dry food","Likes protein variety","Needs a premium everyday option"],families:["Grain-Free Dry","RawMix","Epic Blend"],show:showOpenFarm},
+  "KOHA":{subtitle:"Focused limited-ingredient canned nutrition designed for dogs who may do better with simpler recipes.",why:["Limited-ingredient approach","Simple protein-focused recipes","Wet-food format","Useful when a simpler diet is preferred"],pills:["Prefers wet food","Needs a simpler recipe","Has ingredient sensitivities","Needs an easy-to-serve canned option"],families:["Limited Ingredient Bland Diet"],show:showKoha},
+  "CanineX":{subtitle:"Performance-focused nutrition designed for active and working dogs with higher energy demands.",why:["Built for active dogs","Performance-oriented nutrition","High-energy everyday feeding","Protein-forward formula"],pills:["Is very active","Works or trains regularly","Needs more calorie-dense nutrition","Needs a performance-focused diet"],families:["Performance Nutrition"],show:showCanineX},
+  "My Perfect Pet":{subtitle:"Gently cooked frozen dog food made with whole-food ingredients and served as convenient frozen portions.",why:["Gently cooked frozen format","Whole-food style recipes","Easy portioned feeding","A softer alternative to dry kibble"],pills:["Prefers softer food","Is a picky eater","Needs a gently cooked option","Likes fresh-style meals"],families:["Gently Cooked Frozen"],show:showMyPerfectPet},
+  "ORIJEN FreshPrey":{subtitle:"Fresh and frozen recipes inspired by ORIJEN's animal-protein approach, prepared in a soft fresh-food format.",why:["Fresh and frozen format","Animal-protein focused recipes","Soft texture","Convenient alternative to traditional dry food"],pills:["Prefers fresh-style food","Likes meat-forward recipes","Needs a softer texture","Wants a refrigerated or frozen option"],families:["FreshPrey"],show:showOrijenFreshPrey},
+  "Oma's Pride":{subtitle:"Frozen raw foods offering complete meals, proteins, and whole-food raw options for experienced raw feeders.",why:["Frozen raw choices","Complete meal options","Single-protein and whole-food items","Useful for raw-feeding variety"],pills:["Already eats raw","Likes rotating proteins","Needs a frozen raw option","Uses a custom raw-feeding plan"],families:["Woof Complete","Raw Proteins","Whole Foods"],show:showOmasPride},
+  "MuttGut":{subtitle:"Raw frozen and gently cooked sous-vide dog food with simple protein choices in several convenient formats.",why:["Raw frozen and gently cooked choices","Multiple proteins","Nuggets, patties, and bulk formats","Flexible option for different feeding styles"],pills:["Already feeds raw","Wants gently cooked food","Likes rotating proteins","Needs different portion formats"],families:["Raw Frozen","Sous Vide / Gently Cooked"],show:showMuttGut}
+};
+
+function showBrandIntro(name){
+  var d=BRAND_INTRO_INFO[name];
+  if(!d){openBrandDirect(name);return}
+  hideAllScreens();
+  document.getElementById('brandIntroTitle').textContent=name;
+  document.getElementById('brandIntroSubtitle').textContent=d.subtitle;
+  document.getElementById('brandIntroWhyTitle').textContent='Why pet parents choose '+name;
+  var why=document.getElementById('brandIntroWhy');why.innerHTML='';d.why.forEach(function(x){var li=document.createElement('li');li.textContent=x;why.appendChild(li)});
+  var pills=document.getElementById('brandIntroPills');pills.innerHTML='';d.pills.forEach(function(x){var s=document.createElement('span');s.className='brand-pill';s.textContent=x;pills.appendChild(s)});
+  document.getElementById('brandIntroFamilies').innerHTML=d.families.join('<br>');
+  var btn=document.getElementById('brandIntroProductsBtn');btn.textContent='SEE THE '+name.toUpperCase()+' FOODS WE CARRY →';btn.onclick=d.show;
+  var backBtn=document.getElementById('brandIntroBackBtn');
+  var coldBrands=['My Perfect Pet','A Pup Above',"Tucker's",'ORIJEN FreshPrey',"Oma's Pride",'OC Raw','MuttGut','Primal'];
+  if(coldBrands.indexOf(name)>=0){
+    backBtn.textContent='← Back to Cold Dog Food';
+    backBtn.onclick=function(){openSection('Cold Dog Food','Explore refrigerated and frozen foods.')};
+  }else{
+    backBtn.textContent='← All Brands';
+    backBtn.onclick=showBrandScreen;
+  }
+  document.getElementById('brandIntroScreen').className='screen content-screen active-screen';
+  window.scrollTo(0,0);
+}
+
+function openBrandDirect(name){
+  if(name==='Primal'){showPrimal();return}if(name==='MuttGut'){showMuttGut();return}if(name==='OC Raw'){showOCRaw();return}if(name==="Tucker's"){showTuckers();return}if(name==='A Pup Above'){showAPupAbove();return}if(name==='My Perfect Pet'){showMyPerfectPet();return}if(name==='Fromm'){showFromm();return}if(name==='ACANA'){showAcana();return}if(name==='Taste of the Wild'){showTasteWild();return}if(name==='Science Diet'){showScienceDiet();return}if(name==='Ultimates'){showUltimates();return}if(name==='SquarePet'){showSquarePet();return}if(name==='Nulo'){showNulo();return}if(name==='NutriSource'){showNutriSource();return}if(name==='Diamond Naturals'){showDiamondNaturals();return}if(name==='Redbarn'){showRedbarn();return}if(name==='Zignature'){showZignature();return}if(name==='ORIJEN'){showOrijen();return}if(name==='Open Farm'){showOpenFarm();return}if(name==='KOHA'){showKoha();return}if(name==='CanineX'){showCanineX();return}
+}
+
+function buildBrandGrid(){var g=document.getElementById('brandGrid');if(g.children.length)return;DOG_FOOD_BRANDS.forEach(function(b,i){var x=document.createElement('button');x.className='brand-sign wood-brand-sign';x.innerHTML='<span class="brand-name">'+b.name+'</span>';x.title=b.note||'';x.onclick=function(){openBrand(b.name)};g.appendChild(x)})}
+function openBrand(name){showBrandIntro(name)}
+
+function getProteinAmount(product){
+  if(product.proteinAmount){ return product.proteinAmount; }
+  var text = product.analysis || '';
+  var match = text.match(/Crude Protein\s*(\d+(?:\.\d+)?)%\s*(min)?/i);
+  if(match){ return match[1] + '% min'; }
+  return '';
+}
+
+function buildProductCard(product, brandKey, cardClass){
+  var c=document.createElement('div');
+  c.className='product-card'+(cardClass?(' '+cardClass):'');
+  c.onclick=function(){openBrandProduct(product, brandKey)};
+  c.innerHTML=
+    '<div class="product-image-wrap"><img src="'+product.image+'" alt="'+product.name+'" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'image-missing\')"><div class="image-fallback">'+brandKey+'<br>Product Image</div><div class="size-badge"><span class="badge-label">Polly\'s Sizes</span><span class="badge-size">'+product.carriedSize+'</span></div></div>'+
+    '<div class="product-body">'+
+      '<div class="product-line">'+product.line+'</div>'+
+      '<div class="product-name">'+product.name+'</div>'+
+      '<div class="product-meta"><div class="meta-chip">'+product.life+'</div><div class="meta-chip">'+product.protein+'</div></div>'+
+      (getProteinAmount(product) ? '<div class="protein-amount-badge">Crude Protein: '+getProteinAmount(product)+'</div>' : '')+
+      '<div class="available-sizes">Available Sizes: '+product.availableSizes+'</div>'+
+      '<button class="more-info-btn" type="button">Ingredients</button>'+
+    '</div>';
+  return c;
+}
+
+function buildFrommProducts(items){
+  var g=document.getElementById('frommProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'Fromm','fromm-card'));});
+}
+
+function buildAcanaProducts(items){
+  var g=document.getElementById('acanaProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'ACANA','acana-card'));});
+}
+
+
+function buildTasteWildProducts(items){
+  var g=document.getElementById('tasteWildProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'Taste of the Wild','totw-card'));});
+}
+
+function filterTasteWild(filter,btn){
+  document.querySelectorAll('#tasteWildScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildTasteWildProducts(TASTE_WILD_PRODUCTS);return}
+  var f=TASTE_WILD_PRODUCTS.filter(function(p){return p.line===filter || p.life.indexOf(filter)>=0});
+  buildTasteWildProducts(f);
+}
+
+
+function buildScienceDietProducts(items){
+  var g=document.getElementById('scienceDietProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'Science Diet','science-card'));});
+}
+
+function filterScienceDiet(filter,btn){
+  document.querySelectorAll('#scienceDietScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildScienceDietProducts(SCIENCE_DIET_PRODUCTS);return}
+  var f=SCIENCE_DIET_PRODUCTS.filter(function(p){return p.line===filter || p.life.indexOf(filter)>=0});
+  buildScienceDietProducts(f);
+}
+
+
+function buildUltimatesProducts(items){
+  var g=document.getElementById('ultimatesProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'Ultimates','ultimates-card'));});
+}
+function filterUltimates(filter,btn){
+  document.querySelectorAll('#ultimatesScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildUltimatesProducts(ULTIMATES_PRODUCTS);return}
+  var f=ULTIMATES_PRODUCTS.filter(function(p){
+    if(filter==='Sensitive'){return p.line==='Sensitive'}
+    if(filter==='Grain-Free'){return p.line==='Grain-Free'}
+    if(filter==='Puppy'){return p.life.indexOf('Puppy')>=0}
+    if(filter==='Adult'){return p.life==='Adult'}
+    if(filter==='All Life Stages'){return p.life==='All Life Stages'}
+    return p.line===filter || p.life.indexOf(filter)>=0;
+  });
+  buildUltimatesProducts(f);
+}
+
+
+function buildSquarePetProducts(items){
+  var g=document.getElementById('squarePetProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'SquarePet','squarepet-card'));});
+}
+function filterSquarePet(filter,btn){
+  document.querySelectorAll('#squarePetScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildSquarePetProducts(SQUAREPET_PRODUCTS);return}
+  var f=SQUAREPET_PRODUCTS.filter(function(p){return p.line===filter});
+  buildSquarePetProducts(f);
+}
+
+
+function buildNuloProducts(items){
+  var g=document.getElementById('nuloProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'Nulo','nulo-card'));});
+}
+function filterNulo(filter,btn){
+  document.querySelectorAll('#nuloScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildNuloProducts(NULO_PRODUCTS);return}
+  var f=NULO_PRODUCTS.filter(function(p){
+    var tags=p.tags||[];
+    return p.line===filter || p.life.indexOf(filter)>=0 || tags.indexOf(filter)>=0;
+  });
+  buildNuloProducts(f);
+}
+
+
+function buildNutriSourceProducts(items){
+  var g=document.getElementById('nutriSourceProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'NutriSource','nutrisource-card'));});
+}
+function filterNutriSource(filter,btn){
+  document.querySelectorAll('#nutriSourceScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildNutriSourceProducts(NUTRISOURCE_PRODUCTS);return}
+  var f=NUTRISOURCE_PRODUCTS.filter(function(p){
+    var tags=p.tags||[];
+    return p.line===filter || p.life.indexOf(filter)>=0 || tags.indexOf(filter)>=0;
+  });
+  buildNutriSourceProducts(f);
+}
+
+function buildDiamondNaturalsProducts(items){
+  var g=document.getElementById('diamondNaturalsProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'Diamond Naturals','diamond-card'));});
+}
+function filterDiamondNaturals(filter,btn){
+  document.querySelectorAll('#diamondNaturalsScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildDiamondNaturalsProducts(DIAMOND_NATURALS_PRODUCTS);return}
+  var f=DIAMOND_NATURALS_PRODUCTS.filter(function(p){var tags=p.tags||[];return p.life.indexOf(filter)>=0 || tags.indexOf(filter)>=0;});
+  buildDiamondNaturalsProducts(f);
+}
+
+function buildRedbarnProducts(items){
+  var g=document.getElementById('redbarnProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'Redbarn','redbarn-card'));});
+}
+function filterRedbarn(filter,btn){
+  document.querySelectorAll('#redbarnScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildRedbarnProducts(REDBARN_PRODUCTS);return}
+  var f=REDBARN_PRODUCTS.filter(function(p){var tags=p.tags||[];return p.line===filter || p.life.indexOf(filter)>=0 || tags.indexOf(filter)>=0;});
+  buildRedbarnProducts(f);
+}
+
+function buildZignatureProducts(items){
+  var g=document.getElementById('zignatureProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'Zignature','zignature-card'));});
+}
+function filterZignature(filter,btn){
+  document.querySelectorAll('#zignatureScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildZignatureProducts(ZIGNATURE_PRODUCTS);return}
+  var f=ZIGNATURE_PRODUCTS.filter(function(p){var tags=p.tags||[];return p.life.indexOf(filter)>=0 || tags.indexOf(filter)>=0;});
+  buildZignatureProducts(f);
+}
+
+function buildOrijenProducts(items){
+  var g=document.getElementById('orijenProductGrid');
+  g.innerHTML='';
+  items.forEach(function(p){g.appendChild(buildProductCard(p,'ORIJEN','zignature-card'));});
+}
+function filterOrijen(filter,btn){
+  document.querySelectorAll('#orijenScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildOrijenProducts(ORIJEN_PRODUCTS);return}
+  var f=ORIJEN_PRODUCTS.filter(function(p){var tags=p.tags||[];return p.line===filter || p.life.indexOf(filter)>=0 || tags.indexOf(filter)>=0;});
+  buildOrijenProducts(f);
+}
+
+function filterFromm(filter,btn){
+  document.querySelectorAll('#frommScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildFrommProducts(FROMM_PRODUCTS);return}
+  var f=FROMM_PRODUCTS.filter(function(p){return p.line===filter || p.life.indexOf(filter)>=0});
+  buildFrommProducts(f);
+}
+
+function filterAcana(filter,btn){
+  document.querySelectorAll('#acanaScreen .filter-btn').forEach(function(b){b.className='filter-btn'});
+  btn.className='filter-btn active';
+  if(filter==='All'){buildAcanaProducts(ACANA_PRODUCTS);return}
+  var f=ACANA_PRODUCTS.filter(function(p){return p.line===filter || p.life.indexOf(filter)>=0});
+  buildAcanaProducts(f);
+}
+
+function openBrandProduct(product, brandKey, returnContext){
+  try{
+    sessionStorage.setItem('pollysSelectedProduct',JSON.stringify(product));
+    sessionStorage.setItem('pollysSelectedBrand',brandKey||'');
+    sessionStorage.setItem('pollysSelectedReturnContext',JSON.stringify(returnContext||null));
+  }catch(e){}
+  window.location.href='product-detail.html?v=802';
+}
+
+function openPollysWebsite(){ window.location.href='https://www.pollyspets.com/'; }
+var sectionState={title:'',description:'',mode:'',filter:'All'};
+
+function getCompletedProductCatalog(){
+  var sets=[
+    ['Fromm',typeof FROMM_PRODUCTS!=='undefined'?FROMM_PRODUCTS:[]],
+    ['ACANA',typeof ACANA_PRODUCTS!=='undefined'?ACANA_PRODUCTS:[]],
+    ['Taste of the Wild',typeof TASTE_WILD_PRODUCTS!=='undefined'?TASTE_WILD_PRODUCTS:[]],
+    ['Science Diet',typeof SCIENCE_DIET_PRODUCTS!=='undefined'?SCIENCE_DIET_PRODUCTS:[]],
+    ['Ultimates',typeof ULTIMATES_PRODUCTS!=='undefined'?ULTIMATES_PRODUCTS:[]],
+    ['SquarePet',typeof SQUAREPET_PRODUCTS!=='undefined'?SQUAREPET_PRODUCTS:[]],
+    ['Nulo',typeof NULO_PRODUCTS!=='undefined'?NULO_PRODUCTS:[]],
+    ['NutriSource',typeof NUTRISOURCE_PRODUCTS!=='undefined'?NUTRISOURCE_PRODUCTS:[]],
+    ['Diamond Naturals',typeof DIAMOND_NATURALS_PRODUCTS!=='undefined'?DIAMOND_NATURALS_PRODUCTS:[]],
+    ['Redbarn',typeof REDBARN_PRODUCTS!=='undefined'?REDBARN_PRODUCTS:[]],
+    ['Zignature',typeof ZIGNATURE_PRODUCTS!=='undefined'?ZIGNATURE_PRODUCTS:[]],
+    ['ORIJEN',typeof ORIJEN_PRODUCTS!=='undefined'?ORIJEN_PRODUCTS:[]],
+    ['Open Farm',typeof OPEN_FARM_PRODUCTS!=='undefined'?OPEN_FARM_PRODUCTS:[]],
+    ['KOHA',typeof KOHA_PRODUCTS!=='undefined'?KOHA_PRODUCTS:[]],
+    ['CanineX',typeof CANINEX_PRODUCTS!=='undefined'?CANINEX_PRODUCTS:[]],
+    ['My Perfect Pet',typeof MY_PERFECT_PET_PRODUCTS!=='undefined'?MY_PERFECT_PET_PRODUCTS:[]],
+    ['A Pup Above',typeof A_PUP_ABOVE_COLD_PRODUCTS!=='undefined'?A_PUP_ABOVE_COLD_PRODUCTS:[]],
+    ["Tucker's",typeof TUCKERS_PRODUCTS!=='undefined'?TUCKERS_PRODUCTS:[]],
+    ['ORIJEN FreshPrey',typeof ORIJEN_FRESHPREY_PRODUCTS!=='undefined'?ORIJEN_FRESHPREY_PRODUCTS:[]],
+    ["Oma's Pride",typeof OMAS_PRIDE_PRODUCTS!=='undefined'?OMAS_PRIDE_PRODUCTS:[]],
+    ['OC Raw',typeof OC_RAW_PRODUCTS!=='undefined'?OC_RAW_PRODUCTS:[]],
+    ['MuttGut',typeof MUTTGUT_PRODUCTS!=='undefined'?MUTTGUT_PRODUCTS:[]],
+    ['Primal',typeof PRIMAL_PRODUCTS!=='undefined'?PRIMAL_PRODUCTS:[]]
+  ];
+  var out=[];
+  sets.forEach(function(set){set[1].forEach(function(p){out.push({brand:set[0],product:p})})});
+  return out;
+}
+
+function sectionText(entry){
+  var p=entry.product;
+  return [entry.brand,p.name,p.line,p.life,p.protein,(p.tags||[]).join(' '),p.analysis||'',p.ingredients||''].join(' ').toLowerCase();
+}
+function isPuppyEntry(e){var t=sectionText(e);return /\bpuppy\b/.test(t) && !/adult/.test((e.product.life||'').toLowerCase());}
+function isSeniorEntry(e){var t=sectionText(e);return /\bsenior\b/.test(t);}
+function isAdultEntry(e){
+  var life=(e.product.life||'').toLowerCase();
+  var t=sectionText(e);
+  if(isPuppyEntry(e)||isSeniorEntry(e))return false;
+  return /adult|all life stages|all lifestages|maintenance/.test(life) || (!/puppy/.test(t) && !/senior/.test(t));
+}
+function specialNeedType(e){
+  var t=sectionText(e);
+  if(/controlled phosphorus/.test(t))return 'Controlled Phosphorus';
+  if(/reduced carbohydrates/.test(t))return 'Reduced Carbohydrates';
+  if(/active \/ performance|working dogs|high energy|performance nutrition|maximum energy/.test(t))return 'Active / Performance';
+  if(/mobility|joint|glucosamine|chondroitin/.test(t))return 'Mobility / Joint';
+  if(/low fat|low-fat|digestive support/.test(t))return 'Digestive / Low Fat';
+  if(/weight|trim|light|healthy weight|weight management/.test(t))return 'Weight';
+  if(/sensitive|digest|stomach|skin/.test(t))return 'Sensitive';
+  if(/limited|limited\+|single protein/.test(t))return 'Limited Ingredient';
+  if(/large breed/.test(t))return 'Large Breed';
+  if(/small breed|small bites|small & medium breed|small and medium breed|small & medium|small and medium|small & mini|small and mini|small paws|toy breed|mini breed/.test(t))return 'Small Breed';
+  if(/grain[- ]?free/.test(t))return 'Grain-Free';
+  return '';
+}
+function proteinTypes(e){
+  var t=sectionText(e), vals=[];
+  [['Chicken','chicken'],['Turkey','turkey'],['Beef','beef'],['Lamb','lamb'],['Pork','pork'],['Salmon','salmon'],['Fish','fish|cod|trout|herring|pollock|whitefish|sardine|mackerel'],['Duck','duck'],['Venison','venison'],['Goat','goat'],['Kangaroo','kangaroo']].forEach(function(x){if(new RegExp(x[1]).test(t))vals.push(x[0])});
+  return vals;
+}
+function getSectionBaseItems(mode){
+  var all=getCompletedProductCatalog();
+  if(mode==='Puppy')return all.filter(isPuppyEntry);
+  if(mode==='Adult')return all.filter(isAdultEntry);
+  if(mode==='Senior')return all.filter(isSeniorEntry);
+  if(mode==='Special')return all.filter(function(e){return specialNeedType(e)!==''});
+  if(mode==='Protein')return all.filter(function(e){return proteinTypes(e).length>0});
+  return all;
+}
+function getSectionFilters(mode,items){
+  if(mode==='Puppy')return ['All','Large Breed','Small Breed','Grain-Free'];
+  if(mode==='Adult')return ['All','All Life Stages','Large Breed','Small Breed','Grain-Free'];
+  if(mode==='Senior')return ['All','Weight','Small Breed'];
+  if(mode==='Special')return ['All','Controlled Phosphorus','Reduced Carbohydrates','Active / Performance','Sensitive','Digestive / Low Fat','Mobility / Joint','Weight','Limited Ingredient','Large Breed','Small Breed','Grain-Free'];
+  if(mode==='Protein')return ['All','Chicken','Turkey','Beef','Lamb','Pork','Salmon','Fish','Duck','Venison'];
+  return ['All'];
+}
+function sectionMatchesFilter(e,mode,filter){
+  if(filter==='All')return true;
+  var t=sectionText(e);
+  if(mode==='Special')return specialNeedType(e)===filter || (filter==='Grain-Free' && /grain[- ]?free/.test(t));
+  if(mode==='Protein')return proteinTypes(e).indexOf(filter)>=0;
+  if(filter==='Large Breed')return /large breed/.test(t);
+  if(filter==='Small Breed')return /small breed|small bites|small & medium breed|small and medium breed|small & medium|small and medium|small & mini|small and mini|small paws|toy breed|mini breed/.test(t) || /small\s*&\s*medium\s*breed\s*puppy/.test(t);
+  if(filter==='Grain-Free')return /grain[- ]?free/.test(t);
+  if(filter==='All Life Stages')return /all life stages|all lifestages/.test((e.product.life||'').toLowerCase());
+  if(filter==='Weight')return /weight|trim|light/.test(t);
+  return t.indexOf(filter.toLowerCase())>=0;
+}
+function buildSectionFilters(mode,items){
+  var row=document.getElementById('sectionFilterRow');row.innerHTML='';
+  getSectionFilters(mode,items).forEach(function(f){var b=document.createElement('button');b.className='filter-btn'+(f===sectionState.filter?' active':'');b.innerHTML=f;b.onclick=function(){sectionState.filter=f;renderSectionProducts();buildSectionFilters(mode,items)};row.appendChild(b)});
+}
+function returnToSectionContext(ctx){
+  openSection(ctx.title,ctx.description);
+  if(sectionState.mode!=='Cold'){
+    sectionState.filter=ctx.filter||'All';
+    var items=getSectionBaseItems(sectionState.mode);
+    buildSectionFilters(sectionState.mode,items);
+    renderSectionProducts();
+  }
+}
+function buildCategoryProductCard(entry){
+  var card=buildProductCard(entry.product,entry.brand,'category-card');
+  card.onclick=function(){
+    openBrandProduct(entry.product,entry.brand,{type:'section',title:sectionState.title,description:sectionState.description,mode:sectionState.mode,filter:sectionState.filter});
+  };
+  var body=card.querySelector('.product-body');
+  if(body){var badge=document.createElement('div');badge.className='category-brand-badge';badge.innerHTML=entry.brand;body.insertBefore(badge,body.firstChild)}
+  return card;
+}
+function renderSectionProducts(){
+  var grid=document.getElementById('sectionProductGrid');var cold=document.getElementById('coldBrandGrid');
+  cold.style.display='none';grid.style.display='grid';grid.innerHTML='';
+  var items=getSectionBaseItems(sectionState.mode).filter(function(e){return sectionMatchesFilter(e,sectionState.mode,sectionState.filter)});
+  document.getElementById('sectionCount').innerHTML=items.length+' foods found';
+  items.forEach(function(e){grid.appendChild(buildCategoryProductCard(e))});
+  if(!items.length){grid.innerHTML='<div class="category-empty">No foods match this filter yet. Try another filter.</div>'}
+}
+function showColdDogFood(){
+  var grid=document.getElementById('sectionProductGrid');var cold=document.getElementById('coldBrandGrid');
+  grid.style.display='none';cold.style.display='grid';document.getElementById('sectionFilterRow').innerHTML='';
+  document.getElementById('sectionCount').innerHTML='Refrigerated, frozen, raw & freeze-dried brands carried at Polly\'s Pets';
+  cold.innerHTML='';
+  [
+    ['My Perfect Pet','Gently cooked frozen',function(){showBrandIntro('My Perfect Pet')}],
+    ['A Pup Above','Sous-vide gently cooked frozen',function(){showBrandIntro('A Pup Above')}],
+    ['Tucker\'s','Frozen raw',function(){showBrandIntro('Tucker\'s')}],
+    ['ORIJEN FreshPrey','Gently steam-cooked fresh & frozen',function(){showBrandIntro('ORIJEN FreshPrey')}],
+    ["Oma's Pride",'Raw frozen complete meals & proteins',function(){showBrandIntro("Oma's Pride")}],
+    ['OC Raw','Frozen raw complete meals & meat-only blends',function(){showBrandIntro('OC Raw')}],
+    ['MuttGut','Raw frozen & sous-vide gently cooked',function(){showBrandIntro('MuttGut')}],
+    ['Primal','Frozen raw • Pronto • Nuggets • Patties • Bone Broth',function(){showBrandIntro('Primal')}]
+  ].forEach(function(x){var b=document.createElement('button');b.className='cold-brand-card';b.innerHTML='<span class="cold-brand-name">'+x[0]+'</span><span class="cold-brand-note">'+x[1]+'</span>';b.onclick=x[2];cold.appendChild(b)});
+}
+function openSection(t,d){
+  hideAllScreens();sectionState.title=t;sectionState.description=d;sectionState.filter='All';
+  var sectionScreen=document.getElementById('sectionScreen');
+  sectionScreen.classList.remove('cold-barn-screen');
+  document.getElementById('sectionTitle').innerHTML=t;document.getElementById('sectionDescription').innerHTML=d;
+  if(t==='Puppy Food')sectionState.mode='Puppy';
+  else if(t==='Adult Dog Food')sectionState.mode='Adult';
+  else if(t==='Senior Dog Food')sectionState.mode='Senior';
+  else if(t==='Special Needs')sectionState.mode='Special';
+  else if(t==='Protein')sectionState.mode='Protein';
+  else if(t==='Cold Dog Food')sectionState.mode='Cold';
+  sectionScreen.className='screen content-screen active-screen'+(sectionState.mode==='Cold'?' cold-barn-screen':'');
+  if(sectionState.mode==='Cold'){showColdDogFood()}else{var items=getSectionBaseItems(sectionState.mode);buildSectionFilters(sectionState.mode,items);renderSectionProducts()}
+  window.scrollTo(0,0);
+}
+function startGuide(){guideStep=0;guideAnswers={};showGuideQuestion()}
+function showGuideQuestion(){hideAllScreens();var q=guideQuestions[guideStep];document.getElementById('questionTitle').innerHTML=q.title;document.getElementById('questionSubtitle').innerHTML=q.subtitle;var g=document.getElementById('answerGrid');g.innerHTML='';q.answers.forEach(function(a){var b=document.createElement('button');b.className='answer-btn';b.innerHTML=a;b.onclick=function(){selectGuideAnswer(a)};g.appendChild(b)});document.getElementById('guideScreen').className='screen content-screen active-screen';window.scrollTo(0,0)}
+function selectGuideAnswer(v){var q=guideQuestions[guideStep];guideAnswers[q.key]=v;if(guideStep<guideQuestions.length-1){guideStep++;showGuideQuestion()}else{showGuideResult()}}
+function previousGuideStep(){if(guideStep===0)showHome();else{guideStep--;showGuideQuestion()}}
+function guideAgeMatches(entry){
+  var age=guideAnswers.age||'All Life Stages';
+  if(age==='Puppy')return isPuppyEntry(entry) || /all life stages|all lifestages/.test((entry.product.life||'').toLowerCase());
+  if(age==='Senior')return isSeniorEntry(entry) || /adult|all life stages|all lifestages/.test((entry.product.life||'').toLowerCase());
+  if(age==='Adult')return isAdultEntry(entry) || /all life stages|all lifestages/.test((entry.product.life||'').toLowerCase());
+  return true;
+}
+function guideNeedScore(entry){
+  var need=guideAnswers.need||'Everyday Nutrition';
+  var t=sectionText(entry), s=0;
+  if(need==='Everyday Nutrition'){
+    if(!specialNeedType(entry))s+=3;
+    if(/adult|all life stages|all lifestages|maintenance/.test((entry.product.life||'').toLowerCase()))s+=2;
+  }else if(need==='Sensitive Stomach'){
+    if(/sensitive|digest|stomach|limited|single protein|bland|gut|probiotic|low fat|low-fat/.test(t))s+=7;
+    if(/limited ingredient|digestive/.test(t))s+=2;
+  }else if(need==='Skin & Coat'){
+    if(/skin|coat|omega|salmon|fish|herring|trout|whitefish|sardine|mackerel/.test(t))s+=7;
+    if(/sensitive/.test(t))s+=2;
+  }else if(need==='Weight Support'){
+    if(/weight|trim|light|reduced activity|low fat|low-fat|healthy weight/.test(t))s+=8;
+    if(/senior/.test(t))s+=1;
+  }
+  return s;
+}
+function guideProteinScore(entry){
+  var pref=guideAnswers.protein||'';
+  var types=proteinTypes(entry), t=sectionText(entry);
+  if(pref==='Fish / Salmon')return (types.indexOf('Salmon')>=0 || types.indexOf('Fish')>=0 || /fish|salmon|trout|herring|whitefish|sardine|mackerel/.test(t))?5:0;
+  return types.indexOf(pref)>=0?5:0;
+}
+function getGuideRecommendations(){
+  var all=getCompletedProductCatalog();
+  var scored=all.map(function(entry){
+    var score=0;
+    if(guideAgeMatches(entry))score+=6; else score-=8;
+    score+=guideNeedScore(entry);
+    score+=guideProteinScore(entry);
+    if(entry.product && entry.product.carriedSize)score+=1;
+    return {entry:entry,score:score};
+  }).filter(function(x){return x.score>0});
+  scored.sort(function(a,b){
+    if(b.score!==a.score)return b.score-a.score;
+    return (a.entry.brand+' '+a.entry.product.name).localeCompare(b.entry.brand+' '+b.entry.product.name);
+  });
+  var out=[], seen={};
+  for(var i=0;i<scored.length && out.length<6;i++){
+    var key=scored[i].entry.brand+'|'+scored[i].entry.product.name;
+    if(!seen[key]){seen[key]=true;out.push(scored[i].entry)}
+  }
+  return out;
+}
+function guideMatchReason(entry){
+  var reasons=[];
+  if(guideAgeMatches(entry))reasons.push(guideAnswers.age==='All Life Stages'?'life-stage flexibility':guideAnswers.age.toLowerCase()+' life stage');
+  if(guideNeedScore(entry)>=5)reasons.push((guideAnswers.need||'').toLowerCase());
+  if(guideProteinScore(entry)>0)reasons.push((guideAnswers.protein||'').toLowerCase()+' preference');
+  return reasons.length?'Good match for '+reasons.slice(0,2).join(' + ')+'.':'A useful starting option based on your answers.';
+}
+function buildGuideRecommendationCard(entry){
+  var p=entry.product, c=document.createElement('div');
+  c.className='guide-rec-card';
+  c.innerHTML='<div class="guide-rec-image-wrap"><img src="'+p.image+'" alt="'+p.name+'" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'image-missing\')"><div class="image-fallback">'+entry.brand+'<br>Product Image</div></div>'+
+    '<div class="guide-rec-body"><div class="guide-rec-brand">'+entry.brand+'</div><div class="guide-rec-name">'+p.name+'</div><div class="guide-rec-reason">'+guideMatchReason(entry)+'</div><button class="guide-rec-btn" type="button">View Product Details</button></div>';
+  c.querySelector('.guide-rec-btn').onclick=function(){openBrandProduct(p,entry.brand,{type:'guide'})};
+  c.querySelector('.guide-rec-image-wrap').onclick=function(){openBrandProduct(p,entry.brand,{type:'guide'})};
+  return c;
+}
+function showGuideResult(){
+  hideAllScreens();
+  document.getElementById('guideSummary').innerHTML='You selected <strong>'+guideAnswers.age+'</strong>, focused on <strong>'+guideAnswers.need+'</strong>, with <strong>'+guideAnswers.protein+'</strong>.';
+  var grid=document.getElementById('guideRecommendations');
+  grid.innerHTML='';
+  var recs=getGuideRecommendations();
+  recs.forEach(function(entry){grid.appendChild(buildGuideRecommendationCard(entry))});
+  document.getElementById('guideResultNote').innerHTML=recs.length?'Here are Professor Polly\'s best starting points from foods already in this kiosk. Tap any recommendation to see the full product details.':'No strong matches were found with those exact choices. Try the guide again with a different protein or nutrition goal.';
+  document.getElementById('guideResultScreen').className='screen content-screen active-screen';window.scrollTo(0,0)
+}
+document.addEventListener('contextmenu',function(e){e.preventDefault()});
+var idleTimer;function resetIdleTimer(){clearTimeout(idleTimer);idleTimer=setTimeout(showHome,180000)}
+document.addEventListener('click',resetIdleTimer);document.addEventListener('touchstart',resetIdleTimer);resetIdleTimer();
+
+/* V7.97 – Fully Kiosk / Android WebView repaint helper */
+(function(){
+  function forceActiveScreenPaint(){
+    var active=document.querySelector('.screen.active-screen');
+    if(!active){return;}
+    requestAnimationFrame(function(){
+      active.style.webkitTransform='translateZ(0)';
+      active.style.transform='translateZ(0)';
+      void active.offsetHeight;
+    });
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){
+      forceActiveScreenPaint();
+      var root=document.querySelector('.app-shell');
+      if(root && window.MutationObserver){
+        new MutationObserver(forceActiveScreenPaint).observe(root,{subtree:true,attributes:true,attributeFilter:['class']});
+      }
+    });
+  }else{
+    forceActiveScreenPaint();
+    var root=document.querySelector('.app-shell');
+    if(root && window.MutationObserver){
+      new MutationObserver(forceActiveScreenPaint).observe(root,{subtree:true,attributes:true,attributeFilter:['class']});
+    }
+  }
+})();

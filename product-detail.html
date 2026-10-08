@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#d49a57">
+<title>Polly's Pets Product Details</title>
+<link rel="stylesheet" href="product-detail-v802.css?v=802">
+</head>
+<body>
+<main class="detail-page-shell">
+  <div class="top-nav-bar">
+    <button id="backTop" class="nav-btn secondary">← Back</button>
+    <button id="homeTop" class="nav-btn">Home</button>
+  </div>
+
+  <section class="wood-header">
+    <div id="brandAccent" class="detail-brand-accent">PRODUCT DETAILS</div>
+    <div id="detailLine" class="mini-kicker">BRAND</div>
+    <h1 id="detailName">Ingredients &amp; Nutrition</h1>
+    <p>Ingredients and basic nutrition information for this recipe.</p>
+  </section>
+
+  <section class="ingredient-layout">
+    <div class="ingredient-product-card">
+      <div class="image-wrap"><img id="detailImage" src="" alt=""></div>
+      <div class="size-strip"><span>Polly's Sizes:</span><strong id="detailCarrySize"></strong></div>
+      <div class="size-strip secondary"><span>Available Sizes:</span><strong id="detailSizes"></strong></div>
+    </div>
+
+    <div class="ingredient-content-card">
+      <div class="ingredient-section">
+        <h2 id="ingredientsHeading">Ingredients</h2>
+        <p id="detailIngredients"></p>
+      </div>
+
+      <div class="nutrition-row">
+        <div class="nutrition-box protein-box">
+          <div id="proteinLabel" class="nutrition-label">Crude Protein</div>
+          <div id="detailProteinAmount" class="nutrition-value emphasis"></div>
+        </div>
+        <div class="nutrition-box">
+          <div class="nutrition-label">Guaranteed Analysis</div>
+          <div id="detailAnalysis" class="nutrition-value"></div>
+        </div>
+        <div class="nutrition-box">
+          <div class="nutrition-label">Calories</div>
+          <div id="detailCalories" class="nutrition-value"></div>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="backBottom" class="action-btn secondary">← Back</button>
+        <button id="websiteBtn" class="action-btn">Visit Polly's Pets Website</button>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="product-detail-v802.js?v=802"></script>
+</body>
+</html>
